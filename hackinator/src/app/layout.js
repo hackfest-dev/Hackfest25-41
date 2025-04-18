@@ -1,6 +1,8 @@
 import AnimatedBackground from "@/components/animation/AnimatedBackground";
 import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const metadata = {
   title: "Hackinator",
@@ -15,6 +17,8 @@ export default function RootLayout({ children }) {
         <main className="flex-1 flex items-center justify-center">
           {children}
           <AnimatedBackground branding={false}/>
+          <ToastContainer />
+
         </main>
       </body>
     </html>

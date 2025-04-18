@@ -15,6 +15,9 @@
     "next": "15.1.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-toastify": "^11.0.5",
+    "shadcn-ui": "^0.9.5",
+    "sonner": "^2.0.3",
     "three": "^0.175.0"
   },
   "devDependencies": {
