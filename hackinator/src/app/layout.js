@@ -1,5 +1,6 @@
 import AnimatedBackground from "@/components/animation/AnimatedBackground";
 import "./globals.css";
+import Navbar from "@/components/Navbar/Navbar";
 
 export const metadata = {
   title: "Hackinator",
@@ -10,6 +11,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
+        <Navbar/>
         {children}
         <AnimatedBackground branding={false}/>
       </body>
