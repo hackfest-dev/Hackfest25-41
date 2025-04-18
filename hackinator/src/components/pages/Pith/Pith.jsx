@@ -1,93 +1,116 @@
-'use client'
-import React from 'react';
-import { useState, useEffect } from 'react';
-import { useRouter } from 'next/router';
+// app/components/pages/Pith/Pith.jsx
+'use client';
+import React, { useState } from 'react';
+import dynamic from 'next/dynamic';
 
-export default function PitchGenerationPage() {
-  const router = useRouter();
-  const [pitch, setPitch] = useState('Generating pitch...');
-  const [repoLink, setRepoLink] = useState('');
-  const [manualIdea, setManualIdea] = useState('');
-  const [inputMode, setInputMode] = useState(''); // 'repo' or 'manual'
+const Pith = () => {
+  const [mode, setMode] = useState(null);
+  const [started, setStarted] = useState(false);
 
-  useEffect(() => {
-    // Simulate pitch generation after a slight delay
-    const timer = setTimeout(() => {
-      setPitch(
-        `Here's a pitch crafted by our AI based on your selected theme and idea:\n\nThis innovative project addresses a key challenge by utilizing the power of [mention relevant tech/approach]. We envision a solution that will [mention key benefits and impact]. The AI has analyzed the core concepts and generated this initial pitch to get you started!`
-      );
-    }, 1200); // Slightly shorter delay
-
-    return () => clearTimeout(timer); // Clean up the timeout
-  }, []);
-
-  const handleStart = () => {
-    if (inputMode === 'repo' && !repoLink) {
-      alert('Please provide your GitHub repository link.');
-      return;
-    }
-    if (inputMode === 'manual' && !manualIdea) {
-      alert('Please describe your idea manually.');
-      return;
-    }
-
-    // Assuming you want to pass the repoLink or manualIdea to the next page
-    const query = {};
-    if (repoLink) {
-      query.repoLink = repoLink;
-    } else if (manualIdea) {
-      query.manualIdea = manualIdea;
-    }
-
-    router.push({
-      pathname: '/next-page', // Replace with your actual next page route
-      query: query,
-    });
+  const handleModeSelect = (selectedMode) => {
+    setMode(selectedMode);
   };
 
+  const handleStart = () => {
+    if (mode) {
+      setStarted(true);
+    } else {
+      alert('Please select a mode first.');
+    }
+  };
+
+  if (started) {
+    const PitchInput = dynamic(() => import('./PitchInput'), { ssr: false });
+    return <PitchInput mode={mode} />;
+  }
+
   return (
-    <div style={{ padding: '2rem', fontFamily: 'sans-serif', maxWidth: '900px', margin: 'auto', border: '1px solid #ccc', borderRadius: '8px' }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1.5rem', alignItems: 'center' }}>
-        <h1 style={{ margin: 0 }}>Hackinator</h1>
-        <div>
-          <button style={{ marginRight: '0.5rem', padding: '0.5rem 1rem', border: '1px solid #ccc', borderRadius: '4px', cursor: 'pointer' }}>Back to /</button>
-          <button style={{ padding: '0.5rem 1rem', border: '1px solid #ccc', borderRadius: '4px', cursor: 'pointer' }}>Profile</button>
-        </div>
+    <div style={{
+      minHeight: '100vh',
+      padding: '2rem',
+      fontFamily: 'sans-serif',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center'
+    }}>
+      <h2 style={{ textAlign: 'center', marginBottom: '1rem', fontSize: '2rem' }}>
+        Pitch Generations
+      </h2>
+
+      <div style={{
+        border: '2px solid black',
+        padding: '1.5rem',
+        width: '100%',
+        maxWidth: '700px',
+        backgroundColor: '#f9f9f9',
+        borderRadius: '10px',
+        lineHeight: '1.6',
+        marginBottom: '2rem',
+        textAlign: 'center'
+      }}>
+        <strong>NOTE:</strong>
+        <p style={{ marginTop: '1rem' }}>
+          This section provides a detailed explanation of the pitch generation process.
+          It describes how input is taken from either a GitHub repository or manual explanation,
+          and how it's analyzed and structured to generate a compelling pitch.
+        </p>
       </div>
 
-      <h2 style={{ textAlign: 'center', marginBottom: '1rem', color: '#333' }}>PITCH GENERATION</h2>
+      <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', marginBottom: '2rem' }}>
+        <button
+          onClick={() => handleModeSelect('repo')}
+          style={{
+            padding: '0.75rem 1.5rem',
+            fontSize: '1rem',
+            border: mode === 'repo' ? '3px solid black' : '2px solid black',
+            background: 'rgba(255, 255, 255, 0.1)',
+            backdropFilter: 'blur(12px)',
+            WebkitBackdropFilter: 'blur(12px)',
+            borderRadius: '25px',
+            boxShadow: '0 8px 32px rgba(31, 38, 135, 0.37)',
+            color: '#000',
+            transition: 'all 0.2s ease-in-out'
+          }}
+        >
+          PASTE GITHUB REPO LINK
+        </button>
 
-      <div style={{ border: '1px solid #ddd', padding: '1rem', marginTop: '1rem', marginBottom: '1.5rem', backgroundColor: '#f9f9f9', borderRadius: '4px' }}>
-        <p style={{ fontWeight: 'bold', color: '#555', marginBottom: '0.5rem' }}>Note:</p>
-        <p style={{ whiteSpace: 'pre-wrap', color: '#333', lineHeight: '1.6' }}>{pitch}</p>
+        <button
+          onClick={() => handleModeSelect('manual')}
+          style={{
+            padding: '0.75rem 1.5rem',
+            fontSize: '1rem',
+            border: mode === 'manual' ? '3px solid black' : '2px solid black',
+            background: 'rgba(255, 255, 255, 0.1)',
+            backdropFilter: 'blur(12px)',
+            WebkitBackdropFilter: 'blur(12px)',
+            borderRadius: '25px',
+            boxShadow: '0 8px 32px rgba(31, 38, 135, 0.37)',
+            color: '#000',
+            transition: 'all 0.2s ease-in-out'
+          }}
+        >
+          EXPLAIN MANUALLY
+        </button>
       </div>
 
-      <div style={{ display: 'flex', gap: '1rem', marginBottom: '1rem' }}>
-        <button onClick={() => setInputMode('repo')} style={{ flex: 1, padding: '0.75rem', border: '1px solid #aaa', borderRadius: '4px', cursor: 'pointer', backgroundColor: inputMode === 'repo' ? '#e0f7fa' : '#f0f0f0' }}>Paste GitHub Repo Link</button>
-        <button onClick={() => setInputMode('manual')} style={{ flex: 1, padding: '0.75rem', border: '1px solid #aaa', borderRadius: '4px', cursor: 'pointer', backgroundColor: inputMode === 'manual' ? '#e0f7fa' : '#f0f0f0' }}>Explain Manually</button>
-      </div>
-
-      {inputMode === 'repo' && (
-        <input
-          type="text"
-          placeholder="Enter GitHub Repository Link"
-          value={repoLink}
-          onChange={(e) => setRepoLink(e.target.value)}
-          style={{ width: '100%', padding: '0.75rem', marginBottom: '1rem', border: '1px solid #ccc', borderRadius: '4px' }}
-        />
-      )}
-
-      {inputMode === 'manual' && (
-        <textarea
-          rows={4}
-          placeholder="Manually describe your idea..."
-          value={manualIdea}
-          onChange={(e) => setManualIdea(e.target.value)}
-          style={{ width: '100%', padding: '0.75rem', marginBottom: '1rem', border: '1px solid #ccc', borderRadius: '4px', resize: 'vertical' }}
-        />
-      )}
-
-      <button onClick={handleStart} style={{ width: '100%', padding: '1rem', fontWeight: 'bold', backgroundColor: '#4CAF50', color: 'white', border: 'none', borderRadius: '4px', cursor: 'pointer', fontSize: '1.1rem' }}>GET STARTED</button>
+      <button
+        onClick={handleStart}
+        style={{
+          marginTop: '1rem',
+          padding: '0.75rem 2rem',
+          fontSize: '1rem',
+          border: '2px solid black',
+          borderRadius: '10px',
+          background: '#fff',
+          cursor: 'pointer'
+        }}
+      >
+        GET STARTED
+      </button>
     </div>
   );
-}
+};
+
+export default Pith;
