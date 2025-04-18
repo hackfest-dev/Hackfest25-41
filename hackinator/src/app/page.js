@@ -12,7 +12,7 @@ export default function App() {
 
   return (
     // <AnimatedBackground>
-      <div className="relative min-h-screen">
+      <div className="relative">
         <Hackinator/>
       </div>
     // </AnimatedBackground>
