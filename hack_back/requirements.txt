@@ -11,6 +11,7 @@ djangorestframework_simplejwt==5.5.0
 idna==3.10
 ndg-httpsclient==0.5.1
 packaging==24.2
+pdf2image==1.17.0
 pillow==11.2.1
 pusher==3.3.3
 pyasn1==0.6.1
