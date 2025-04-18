@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-from hack_back.hackathon.models import HackathonSession
+from hackathon.models import HackathonSession
 
 
 # Create your models here.
