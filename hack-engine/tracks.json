@@ -1,0 +1,57 @@
+{
+    "hackathon_name": "CodeSprint 2025",
+    "tracks": [
+        {
+            "name": "Smart Cities",
+            "code": "URBANTECH",
+            "description": "Developing innovative solutions for urban challenges, focusing on intelligent infrastructure and connected systems.",
+            "keywords": [
+                "smart cities",
+                "urban planning",
+                "infrastructure",
+                "IoT",
+                "connectivity"
+            ]
+        },
+        {
+            "name": "Climate Tech",
+            "code": "SOLVERA",
+            "description": "Creating technology solutions to address climate change, promote renewable energy and minimize environmental impact.",
+            "keywords": [
+                "climate change",
+                "renewable energy",
+                "sustainability",
+                "environmental tech",
+                "carbon reduction"
+            ]
+        },
+        {
+            "name": "Cybersecurity",
+            "code": "CyberFort",
+            "description": "Building robust security systems and solutions to protect digital assets and combat cyber threats.",
+            "keywords": [
+                "cybersecurity",
+                "threat detection",
+                "data protection",
+                "network security",
+                "ethical hacking"
+            ]
+        },
+        {
+            "name": "Data Analytics & AI",
+            "code": "Datamatics Edge",
+            "description": "Leveraging artificial intelligence and data analytics to drive business insights and innovation.",
+            "keywords": [
+                "data analytics",
+                "AI",
+                "machine learning",
+                "big data",
+                "business intelligence"
+            ]
+        }
+    ],
+    "metadata": {
+        "last_updated": "2025-04-19T00:09:35.307563",
+        "total_count": 4
+    }
+}

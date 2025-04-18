@@ -80,7 +80,7 @@ def generate_queries_with_ai(theme):
     Each query should be specific and use relevant technical terms.
     """
     
-
+    # Prepare the request
     request_data = {
         "model": "gemma-3-4b-it",
         "messages": [
@@ -121,14 +121,14 @@ def generate_queries_with_ai(theme):
         print(f"Error generating queries with AI: {str(e)}")
         print("Using fallback queries.")
         return None
-# defined in the main.py file
-# from main import clear_screen, read_brochure, get_existing_problem_texts, is_duplicate_problem, add_problem_statements
+
 def get_search_results(theme):
     """Get search results for a theme."""
     print(f"\nGathering information about {theme['name']}...")
     
     # Generate search queries
     queries = generate_search_queries(theme)
+    print(f"DEBUG: Generated search queries: {queries}")
     
     # Simulate web search for each query
     all_results = []
@@ -157,25 +157,65 @@ def get_search_results(theme):
     print(f"Found {len(unique_results)} relevant search results.")
     return unique_results[:10]  # Limit to 10 results
 
+import requests
+import os
+
+BING_SEARCH_API_KEY = os.getenv("BING_SEARCH_API_KEY")  # User must set this environment variable
+BING_SEARCH_ENDPOINT = "https://api.bing.microsoft.com/v7.0/search"
+
 def simulate_web_search(query, theme):
+    """Perform real web search using Bing Search API."""
+    if not BING_SEARCH_API_KEY:
+        print("BING_SEARCH_API_KEY not set. Falling back to simulated search results.")
+        return simulate_web_search_fallback(query, theme)
     
-    # This function simulates web search results
-    # In a real implementation, this would call an actual search API
+    headers = {"Ocp-Apim-Subscription-Key": BING_SEARCH_API_KEY}
+    params = {"q": query, "count": 5, "textDecorations": True, "textFormat": "HTML"}
     
+    try:
+        response = requests.get(BING_SEARCH_ENDPOINT, headers=headers, params=params, timeout=10)
+        response.raise_for_status()
+        data = response.json()
+        
+        results = []
+        web_pages = data.get("webPages", {}).get("value", [])
+        for item in web_pages:
+            results.append({
+                "title": item.get("name", ""),
+                "snippet": item.get("snippet", ""),
+                "link": item.get("url", "")
+            })
+        
+        if not results:
+            print("No results from Bing Search API, falling back to simulated results.")
+            return simulate_web_search_fallback(query, theme)
+        
+        return results[:3]  # Return top 3 results
+    
+    except Exception as e:
+        print(f"Error during Bing Search API call: {e}")
+        print("Falling back to simulated search results.")
+        return simulate_web_search_fallback(query, theme)
+
+def simulate_web_search_fallback(query, theme):
+    """Fallback simulated web search results."""
     # Get default context as a base
     base_results = get_default_context(theme)
+    
     # Modify results to make them more relevant to the query
+    import random
     results = []
     for result in base_results:
-        # Create a variation of the result that's more relevant to the query
         query_terms = query.lower().split()
         title = result['title']
         snippet = result['snippet']
         
-        # Add some query terms to make it seem more relevant   
         for term in query_terms:
-            if term not in snippet.lower() and random.random() < 0.3:
+            if term not in snippet.lower() and random.random() < 0.7:
                 snippet = snippet + f" This approach addresses {term} challenges effectively."
+        
+        if random.random() < 0.5:
+            title = f"{title} - Related to {query_terms[0]}"
         
         results.append({
             "title": title,
@@ -183,7 +223,7 @@ def simulate_web_search(query, theme):
             "link": result['link']
         })
     
-    # Shuffle to simulate different results for different queries
+    import random
     random.shuffle(results)
     return results[:3]  # Return 3 results per query
 

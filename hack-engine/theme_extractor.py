@@ -153,10 +153,8 @@ def extract_keywords(text):
     
     return keywords[:5]  # Return top 5 keywords
 
-
-# fail safe function to extract themes if AI and explicit methods fail hehehe cheaky move
 def extract_themes_fallback(text):
-    
+    """Fallback method for theme extraction."""
     return [
         {
             "name": "Healthcare",
