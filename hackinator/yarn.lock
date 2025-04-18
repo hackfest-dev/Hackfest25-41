@@ -102,6 +102,11 @@
     "@eslint/core" "^0.13.0"
     levn "^0.4.1"
 
+"@firecms/neat@^0.4.0":
+  version "0.4.0"
+  resolved "https://registry.npmjs.org/@firecms/neat/-/neat-0.4.0.tgz#ab1fdee483e077403b77827cf3bc95197dc6c1e5"
+  integrity sha512-a99QILBQsrbcm44KDsOvtcIVXWSLtRyqUq+dQPmkYECyYc69Sv7tgXFrv2ogbYayMMkAaVqZqhZndXVZaAsRqA==
+
 "@humanfs/core@^0.19.1":
   version "0.19.1"
   resolved "https://registry.npmjs.org/@humanfs/core/-/core-0.19.1.tgz#17c55ca7d426733fe3c561906b8173c336b40a77"
@@ -2842,6 +2847,11 @@ thenify-all@^1.0.0:
   integrity sha512-RVZSIV5IG10Hk3enotrhvz0T9em6cyHBLkH/YAZuKqd8hRkKhSfCGIcP2KUY0EPxndzANBmNllzWPwak+bheSw==
   dependencies:
     any-promise "^1.0.0"
+
+three@^0.175.0:
+  version "0.175.0"
+  resolved "https://registry.npmjs.org/three/-/three-0.175.0.tgz#67b357b0b1ee8ef0445b9a768f59363ab1fa7921"
+  integrity sha512-nNE3pnTHxXN/Phw768u0Grr7W4+rumGg/H6PgeseNJojkJtmeHJfZWi41Gp2mpXl1pg1pf1zjwR4McM1jTqkpg==
 
 tinyglobby@^0.2.12:
   version "0.2.12"
