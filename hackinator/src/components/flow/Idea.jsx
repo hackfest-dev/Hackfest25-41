@@ -19,21 +19,36 @@ export default function IdeaFlow() {
 
   const handleSubmit = async () => {
     if (!idea || !file) {
-      setErrorMessage('Please explain your idea and upload a file.');
+        toast.error('Please explain your idea and upload a file.');
       return;
     }
     setLoading(true);
-    setErrorMessage('');
+    setErrorMessage(''); // Clear any previous error messages
     try {
       await new Promise((resolve) => setTimeout(resolve, 2000)); // Simulate file upload
       setLoading(false);
-      toast.success("Idea and file uploaded successfully!"); // Show success toast
+      toast.success("Idea and file uploaded successfully!", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        style: {
+          backgroundColor: '#0f0c29', // Deep violet/navy for success
+          color: '#f5f5f5', // Soft white for text
+          fontSize: '16px',
+          padding: '12px',
+          borderRadius: '8px',
+        },
+        progressStyle: {
+          backgroundColor: '#302b63', // Rich indigo for progress bar
+        },
+      });
     } catch (error) {
       setLoading(false);
-      setErrorMessage('There was an error uploading your idea and file.');
-      toast.error("Error uploading your idea and file!"); // Show error toast
+      const errorText = error.message || 'There was an error uploading your idea and file.';
+      toast.error(errorText); // Show error toast
+      setErrorMessage(errorText); // Set the error message
     }
-  };
+  };  
 
   // Variants for Framer Motion
   const containerVariants = {
@@ -71,10 +86,10 @@ export default function IdeaFlow() {
 
       <motion.div className="text-lg max-w-2xl text-center mb-10 leading-relaxed" variants={itemVariants}>
         <ul className="text-left list-disc list-inside mt-4 space-y-2">
-          <li>🧠 <strong>Think</strong> of an innovative and original idea.</li>
-          <li>📝 <strong>Describe</strong> it briefly in the input box.</li>
-          <li>📎 <strong>Upload</strong> any file that supports your idea (PDF, image, etc).</li>
-          <li>🚀 <strong>Submit</strong> and let us process your creativity for review!</li>
+          <li><strong>Think</strong> of an innovative and original idea.</li>
+          <li><strong>Describe</strong> it briefly in the input box.</li>
+          <li><strong>Upload</strong> any file that supports your idea (PDF, image, etc).</li>
+          <li><strong>Submit</strong> and let us process your creativity for review!</li>
         </ul>
       </motion.div>
 
