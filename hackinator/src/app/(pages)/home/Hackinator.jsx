@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Hackinator() {
+export default function Hackinators() {
   return (
     <div>Hackinator</div>
   )
