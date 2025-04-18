@@ -60,9 +60,9 @@ export default function ProblemSelector() {
     const selectedIdeas = dummyIdeas
       .map((idea, index) => (selectionStatus[index] === 'accepted' ? idea : null))
       .filter(Boolean);
-
-    localStorage.setItem('selectedIdeas', JSON.stringify(selectedIdeas));
-    router.push('/flow/selected-problems');
+  
+    const encodedIdeas = encodeURIComponent(JSON.stringify(selectedIdeas));
+    router.push(`/flow/selected-problems?ideas=${encodedIdeas}`);
   };
 
   const idea = dummyIdeas[currentIndex];
