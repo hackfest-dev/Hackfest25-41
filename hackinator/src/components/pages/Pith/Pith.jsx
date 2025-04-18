@@ -16,7 +16,7 @@ export default function PithFlow() {
           <div><strong style={{ fontSize: '1.8rem' }}>Hackinator</strong></div>
           <div>
             <button style={{ marginRight: '0.5rem' }}>BACK TO /</button>
-            <button>PROFILE</button>
+            <button>PROFILE!!</button> 
           </div>
         </div>
   
