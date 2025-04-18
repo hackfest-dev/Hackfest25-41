@@ -1,12 +1,5 @@
 import AnimatedBackground from "@/components/animation/AnimatedBackground";
 import "./globals.css";
-import dynamic from 'next/dynamic';
-
-// Import SmoothScroll with client-side only rendering
-const SmoothScroll = dynamic(
-  () => import('@/components/animation/SmoothScroll'),
-  { ssr: false }
-);
 
 export const metadata = {
   title: "Hackinator",
