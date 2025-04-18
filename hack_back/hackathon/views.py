@@ -8,19 +8,19 @@ from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework.permissions import IsAuthenticated
 from rest_framework_simplejwt.authentication import JWTAuthentication
 from .models import HackathonSession, ThemeSelection
+from .serializers import DocumentSerializer
+from core.pusher import pusher_client
+import requests
+import logging
+
 # Create your views here.
+
+# Initialize logger
+logger = logging.getLogger(__name__)
 
 class CreateHackathonView(APIView):
     permission_classes = [IsAuthenticated]
     authentication_classes = [JWTAuthentication]
 
     #recieve the pdf or plain text and send it to ai
-    def post(self, request):
-        """
-        Handle file upload and OCR processing
-        Steps:
-        1. Process text message if present
-        2. Process file if uploaded
-        3. Create chat messages and broadcast
-        """
-        pass
+    pass
