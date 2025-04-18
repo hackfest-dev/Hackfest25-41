@@ -113,3 +113,36 @@ class CreateHackathonView(APIView):
         except Exception as e:
             logger.error(f"Exception during theme extraction or DB save: {e}")
             return Response({"error": "Internal server error"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+class AddThemesView(APIView):
+    permission_classes = [IsAuthenticated]
+    authentication_classes = [JWTAuthentication]
+
+    def post(self, request, session_id):
+        user = request.user
+        themes = request.data.get('themes', [])
+        logger.debug(f"Received themes: {themes} for session_id: {session_id}")
+        print(f"Received themes: {themes} for session_id: {session_id}")
+
+        if not themes:
+            return Response({"error": "No themes provided"}, status=status.HTTP_400_BAD_REQUEST)
+
+        try:
+            # Check if session exists and belongs to the user
+            session = HackathonSession.objects.get(pk=session_id, user=user)
+            
+            themes = str(themes)
+            # Save themes in ThemeSelection model
+            ThemeSelection.objects.create(session=session, theme_name=themes)
+
+            # Notify Pusher about new themes
+            pusher_client.trigger(f'session-{session_id}', 'new-themes', {'themes': themes})
+
+            return Response({"message": "Themes added successfully"}, status=status.HTTP_200_OK)
+
+        except HackathonSession.DoesNotExist:
+            return Response({"error": "Session not found or does not belong to the user"}, status=status.HTTP_404_NOT_FOUND)
+        except Exception as e:
+            logger.error(f"Exception during theme saving: {e}")
+            return Response({"error": "Internal server error"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
