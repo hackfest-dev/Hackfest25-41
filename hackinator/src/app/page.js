@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Hackinator from './(pages)/home/page';
+import HackinatorLayout from './(pages)/home/page';
 
 export default function App() {
   const [mounted, setMounted] = useState(false);
@@ -12,8 +12,8 @@ export default function App() {
 
   return (
     // <AnimatedBackground>
-      <div className="relative min-h-screen">
-        <Hackinator/>
+      <div className="relative">
+        <HackinatorLayout/>
       </div>
     // </AnimatedBackground>
   );

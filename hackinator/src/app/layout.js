@@ -1,5 +1,8 @@
 import AnimatedBackground from "@/components/animation/AnimatedBackground";
 import "./globals.css";
+import Navbar from "@/components/Navbar/Navbar";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const metadata = {
   title: "Hackinator",
@@ -9,9 +12,37 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>
-        {children}
-        <AnimatedBackground branding={false}/>
+      <body className="flex flex-col h-screen">
+        <Navbar />
+        <main className="flex-1 flex items-center justify-center">
+          {children}
+          <AnimatedBackground branding={false} />
+          
+          {/* Global Toast Container */}
+          <ToastContainer
+            position="top-center"
+            autoClose={2000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="colored" // 'light' | 'dark' | 'colored' (adds a nice color gradient)
+            toastStyle={{
+              backgroundColor: '#0f0c29', // Deep violet/navy for toast background
+              color: '#f5f5f5', // Soft white for text
+              fontSize: '16px', // Font size
+              padding: '12px', // Padding inside toast
+              borderRadius: '8px', // Rounded corners
+              boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)', // Shadow effect
+            }}
+            progressStyle={{
+              backgroundColor: '#302b63', // Rich indigo for progress bar
+            }}
+          />
+        </main>
       </body>
     </html>
   );

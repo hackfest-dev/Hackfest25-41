@@ -1,7 +1,10 @@
+import MainFlow from '@/components/flow/MainFlow'
 import React from 'react'
 
 export default function Flow() {
   return (
-    <div>Flow</div>
+    <div>
+      <MainFlow/>
+    </div>
   )
 }
