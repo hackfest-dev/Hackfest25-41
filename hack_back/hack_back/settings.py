@@ -43,9 +43,10 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_simplejwt',
     'rest_framework_simplejwt.token_blacklist',
+    'apis', # for api management
     'core',  # idk why i created this in starting for db management
     'users', # for user management
-    'sessions', # for hackathon session management
+    'hackathon', # for hackathon session management
     'ideas', # for idea management
     'chat', # for chat management
     'readme', # for readme generation
@@ -92,7 +93,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'app.urls'
+ROOT_URLCONF = 'hack_back.urls'
 
 TEMPLATES = [
     {
@@ -113,7 +114,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'app.wsgi.application'
+WSGI_APPLICATION = 'hack_back.wsgi.application'
 
 
 # Database

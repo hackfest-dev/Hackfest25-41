@@ -3,14 +3,14 @@ import requests
 import time
 from storage import is_duplicate_problem, add_problem_statements
 
-def generate_problem_statements(theme, search_results, existing_problems):
+def generate_problem_statements(theme, search_results, existing_problems, max_ideas=3):
     """Generate problem statements for the theme using AI."""
     print("\nGenerating problem statements...")
     
     try:
         # Generate statements one by one using AI
         statements = []
-        max_statements = 3
+        max_statements = max_ideas
         
         for i in range(max_statements):
             try:
@@ -28,9 +28,6 @@ def generate_problem_statements(theme, search_results, existing_problems):
                     
                     # Add the statement to storage immediately
                     add_problem_statements(theme['name'], [statement])
-                    
-                    # Also add to generated_ideas.json
-                    add_to_generated_ideas(statement, theme['name'])
                     
                     # Small delay between generations to avoid overwhelming the API
                     time.sleep(1)
@@ -50,9 +47,6 @@ def generate_problem_statements(theme, search_results, existing_problems):
                 print("-" * 80)
                 print(statement)
                 print("-" * 80)
-                
-                # Add to generated_ideas.json
-                add_to_generated_ideas(statement, theme['name'])
             
             add_problem_statements(theme['name'], statements)
         
@@ -67,9 +61,16 @@ def generate_problem_statements(theme, search_results, existing_problems):
 def add_to_generated_ideas(statement, theme_name):
     """Add a generated idea to the generated_ideas.json file."""
     try:
-        # Read the current ideas
-        with open('generated_ideas.json', 'r') as f:
-            ideas_data = json.load(f)
+        # Initialize generated_ideas.json if empty or missing keys
+        try:
+            with open('generated_ideas.json', 'r') as f:
+                ideas_data = json.load(f)
+        except (FileNotFoundError, json.JSONDecodeError):
+            ideas_data = {
+                "count": 0,
+                "max_capacity": 100,
+                "ideas": []
+            }
         
         # Check if we need to reset the count
         if ideas_data['count'] >= ideas_data['max_capacity']:

@@ -1,4 +1,5 @@
 import json
+import os
 from datetime import datetime
 
 def load_problem_statements():
@@ -79,3 +80,64 @@ def add_problem_statements(topic, new_statements):
     save_problem_statements(data)
     
     return added_count
+
+def save_tracks(hackathon_name, tracks):
+    """Save hackathon tracks to tracks.json file."""
+    data = {
+        "hackathon_name": hackathon_name,
+        "tracks": tracks,
+        "metadata": {
+            "last_updated": datetime.now().isoformat(),
+            "total_count": len(tracks)
+        }
+    }
+    
+    with open('tracks.json', 'w') as f:
+        json.dump(data, f, indent=4)
+    
+    return len(tracks)
+
+def save_generated_ideas(hackathon_name, ideas):
+    """Save generated ideas to generated_ideas.json file."""
+    data = {
+        "hackathon_name": hackathon_name,
+        "generated_ideas": ideas,
+        "metadata": {
+            "last_updated": datetime.now().isoformat(),
+            "total_count": len(ideas)
+        }
+    }
+    
+    with open('generated_ideas.json', 'w') as f:
+        json.dump(data, f, indent=4)
+    
+    return len(ideas)
+
+def save_generated_ideas_detailed(hackathon_name, theme_name, ideas):
+    """Save generated ideas in detailed format similar to problem_statements.json."""
+    data = {
+        "hackathon_name": hackathon_name,
+        "generated_ideas": [],
+        "metadata": {
+            "last_updated": datetime.now().isoformat(),
+            "total_count": len(ideas)
+        }
+    }
+    
+    for idx, idea_text in enumerate(ideas, start=1):
+        idea_entry = {
+            "id": idx,
+            "topic": theme_name,
+            "text": idea_text,
+            "created_at": datetime.now().isoformat(),
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        }
+        data["generated_ideas"].append(idea_entry)
+    
+    with open('generated_ideas.json', 'w') as f:
+        json.dump(data, f, indent=4)
+    
+    return len(ideas)
