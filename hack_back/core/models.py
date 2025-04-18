@@ -17,6 +17,9 @@ class ThemeSelection(models.Model):
     session = models.ForeignKey(HackathonSession, on_delete=models.CASCADE, related_name='themes')
     theme_name = models.CharField(max_length=255)
 
+    def __str__(self):
+        return f"{self.theme_name}"
+
 # Idea Suggestions
 class Idea(models.Model):
     session = models.ForeignKey(HackathonSession, on_delete=models.SET_NULL, null=True, blank=True, related_name='ideas')
@@ -26,6 +29,9 @@ class Idea(models.Model):
     finalised = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
 
+    def __str__(self):
+        return f"{self.user.username}{self.content[:20]} - {self.accepted} - {self.finalised}"
+
 # Chat with AI
 class ChatMessage(models.Model):
     session = models.ForeignKey(HackathonSession, on_delete=models.SET_NULL, null=True, blank=True, related_name='chats')
@@ -33,6 +39,9 @@ class ChatMessage(models.Model):
     sender = models.CharField(max_length=10, choices=[('user', 'User'), ('ai', 'AI')])
     message = models.TextField()
     timestamp = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.user.username} - {self.sender}"
 
 # Readme Generation
 class ReadmeSession(models.Model):
@@ -43,6 +52,9 @@ class ReadmeSession(models.Model):
     generated_readme = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
 
+    def __str__(self):
+        return f"{self.user.username} - {self.github_repo_link[19:]}"
+
 # Pitch Helper
 class PitchHelperSession(models.Model):
     session = models.ForeignKey(HackathonSession, on_delete=models.SET_NULL, null=True, blank=True, related_name='pitch_sessions')
@@ -50,3 +62,6 @@ class PitchHelperSession(models.Model):
     pitch_text = models.TextField()
     key_questions = models.TextField(help_text="Store as plain text or JSON")
     created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.user.username} - {self.pitch_text[:20]}"
