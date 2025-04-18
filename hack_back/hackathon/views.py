@@ -8,7 +8,6 @@ from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework.permissions import IsAuthenticated
 from rest_framework_simplejwt.authentication import JWTAuthentication
 from .models import HackathonSession, ThemeSelection
-from .serializers import DocumentSerializer
 from core.pusher import pusher_client
 import requests
 import logging
