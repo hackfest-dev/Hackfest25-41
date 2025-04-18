@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { toast } from 'react-toastify';
 import { useRouter } from 'next/navigation';
+import IdeaSelector from './IdeaSelector';
 
 export default function IdeaFlow() {
   const [idea, setIdea] = useState('');
@@ -13,6 +14,8 @@ export default function IdeaFlow() {
   const [selectedThemes, setSelectedThemes] = useState([]);
   const [customTheme, setCustomTheme] = useState('');
   const [themeOptions, setThemeOptions] = useState([]);
+  const [showSelectorPage, setShowSelectorPage] = useState(false);
+
 
   const router = useRouter();
 
@@ -23,10 +26,6 @@ export default function IdeaFlow() {
   };
 
   const handleSubmit = async () => {
-    if (!idea || !file) {
-      toast.error('Please explain your idea and upload a file.');
-      return;
-    }
     setLoading(true);
     setErrorMessage('');
     try {
@@ -62,9 +61,10 @@ export default function IdeaFlow() {
     if (customTheme.trim()) finalSelection.push(customTheme.trim());
 
     toast.success(`Selected themes: ${finalSelection.join(', ')}`, { position: "top-center" });
+    setShowSelectorPage(true);
 
     // send finalSelection to backend
-  };
+  };    
 
   // Animation variants
   const containerVariants = {
@@ -92,6 +92,12 @@ export default function IdeaFlow() {
       initial="hidden"
       animate="visible"
     >
+        {showSelectorPage ? (
+            <IdeaSelector />
+        ) : (
+            ''
+        )}
+
       {!showThemes && (
         <>
           <motion.h1 className="text-5xl font-extrabold mb-2 drop-shadow-lg" variants={itemVariants}>
@@ -99,7 +105,7 @@ export default function IdeaFlow() {
           </motion.h1>
 
           <motion.p className="mt-12 text-xl font-bold mb-2 drop-shadow-md" variants={itemVariants}>
-            IDEA GENERATOR
+            PROBLEM STATMENT GENERATOR
           </motion.p>
 
           <motion.div className="text-lg max-w-2xl text-center mb-10 leading-relaxed" variants={itemVariants}>
@@ -126,7 +132,7 @@ export default function IdeaFlow() {
             >
               <motion.input
                 type="text"
-                placeholder="EXPLAIN YOUR IDEA"
+                placeholder="EXPLAIN YOUR PROBLEM STATMENT"
                 value={idea}
                 onChange={handleIdeaChange}
                 className="flex-1 h-14 p-4 rounded-md border border-gray-300 text-black focus:outline-none focus:ring-2 focus:ring-white w-96 shadow-md"
