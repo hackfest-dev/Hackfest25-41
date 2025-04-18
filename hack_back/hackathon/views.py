@@ -99,7 +99,7 @@ class CreateHackathonView(APIView):
             else:
                 # Fallback: treat result as list of themes and generate title
                 themes = result
-                hackathon_title = themes[0]['name'] + " Hackathon" if themes else "Hackathon Session"
+                hackathon_title = themes[0]['hackathon header'] + " Hackathon" if themes else "Hackathon Session"
 
             # Save hackathon title in HackathonSession
             session = HackathonSession.objects.create(user=user, title=hackathon_title)
@@ -108,7 +108,7 @@ class CreateHackathonView(APIView):
                 session.brochure.save(file_obj.name, file_obj, save=True)
 
             # Return themes as response
-            return Response({"themes": themes}, status=status.HTTP_200_OK)
+            return Response({"themes": themes, "session_id": session.pk}, status=status.HTTP_200_OK)
 
         except Exception as e:
             logger.error(f"Exception during theme extraction or DB save: {e}")
