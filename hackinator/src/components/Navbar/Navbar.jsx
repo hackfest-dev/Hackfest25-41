@@ -8,7 +8,7 @@ export default function Navbar() {
         <div className="text-3xl font-extrabold text-indigo-700">Hackinator</div>
         <div className="space-x-3">
           <button className="border border-indigo-600 text-indigo-600 px-4 py-2 rounded hover:bg-indigo-600 hover:text-white transition">
-            Get Idea
+            Get Ideas
           </button>
           <button className="border border-indigo-600 text-indigo-600 px-4 py-2 rounded hover:bg-indigo-600 hover:text-white transition">
             Something
