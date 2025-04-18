@@ -106,7 +106,7 @@ export default function Hackinator() {
           >
             <motion.div
               ref={modalRef}
-              className="bg-white p-6 rounded-2xl shadow-xl max-w-3xl w-full text-center flex flex-col"
+              className="bg-white p-6 rounded-2xl shadow-xl max-w-xl w-full text-center flex flex-col"
               variants={modalVariants}
               initial="hidden"
               animate="visible"
@@ -121,8 +121,8 @@ export default function Hackinator() {
 
               <motion.div className="p-6 justify-center" variants={contentFade} initial="hidden" animate="visible">
                 <iframe
-                  width="560"
-                  height="315"
+                  width="480"
+                  height="255"
                   src={modalContent.videoUrl}
                   title="Tutorial Video"
                   frameBorder="0"
