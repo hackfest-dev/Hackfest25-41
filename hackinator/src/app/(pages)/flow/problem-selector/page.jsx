@@ -1,43 +1,41 @@
 'use client';
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { toast } from 'react-toastify'; // Import toast for notifications
 
-// Dummy ideas array
+import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+import { toast } from 'react-toastify';
+import { useRouter } from 'next/navigation';
+
+// Dummy ideas array with IDs
 const dummyIdeas = [
-  { title: 'Productivity Tracker', description: 'An app to track your daily tasks and measure productivity trends over time.' },
-  { title: 'Recipe Sharing Platform', description: 'A place for users to share and discover new recipes with social features.' },
-  { title: 'Language Learning Chatbot', description: 'A chatbot that helps users practice conversation in different languages.' },
-  { title: 'Minimal Habit Tracker', description: 'A simple and clean app to build and track daily habits effectively.' },
-  { title: 'abc', description: 'A community-driven site where users review and rate books they have read.' },
-  { title: 'Book Review Website', description: 'A community-driven site where users review and rate books they have read.' },
-  { title: 'Productivity Tracker', description: 'An app to track your daily tasks and measure productivity trends over time.' },
-  { title: 'Recipe Sharing Platform', description: 'A place for users to share and discover new recipes with social features.' },
-  { title: 'Language Learning Chatbot', description: 'A chatbot that helps users practice conversation in different languages.' },
-  { title: 'Minimal Habit Tracker', description: 'A simple and clean app to build and track daily habits effectively.' },
-  { title: 'abc', description: 'A community-driven site where users review and rate books they have read.' },
-  { title: 'Book Review Website', description: 'A community-driven site where users review and rate books they have read.' }
+  { id: 1, title: 'Productivity Tracker', description: 'An app to track your daily tasks and measure productivity trends over time.' },
+  { id: 2, title: 'Recipe Sharing Platform', description: 'A place for users to share and discover new recipes with social features.' },
+  { id: 3, title: 'Language Learning Chatbot', description: 'A chatbot that helps users practice conversation in different languages.' },
+  { id: 4, title: 'Minimal Habit Tracker', description: 'A simple and clean app to build and track daily habits effectively.' },
+  { id: 5, title: 'abc', description: 'A community-driven site where users review and rate books they have read.' },
+  { id: 6, title: 'Book Review Website', description: 'A community-driven site where users review and rate books they have read.' },
+  { id: 7, title: 'Productivity Tracker', description: 'An app to track your daily tasks and measure productivity trends over time.' },
+  { id: 8, title: 'Recipe Sharing Platform', description: 'A place for users to share and discover new recipes with social features.' },
+  { id: 9, title: 'Language Learning Chatbot', description: 'A chatbot that helps users practice conversation in different languages.' },
+  { id: 10, title: 'Minimal Habit Tracker', description: 'A simple and clean app to build and track daily habits effectively.' },
+  { id: 11, title: 'abc', description: 'A community-driven site where users review and rate books they have read.' },
+  { id: 12, title: 'Book Review Website', description: 'A community-driven site where users review and rate books they have read.' }
 ];
 
 export default function ProblemSelector() {
+  const router = useRouter();
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [selectionStatus, setSelectionStatus] = useState(Array(dummyIdeas.length).fill(null)); // 'accepted' or null
+  const [selectionStatus, setSelectionStatus] = useState(Array(dummyIdeas.length).fill(null));
 
-  // Handle next idea selection
   const handleNext = () => {
     setCurrentIndex((prev) => (prev + 1) % dummyIdeas.length);
   };
 
-  // Handle previous idea selection
   const handlePrev = () => {
     setCurrentIndex((prev) => (prev - 1 + dummyIdeas.length) % dummyIdeas.length);
   };
 
-  // Handle accepting an idea
   const handleAccept = () => {
     const acceptedCount = selectionStatus.filter((status) => status === 'accepted').length;
-
-    // If user has already accepted 6 ideas, show a toast error
     if (acceptedCount >= 6) {
       toast.error('You can only select up to 6 ideas!', {
         position: 'top-center',
@@ -45,43 +43,40 @@ export default function ProblemSelector() {
       });
       return;
     }
-
-    // Update selection status
     const updatedStatus = [...selectionStatus];
     updatedStatus[currentIndex] = 'accepted';
     setSelectionStatus(updatedStatus);
-
-    // Move to next idea
     setCurrentIndex((prev) => (prev + 1) % dummyIdeas.length);
   };
 
-  // Handle rejecting an idea
   const handleReject = () => {
     const updatedStatus = [...selectionStatus];
     updatedStatus[currentIndex] = null;
     setSelectionStatus(updatedStatus);
-
-    // Move to previous idea
     setCurrentIndex((prev) => (prev - 1 + dummyIdeas.length) % dummyIdeas.length);
+  };
+
+  const handleGooo = () => {
+    const selectedIdeas = dummyIdeas
+      .map((idea, index) => (selectionStatus[index] === 'accepted' ? idea : null))
+      .filter(Boolean);
+
+    localStorage.setItem('selectedIdeas', JSON.stringify(selectedIdeas));
+    router.push('/flow/selected-problems');
   };
 
   const idea = dummyIdeas[currentIndex];
   const currentStatus = selectionStatus[currentIndex];
-  
-  // Calculate how many ideas have been accepted
   const acceptedCount = selectionStatus.filter(status => status === 'accepted').length;
 
   return (
     <div className="flex flex-col items-center justify-center p-4 animate-fade-in" style={{ color: '#f5f5f5' }}>
-      {/* Header */}
       <div className="w-full max-w-2xl text-center bg-opacity-20 text-white border border-gray-300 rounded-md p-4 mb-8 shadow">
         <h1 className="text-xl font-semibold">Idea Select Helper</h1>
       </div>
 
-      {/* Progress display */}
       <div className="text-white mb-6">
         <p>{`${acceptedCount}/6 ideas selected`}</p>
-        {/* Optional: Add a progress bar */}
         <div className="w-full bg-gray-300 h-2 rounded-full">
           <div
             className="bg-green-500 h-2 rounded-full"
@@ -90,9 +85,7 @@ export default function ProblemSelector() {
         </div>
       </div>
 
-      {/* Main Section */}
       <div className="flex items-center justify-center space-x-4 mb-6">
-        {/* Left Arrow Button */}
         <button
           onClick={handlePrev}
           className="text-2xl bg-white bg-opacity-20 text-white rounded-full w-12 h-12 flex items-center justify-center border border-white hover:bg-opacity-30 transition"
@@ -100,14 +93,12 @@ export default function ProblemSelector() {
           &lt;
         </button>
 
-        {/* Idea Box */}
         <div className="w-96 h-96 bg-white bg-opacity-10 backdrop-blur-md border border-gray-400 rounded-md flex flex-col justify-between p-4 shadow-lg text-white">
           <div className="flex-grow flex flex-col items-center justify-center text-center px-2">
             <h2 className="text-xl font-bold mb-2">{idea.title}</h2>
             <p className="text-sm text-white text-opacity-90">{idea.description}</p>
           </div>
 
-          {/* Accept/Reject Buttons */}
           <div className="flex justify-center mt-6">
             {currentStatus === 'accepted' ? (
               <button
@@ -127,7 +118,6 @@ export default function ProblemSelector() {
           </div>
         </div>
 
-        {/* Right Arrow Button */}
         <button
           onClick={handleNext}
           className="text-2xl bg-white bg-opacity-20 text-white rounded-full w-12 h-12 flex items-center justify-center border border-white hover:bg-opacity-30 transition"
@@ -136,11 +126,11 @@ export default function ProblemSelector() {
         </button>
       </div>
 
-      {/* Gooo Button */}
       <div className="text-center">
         <motion.button
           whileHover={{ scale: 1.06 }}
           whileTap={{ scale: 0.95 }}
+          onClick={handleGooo}
           className="relative inline-flex items-center justify-center px-10 py-3 mt-6 font-semibold text-white rounded-2xl shadow-xl overflow-hidden group bg-gradient-to-br from-purple-600 via-indigo-600 to-purple-700 transition-all duration-300"
         >
           <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent rounded-full blur-md opacity-0 group-hover:opacity-100 group-hover:animate-pulse transition-opacity duration-500"></span>
