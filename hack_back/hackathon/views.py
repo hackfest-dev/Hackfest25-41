@@ -9,14 +9,13 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework_simplejwt.authentication import JWTAuthentication
 from .models import HackathonSession, ThemeSelection
 from core.pusher import pusher_client
-import requests
+from core.theme_extractor import extract_themes_from_text
 import logging
 import PyPDF2
 import pytesseract
 from PIL import Image
 import io
 import json
-import mimetypes
 
 # Create your views here.
 
@@ -50,7 +49,18 @@ class CreateHackathonView(APIView):
     def post(self, request, *args, **kwargs):
         user = request.user
         file_obj = request.FILES.get('file', None)
+
+        # Try to get text from form-data or JSON body
         text_data = request.data.get('text', "")
+        if not text_data:
+            try:
+                body_unicode = request.body.decode('utf-8')
+                body_data = json.loads(body_unicode)
+                text_data = body_data.get('text', "")
+            except Exception:
+                text_data = ""
+
+        logger.debug(f"Received file: {file_obj}, text_data: {text_data}")
 
         extracted_text = ""
 
@@ -75,36 +85,21 @@ class CreateHackathonView(APIView):
         else:
             return Response({"error": "No input data provided"}, status=status.HTTP_400_BAD_REQUEST)
 
-        # Prepare payload for AI service
-        payload = {
-            "model": "gemma-3-1b-it",
-            "messages": [
-                {"role": "system", "content": "Extract themes for a hackathon from the provided text. Always return a json object with keys 'title' and 'themes'. The title should be a string and themes should be a list of strings."},
-                {"role": "user", "content": combined_text}
-            ],
-            "temperature": 0.7,
-            "max_tokens": -1,
-            "stream": False
-        }
-
         try:
-            ai_response = requests.post(
-                "http://localhost:1234/v1/chat/completions",
-                headers={"Content-Type": "application/json"},
-                data=json.dumps(payload)
-            )
-            if ai_response.status_code != 200:
-                logger.error(f"AI service returned status {ai_response.status_code}: {ai_response.text}")
-                return Response({"error": "AI service error"}, status=status.HTTP_502_BAD_GATEWAY)
+            # Use core app theme extractor instead of AI service call
+            result = extract_themes_from_text(combined_text)
 
-            ai_json = ai_response.json()
-            # Assuming AI returns JSON with keys 'title' and 'themes'
-            hackathon_title = ai_json.get('title', None)
-            themes = ai_json.get('themes', None)
+            if not result:
+                return Response({"error": "Failed to extract themes"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
-            if not hackathon_title or themes is None:
-                logger.error(f"AI response missing required fields: {ai_json}")
-                return Response({"error": "Invalid AI response"}, status=status.HTTP_502_BAD_GATEWAY)
+            # Check if result is dict with hackathon name and themes
+            if isinstance(result, dict) and "hackathon name" in result and "themes" in result:
+                hackathon_title = result["hackathon name"]
+                themes = result["themes"]
+            else:
+                # Fallback: treat result as list of themes and generate title
+                themes = result
+                hackathon_title = themes[0]['name'] + " Hackathon" if themes else "Hackathon Session"
 
             # Save hackathon title in HackathonSession
             session = HackathonSession.objects.create(user=user, title=hackathon_title)
@@ -116,5 +111,5 @@ class CreateHackathonView(APIView):
             return Response({"themes": themes}, status=status.HTTP_200_OK)
 
         except Exception as e:
-            logger.error(f"Exception during AI service call or DB save: {e}")
+            logger.error(f"Exception during theme extraction or DB save: {e}")
             return Response({"error": "Internal server error"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)

@@ -1,57 +1,81 @@
 {
-    "hackathon_name": "CodeSprint 2025",
+    "hackathon_name": "we are 2200",
     "tracks": [
         {
-            "name": "Smart Cities",
-            "code": "URBANTECH",
-            "description": "Developing innovative solutions for urban challenges, focusing on intelligent infrastructure and connected systems.",
+            "name": "Financial Innovation",
+            "code": "FINANCE_CORE",
+            "description": "Developing innovative solutions for the financial sector, encompassing areas like fintech, blockchain, and digital banking.",
             "keywords": [
-                "smart cities",
-                "urban planning",
-                "infrastructure",
-                "IoT",
-                "connectivity"
+                "finance",
+                "banking",
+                "blockchain",
+                "fintech",
+                "investment"
             ]
         },
         {
-            "name": "Climate Tech",
-            "code": "SOLVERA",
-            "description": "Creating technology solutions to address climate change, promote renewable energy and minimize environmental impact.",
+            "name": "Open Innovation",
+            "code": "OPEN_SPACE",
+            "description": "A broad category encouraging creative solutions across any technology area, fostering experimentation and diverse project ideas.",
             "keywords": [
-                "climate change",
-                "renewable energy",
+                "innovation",
+                "technology",
+                "creative",
+                "solutions",
+                "development"
+            ]
+        },
+        {
+            "name": "Healthcare Solutions",
+            "code": "HEALTH_CODE",
+            "description": "Creating technological advancements in healthcare, including patient monitoring, diagnostics, and medical data management.",
+            "keywords": [
+                "healthcare",
+                "medical",
+                "patient",
+                "diagnosis",
+                "technology"
+            ]
+        },
+        {
+            "name": "Sustainable Tech",
+            "code": "GREEN_TECH",
+            "description": "Developing solutions for environmental sustainability, including renewable energy, smart cities, and waste management.",
+            "keywords": [
                 "sustainability",
-                "environmental tech",
-                "carbon reduction"
+                "environment",
+                "renewable",
+                "energy",
+                "climate"
             ]
         },
         {
-            "name": "Cybersecurity",
-            "code": "CyberFort",
-            "description": "Building robust security systems and solutions to protect digital assets and combat cyber threats.",
+            "name": "Immersive Experiences",
+            "code": "VR_REALITY",
+            "description": "Building innovative applications for virtual reality, augmented reality, and mixed reality technologies.",
             "keywords": [
-                "cybersecurity",
-                "threat detection",
-                "data protection",
-                "network security",
-                "ethical hacking"
+                "vr",
+                "ar",
+                "reality",
+                "immersive",
+                "digital"
             ]
         },
         {
-            "name": "Data Analytics & AI",
-            "code": "Datamatics Edge",
-            "description": "Leveraging artificial intelligence and data analytics to drive business insights and innovation.",
+            "name": "Logistics Optimization",
+            "code": "LOGISTICS_FLOW",
+            "description": "Creating solutions to improve logistics operations, including supply chain management, transportation, and warehousing.",
             "keywords": [
-                "data analytics",
-                "AI",
-                "machine learning",
-                "big data",
-                "business intelligence"
+                "logistics",
+                "supplychain",
+                "transportation",
+                "warehousing",
+                "optimization"
             ]
         }
     ],
     "metadata": {
-        "last_updated": "2025-04-19T00:09:35.307563",
-        "total_count": 4
+        "last_updated": "2025-04-19T01:23:37.782986",
+        "total_count": 6
     }
 }
