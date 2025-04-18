@@ -1,11 +1,11 @@
 import json
 import requests
 import time
-from storage import is_duplicate_problem, add_problem_statements
+from .storage import is_duplicate_problem, add_problem_statements
 
 def generate_problem_statements(theme, search_results, existing_problems, max_ideas=3):
     """Generate problem statements for the theme using AI."""
-    print("\nGenerating problem statements...")
+    print("\\nGenerating problem statements...")
     
     try:
         # Generate statements one by one using AI
@@ -21,7 +21,7 @@ def generate_problem_statements(theme, search_results, existing_problems, max_id
                     statements.append(statement)
                     
                     # Print the generated statement
-                    print(f"\nGenerated problem statement {len(statements)} of {max_statements}:")
+                    print(f"\\nGenerated problem statement {len(statements)} of {max_statements}:")
                     print("-" * 80)
                     print(statement)
                     print("-" * 80)
@@ -43,7 +43,7 @@ def generate_problem_statements(theme, search_results, existing_problems, max_id
             
             # Print and store fallback statements
             for i, statement in enumerate(statements, 1):
-                print(f"\nFallback problem statement {i} of {len(statements)}:")
+                print(f"\\nFallback problem statement {i} of {len(statements)}:")
                 print("-" * 80)
                 print(statement)
                 print("-" * 80)
@@ -76,7 +76,7 @@ def add_to_generated_ideas(statement, theme_name):
         if ideas_data['count'] >= ideas_data['max_capacity']:
             ideas_data['ideas'] = []
             ideas_data['count'] = 0
-            print("\nReset generated ideas count to 0 (reached max capacity).")
+            print("\\nReset generated ideas count to 0 (reached max capacity).")
         
         # Add the new idea
         ideas_data['ideas'].append({
@@ -104,19 +104,19 @@ def generate_single_problem_statement(theme, search_results, existing_problems):
     # Create context from search results
     context = ""
     if search_results:
-        context = "Based on the following search results:\n\n"
+        context = "Based on the following search results:\\n\\n"
         for i, result in enumerate(search_results[:5], 1):
-            context += f"{i}. {result['title']}: {result['snippet']}\n"
+            context += f"{i}. {result['title']}: {result['snippet']}\\n"
     
     # Create existing problems context to avoid duplicates
     existing_context = ""
     if existing_problems:
-        existing_context = "Avoid generating problem statements similar to these existing ones:\n\n"
+        existing_context = "Avoid generating problem statements similar to these existing ones:\\n\\n"
         for i, problem in enumerate(existing_problems[-5:], 1):
             if isinstance(problem, str):
-                existing_context += f"{i}. {problem}\n"
+                existing_context += f"{i}. {problem}\\n"
             elif isinstance(problem, dict) and 'text' in problem:
-                existing_context += f"{i}. {problem['text']}\n"
+                existing_context += f"{i}. {problem['text']}\\n"
     
     # Prepare the system prompt
     system_prompt = f"""You are an AI specialized in creating unique and innovative problem statements for hackathons.

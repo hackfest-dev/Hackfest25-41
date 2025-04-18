@@ -1,0 +1,39 @@
+{
+    "hackathon_name": "Default Hackathon",
+    "generated_ideas": [
+        {
+            "id": 1,
+            "topic": "Default Theme",
+            "text": "Develop a solution for automatically generating personalized onboarding experiences for new users of a SaaS application based on their initial input \u2013 specifically, their stated goals and technical proficiency levels \u2013 utilizing a minimal viable product (MVP) of a rule-based engine combined with dynamically generated content templates.  Teams must create a system that can map user responses to three pre-defined onboarding pathways (Beginner, Intermediate, Advanced), delivering tailored tutorials and feature highlights within a 60-second interactive sequence, while logging user progress for future analysis; deliverable: a functional prototype demonstrating the automated pathway selection and content delivery.",
+            "created_at": "2025-04-18T22:59:59.900678",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 2,
+            "topic": "Default Theme",
+            "text": "Develop a solution for automatically generating accessible, default website themes based on user browser data \u2013 specifically screen size, OS, and detected language \u2013 utilizing a lightweight JavaScript library and pre-defined theme templates. Teams must create a system that dynamically applies one of three pre-designed themes (Light, Dark, High Contrast) within 15 seconds of page load, ensuring responsive design and accessibility standards are met, delivering a functional browser extension prototype capable of initiating theme switching and logging user device information.",
+            "created_at": "2025-04-18T22:59:59.900688",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 3,
+            "topic": "Default Theme",
+            "text": "Develop a solution for predicting user interface (UI) default preference based on ambient lighting conditions detected via a webcam feed, utilizing computer vision to analyze color temperature and dynamically adjusting the theme of a simple web application in real-time. Teams must leverage OpenCV for image processing, identify dominant colors within a 50ms frame rate, and switch between three pre-defined themes (Warm, Cool, Neutral) based on color temperature thresholds, delivering a functional web app prototype with live lighting analysis and theme switching capabilities.",
+            "created_at": "2025-04-18T22:59:59.900694",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        }
+    ],
+    "metadata": {
+        "last_updated": "2025-04-18T22:59:59.900645",
+        "total_count": 3
+    }
+}
