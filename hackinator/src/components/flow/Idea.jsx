@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { toast } from 'react-toastify';
 import { useRouter } from 'next/navigation';
-import IdeaSelector from './IdeaSelector';
 
 export default function IdeaFlow() {
   const [idea, setIdea] = useState('');
@@ -14,7 +13,6 @@ export default function IdeaFlow() {
   const [selectedThemes, setSelectedThemes] = useState([]);
   const [customTheme, setCustomTheme] = useState('');
   const [themeOptions, setThemeOptions] = useState([]);
-  const [showSelectorPage, setShowSelectorPage] = useState(false);
 
 
   const router = useRouter();
@@ -60,8 +58,8 @@ export default function IdeaFlow() {
     const finalSelection = [...selectedThemes];
     if (customTheme.trim()) finalSelection.push(customTheme.trim());
 
-    toast.success(`Selected themes: ${finalSelection.join(', ')}`, { position: "top-center" });
-    setShowSelectorPage(true);
+    toast.success(`Selected theme sent to server!`, { position: "top-center" });
+    router.push('/flow/problem-selector'); // Redirect to home or another page
 
     // send finalSelection to backend
   };    
@@ -92,11 +90,6 @@ export default function IdeaFlow() {
       initial="hidden"
       animate="visible"
     >
-        {showSelectorPage ? (
-            <IdeaSelector />
-        ) : (
-            ''
-        )}
 
       {!showThemes && (
         <>
