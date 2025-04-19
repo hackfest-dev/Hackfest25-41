@@ -21,29 +21,28 @@ export default function SelectedIdeasPage() {
   }, [searchParams]);
 
   const pageVariants = {
-    hidden: { opacity: 0, y: 10 },
+    hidden: { opacity: 0, y: 5 },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.6,
+        duration: 0.4,
         ease: 'easeOut',
         when: 'beforeChildren',
-        staggerChildren: 0.2,
+        staggerChildren: 0.1,
       },
     },
   };
 
   const cardVariants = {
-    hidden: { opacity: 0, y: 30, rotateX: -10 },
+    hidden: { opacity: 0, y: 10 },
     visible: {
       opacity: 1,
       y: 0,
-      rotateX: 0,
       transition: {
         type: 'spring',
-        stiffness: 120,
-        damping: 15,
+        stiffness: 100,
+        damping: 18,
       },
     },
   };
@@ -57,15 +56,15 @@ export default function SelectedIdeasPage() {
     >
       <motion.h1
         className="text-3xl font-bold text-center mb-10 text-white"
-        initial={{ opacity: 0, y: -20 }}
+        initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: 'easeOut' }}
+        transition={{ duration: 0.5, ease: 'easeOut' }}
       >
         🎯 User's Selected Ideas
       </motion.h1>
 
       <motion.div
-        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 w-full max-w-6xl"
+        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full max-w-6xl"
         layout
       >
         {selectedIdeas.map((idea, index) => (
@@ -73,16 +72,14 @@ export default function SelectedIdeasPage() {
             key={index}
             className="rounded-2xl p-6 h-44 flex flex-col justify-center 
                        border border-white/10 backdrop-blur-md 
-                       shadow-[0_4px_30px_rgba(0,0,0,0.1)] 
+                       shadow-[0_4px_20px_rgba(0,0,0,0.05)] 
                        transition-all cursor-pointer"
             variants={cardVariants}
             whileHover={{
-              scale: 1.05,
-              rotateX: 2,
-              rotateY: -2,
-              boxShadow: '0 15px 30px rgba(0,0,0,0.2)',
+              scale: 1.02,
+              boxShadow: '0 8px 16px rgba(0,0,0,0.1)',
             }}
-            whileTap={{ scale: 0.97 }}
+            whileTap={{ scale: 0.98 }}
             layout
           >
             <h2 className="text-xl font-semibold mb-2 text-white">{idea.title}</h2>
