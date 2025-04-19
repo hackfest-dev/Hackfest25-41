@@ -1,7 +1,7 @@
 import json
 import requests
 import time
-from storage import is_duplicate_problem, add_problem_statements
+from .storage import is_duplicate_problem, add_problem_statements
 
 def generate_problem_statements(theme, search_results, existing_problems, max_ideas=3):
     """Generate problem statements for the theme using AI."""

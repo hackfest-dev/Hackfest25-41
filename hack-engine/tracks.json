@@ -16,31 +16,31 @@
         {
             "name": "FinTech",
             "code": "VALKYRIE",
-            "description": "Creating cutting-edge financial applications, including payment systems, investment tools, and fraud detection.",
+            "description": "Creating cutting-edge financial technologies for banking, investment, and payment systems.",
             "keywords": [
                 "finance",
                 "banking",
-                "payments",
                 "investment",
+                "payments",
                 "blockchain"
             ]
         },
         {
             "name": "Sustainability",
             "code": "VERDANT",
-            "description": "Designing solutions for environmental monitoring, resource management, and sustainable development.",
+            "description": "Building solutions to address environmental challenges through smart technologies and sustainable practices.",
             "keywords": [
                 "sustainability",
                 "environment",
                 "climate change",
                 "renewable energy",
-                "conservation"
+                "IoT"
             ]
         },
         {
             "name": "Immersive Experiences",
             "code": "MIRAGE",
-            "description": "Building interactive virtual reality and augmented reality applications for entertainment, education, and training.",
+            "description": "Designing interactive digital experiences, virtual reality applications, and augmented reality solutions.",
             "keywords": [
                 "VR",
                 "AR",
@@ -52,19 +52,19 @@
         {
             "name": "Logistics & Supply Chain",
             "code": "ROUTE",
-            "description": "Optimizing logistics operations through smart routing, inventory management, and supply chain automation.",
+            "description": "Optimizing logistics operations through data analytics, automation, and intelligent transportation systems.",
             "keywords": [
                 "logistics",
                 "supply chain",
-                "transportation",
                 "automation",
+                "transportation",
                 "optimization"
             ]
         },
         {
             "name": "Open Innovation",
             "code": "GENESIS",
-            "description": "A broad category for exploring novel ideas and technologies across various domains, fostering creativity and experimentation.",
+            "description": "A broad theme encouraging participants to explore any innovative technology solution.",
             "keywords": [
                 "innovation",
                 "technology",
@@ -75,7 +75,7 @@
         }
     ],
     "metadata": {
-        "last_updated": "2025-04-19T12:27:32.348911",
+        "last_updated": "2025-04-19T14:48:54.705083",
         "total_count": 6
     }
 }

@@ -1,0 +1,109 @@
+{
+    "hackathon_name": "we are 2200",
+    "generated_ideas": [
+        {
+            "id": 1,
+            "topic": "Combined Themes",
+            "text": "Develop a solution for predicting patient recovery times post-surgery based on environmental factors \u2013 specifically, local renewable energy generation (wind and solar) data and associated carbon intensity metrics \u2013 utilizing real-time IoT sensor data and machine learning algorithms to provide actionable insights for hospital resource allocation and reduce operational costs while promoting sustainable healthcare practices. The system must integrate publicly available weather data via API, employ a convolutional neural network trained on synthetic patient data mimicking diverse demographics and surgical procedures, and deliver a user-friendly dashboard displaying predicted recovery timelines alongside recommendations for energy efficiency measures within the hospital setting with a demonstrable accuracy of 80% within 48 hours.",
+            "created_at": "2025-04-19T16:16:44.305665",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 2,
+            "topic": "Combined Themes",
+            "text": "Develop a solution for creating a \u201cGreen Patient Passport\u201d \u2013 a secure, blockchain-based system that integrates patient medical records with localized renewable energy consumption data to incentivize sustainable healthcare choices. The application must utilize IoT device integration (smart meters, wearable sensors) to capture real-time energy usage and correlate it with patient health metrics, employing a permissioned blockchain for data security and privacy, and generating personalized recommendations for patients regarding energy-efficient treatments and lifestyle adjustments while rewarding sustainable behavior through a linked fintech micro-credit system. Deliverables include a functional prototype demonstrating data integration, blockchain transaction validation, and a user interface accessible via mobile device within 48 hours.",
+            "created_at": "2025-04-19T16:16:44.305678",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 3,
+            "topic": "Combined Themes",
+            "text": "Develop a solution for creating \u201cClimateCare,\u201d a fintech platform utilizing satellite imagery analysis and patient-reported data to assess the environmental impact of medical treatments and generate personalized green financing options. The system must ingest high-resolution satellite data (NDVI, EVI) linked to hospital locations, integrate anonymized patient data regarding treatment types and duration via a secure API, employ machine learning to estimate carbon emissions associated with each procedure, and offer micro-loans or grants through a partnered fintech provider for patients choosing lower-carbon treatment alternatives \u2013 all while maintaining HIPAA compliance and achieving a 70% accuracy rate in predicting environmental impact within 48 hours.",
+            "created_at": "2025-04-19T16:16:44.305685",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 4,
+            "topic": "Combined Themes",
+            "text": "Develop a solution for creating \u201cEcoLearn,\u201d a digital platform that utilizes smart building energy data alongside personalized educational content delivery to optimize student learning environments and promote sustainable behavior within schools. The system must integrate real-time HVAC sensor data via API, dynamically adjust lighting and temperature based on occupancy and learning activity (detected through wearable sensors), and tailor educational modules \u2013 focusing on climate science and renewable energy \u2013 to match the building\u2019s operational efficiency metrics, utilizing a secure fintech layer for micro-rewards tied to achieving sustainability targets within a school. Deliverables include a functional prototype demonstrating real-time data integration, adaptive environmental control, and personalized learning module delivery with demonstrable improvements in student engagement (measured via platform usage) and reduced energy consumption (tracked through building sensor data).",
+            "created_at": "2025-04-19T16:16:44.305688",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 5,
+            "topic": "Combined Themes",
+            "text": "Develop a solution for \u201cGreen Prescription,\u201d a mobile application that connects patients with verified local renewable energy providers for carbon offsetting of their prescribed medications. The system must utilize GPS location data to identify nearby solar or wind farms offering verifiable carbon credits, integrate with pharmaceutical prescription databases via a secure API (HIPAA compliant), employ blockchain technology to track and authenticate carbon offset purchases, and provide patients with real-time visualizations of the environmental impact reduction associated with each medication\u2019s carbon footprint \u2013 all while allowing for micro-payments through a partnered fintech solution to directly fund renewable energy projects within their community. Deliverables include a functional prototype with data visualization, secure API integration, blockchain transaction tracking, and payment processing capabilities demonstrating at least three different renewable energy provider integrations within 48 hours.",
+            "created_at": "2025-04-19T16:16:44.305691",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 6,
+            "topic": "Combined Themes",
+            "text": "Develop a solution for \u201cSynergyStream,\u201d a system that leverages smart grid data, patient health records (de-identified), and educational resources to optimize energy consumption within urban healthcare facilities while promoting sustainable learning habits among students. The system must ingest real-time electricity demand data from a local microgrid via API, correlate this with anonymized patient activity data (e.g., hospital floor movement, equipment usage) and student attendance/learning metrics, and dynamically adjust building HVAC systems and deliver targeted educational content \u2013 focusing on energy efficiency \u2013 through a mobile app interface using a secure, federated learning approach to minimize data transfer. Deliverables include a functional prototype demonstrating real-time data integration, adaptive environmental control adjustments, and personalized learning module delivery with measurable reductions in energy usage within the target healthcare facility and student engagement metrics (tracked via the educational component) within 48 hours.",
+            "created_at": "2025-04-19T16:16:44.305694",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 7,
+            "topic": "Combined Themes",
+            "text": "Develop a solution for \u201cEnergyPulse,\u201d a system that utilizes smart meter data and patient symptom tracking to predict localized energy demand spikes correlated with illness outbreaks within a defined geographic area (e.g., a hospital district). The application must ingest anonymized real-time electricity consumption data from smart meters, integrate with a secure patient monitoring API (focusing on common respiratory illnesses \u2013 asthma, influenza) providing aggregated, de-identified symptom trends, employ predictive analytics to forecast energy demand surges based on illness prevalence, and generate alerts for grid operators and public health officials regarding potential strain on the renewable energy infrastructure supplying that area \u2013 all while maintaining strict data security protocols compliant with HIPAA standards and utilizing a blockchain ledger for tamper-proof audit trails of demand forecasts. Deliverables include a functional prototype demonstrating real-time data visualization, predictive modeling output, and alert dissemination capabilities within 48 hours.",
+            "created_at": "2025-04-19T16:16:44.305697",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 8,
+            "topic": "Combined Themes",
+            "text": "Develop a solution for \u201cGreen Health Pathways,\u201d a system that utilizes smart building energy consumption data alongside anonymized patient medical records (specifically focusing on post-operative recovery) to optimize hospital resource allocation and incentivize sustainable practices. The system must ingest real-time HVAC sensor data via API, correlate it with de-identified patient vital signs and recovery metrics (pain levels, mobility scores \u2013 accessed through a secure HL7 interface), employ machine learning to predict energy needs based on patient recovery stages, and dynamically adjust building settings to minimize waste while providing personalized comfort. Deliverables include a functional prototype demonstrating real-time data integration, predictive resource optimization, and a user-friendly dashboard visualizing energy savings alongside patient progress metrics within 48 hours.",
+            "created_at": "2025-04-19T16:16:44.305699",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 9,
+            "topic": "Combined Themes",
+            "text": "Develop a solution for \u201cSolarPulse,\u201d a fintech platform utilizing smart meter data and IoT-enabled weather sensors to provide personalized green energy financing options for patients recovering at home after medical procedures. The system must integrate real-time solar panel production data via API, predict localized energy demand fluctuations based on patient recovery stages (determined by wearable sensor data \u2013 heart rate, activity levels) and weather forecasts, offer micro-loans through a secure blockchain-based fintech layer to offset the increased energy consumption during recovery, and provide transparent tracking of carbon offsetting credits generated from solar usage\u2014all while ensuring HIPAA compliance for patient data security. Deliverables include a functional prototype demonstrating real-time data integration, personalized loan offers based on predicted demand, and a verifiable carbon credit tracking system with demonstrable impact within 48 hours.",
+            "created_at": "2025-04-19T16:16:44.305702",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 10,
+            "topic": "Combined Themes",
+            "text": "Develop a solution for \u201cVeridian,\u201d a platform utilizing smart building energy data and patient symptom reporting to dynamically optimize green energy usage in educational facilities while fostering student engagement with sustainability. The system must ingest real-time HVAC sensor data via API from schools, integrate anonymized student self-reported symptoms (e.g., allergies, temperature discomfort \u2013 via a mobile app interface) alongside learning activity data (attendance, quiz scores), employ machine learning to predict energy demands based on environmental conditions and student health, and automatically adjust building settings (lighting, ventilation) while delivering targeted educational content about sustainable practices\u2014all secured with end-to-end encryption and utilizing a federated learning approach for privacy. Deliverables include a functional prototype demonstrating real-time data integration, adaptive control adjustments, and interactive learning module delivery with measurable reductions in energy consumption and increased student engagement metrics within 48 hours.",
+            "created_at": "2025-04-19T16:16:44.305704",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        }
+    ],
+    "metadata": {
+        "last_updated": "2025-04-19T16:16:44.305609",
+        "total_count": 10
+    }
+}
