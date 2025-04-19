@@ -1,19 +1,44 @@
-from venv import logger
+
+import asyncio
+import logging
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-from rest_framework.permissions import IsAuthenticated, AllowAny
+from rest_framework.permissions import IsAuthenticated
 from rest_framework_simplejwt.authentication import JWTAuthentication
-from rest_framework_simplejwt.tokens import RefreshToken
-from django.contrib.auth.models import User
-from .models import ChatMessage
-from .serializers import MessageSerializer
-from core.pusher import pusher_client
 from ideas.models import Idea
-import requests
+from core.research_engine.scholar_pyppeteer_scraper import generate_keywords, scrape_google_scholar_and_abstracts
+from chat.models import ChatMessage
+from chat.serializers import MessageSerializer
+from core.pusher import pusher_client
+from asgiref.sync import sync_to_async, async_to_sync
+import concurrent.futures
+import asyncio
+import logging
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import status
+from rest_framework.permissions import IsAuthenticated
+from rest_framework_simplejwt.authentication import JWTAuthentication
+from ideas.models import Idea
+from core.research_engine.scholar_pyppeteer_scraper import generate_keywords, scrape_google_scholar_and_abstracts
+from chat.models import ChatMessage
+from chat.serializers import MessageSerializer
+from core.pusher import pusher_client
+from asgiref.sync import sync_to_async, async_to_sync
 
-# Create your views here.
+logger = logging.getLogger(__name__)
 
+async def scrape_all_keywords(keywords):
+    all_results = []
+    for keyword in keywords:
+        results = await scrape_google_scholar_and_abstracts(keyword, num_results_per_keyword=2)
+        all_results.extend(results)
+        await asyncio.sleep(5)  # Sleep between keywords to avoid rate limits
+    return all_results
+
+def run_scraping(keywords):
+    return asyncio.run(scrape_all_keywords(keywords))
 
 class MessageAPIView(APIView):
     permission_classes = [IsAuthenticated]
@@ -49,7 +74,6 @@ class MessageListAPIView(APIView):
             # Log the error for debugging
             logger.error(f"Error fetching messages: {str(e)}")
             return Response({"error": "Failed to fetch messages"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-
 
 class AIChatAPIView(APIView):
     permission_classes = [IsAuthenticated]
@@ -128,3 +152,39 @@ class AIChatAPIView(APIView):
         )
 
         return Response({"response": ai_message}, status=status.HTTP_200_OK)
+
+class ResearchAPIView(APIView):
+    permission_classes = [IsAuthenticated]
+    authentication_classes = [JWTAuthentication]
+
+    def get(self, request, session_id):
+        user = request.user
+
+        # Fetch ideas for the session to build problem statement
+        ideas_qs = Idea.objects.filter(session_id=session_id, user=user)
+        if not ideas_qs.exists():
+            return Response({"error": "No ideas found for this session and user"}, status=status.HTTP_404_NOT_FOUND)
+
+        ideas = list(ideas_qs)
+        problem_statement = "\n".join([idea.content for idea in ideas])
+
+        # Generate keywords
+        try:
+            keywords = generate_keywords(problem_statement)
+        except Exception as e:
+            logger.error(f"Error generating keywords: {str(e)}")
+            return Response({"error": "Failed to generate keywords for research"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+        if not keywords:
+            return Response({"error": "No keywords generated for research"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+        # Scrape research results asynchronously in a separate process
+        try:
+            with concurrent.futures.ProcessPoolExecutor() as executor:
+                future = executor.submit(run_scraping, keywords)
+                research_results = future.result()
+        except Exception as e:
+            logger.error(f"Error during research scraping: {str(e)}")
+            return Response({"error": "Failed to scrape research results"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+        return Response({"research_results": research_results}, status=status.HTTP_200_OK)
