@@ -4,7 +4,7 @@
         {
             "name": "Healthcare",
             "code": "HEALIX",
-            "description": "Developing innovative solutions for improving patient care, diagnostics, and overall healthcare management.",
+            "description": "Developing innovative solutions for improving patient care, diagnostics, and healthcare management.",
             "keywords": [
                 "healthcare",
                 "medical",
@@ -14,56 +14,68 @@
             ]
         },
         {
-            "name": "FinTech Innovation",
-            "code": "MONETIZE",
-            "description": "Creating cutting-edge financial technologies \u2013 from blockchain solutions to automated trading systems.",
+            "name": "FinTech",
+            "code": "VALKYRIE",
+            "description": "Creating cutting-edge financial applications, including payment systems, investment tools, and fraud detection.",
             "keywords": [
                 "finance",
-                "blockchain",
+                "banking",
                 "payments",
                 "investment",
-                "algorithms"
+                "blockchain"
             ]
         },
         {
-            "name": "Sustainable Solutions",
-            "code": "ECOSYSTEM",
-            "description": "Designing and implementing tech-driven approaches for environmental conservation, renewable energy, and sustainable practices.",
+            "name": "Sustainability",
+            "code": "VERDANT",
+            "description": "Designing solutions for environmental monitoring, resource management, and sustainable development.",
             "keywords": [
                 "sustainability",
                 "environment",
-                "renewable energy",
                 "climate change",
+                "renewable energy",
                 "conservation"
             ]
         },
         {
             "name": "Immersive Experiences",
-            "code": "REALITY",
-            "description": "Building interactive virtual reality (VR) and augmented reality (AR) applications for entertainment, education, or training.",
+            "code": "MIRAGE",
+            "description": "Building interactive virtual reality and augmented reality applications for entertainment, education, and training.",
             "keywords": [
-                "vr",
-                "ar",
+                "VR",
+                "AR",
                 "immersive",
-                "virtual reality",
-                "augmented reality"
+                "gaming",
+                "virtual reality"
             ]
         },
         {
-            "name": "Logistics Optimization",
-            "code": "FLOWTRACKER",
-            "description": "Developing intelligent logistics systems for supply chain management, route optimization, and efficient delivery services.",
+            "name": "Logistics & Supply Chain",
+            "code": "ROUTE",
+            "description": "Optimizing logistics operations through smart routing, inventory management, and supply chain automation.",
             "keywords": [
                 "logistics",
                 "supply chain",
-                "route optimization",
-                "delivery",
-                "transportation"
+                "transportation",
+                "automation",
+                "optimization"
+            ]
+        },
+        {
+            "name": "Open Innovation",
+            "code": "GENESIS",
+            "description": "A broad category for exploring novel ideas and technologies across various domains, fostering creativity and experimentation.",
+            "keywords": [
+                "innovation",
+                "technology",
+                "creative",
+                "problem-solving",
+                "ideas"
             ]
         }
     ],
     "metadata": {
-        "last_updated": "2025-04-19T11:27:44.052412",
-        "total_count": 5
+        "last_updated": "2025-04-19T12:27:32.348911",
+        "total_count": 6
     }
 }
