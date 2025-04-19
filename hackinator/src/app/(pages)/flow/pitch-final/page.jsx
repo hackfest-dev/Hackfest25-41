@@ -98,66 +98,18 @@ export default function ChatInterface() {
               Hackinator
             </div>
 
-
-          {/* Selected Topic Display */}
-          {selectedTopic && (
-            <div className="bg-white/5 text-white px-6 py-4 border-b border-white/20">
-              <h2 className="text-lg font-semibold">💡 Topic: {selectedTopic.title}</h2>
-              <p className="text-sm text-gray-300">{selectedTopic.description}</p>
-            </div>
-          )}
-
-          {/* Messages */}
-          <div
-            id="chat-messages"
-            className="flex-1 overflow-y-auto p-6 space-y-4 bg-transparent text-sm text-white backdrop-blur-xl"
-          >
-            {messages.map((msg, i) => (
-              <div key={i} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
-                <div
-                  className={`px-4 py-3 max-w-xs rounded-xl ${msg.role === 'user' ? 'bg-white/20 text-white' : 'bg-white/15 text-gray-100'}`}
-                >
-                  <div>{msg.content}</div>
-                  <div className="text-[11px] mt-1 text-right text-gray-300">
-                    {msg.time.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
-                  </div>
+            <div className="flex flex-row flex-1 justify-evenly items-center space-x-4">
+                <div className=" text-white py-2 px-4 rounded-lg shadow-md cursor-pointer">
+                    Pros
                 </div>
-              </div>
-            ))}
-            {typing && (
-              <div className="flex justify-start">
-                <div className="bg-white/15 text-gray-300 px-4 py-2 rounded-lg text-sm backdrop-blur-sm">
-                  Hackii is typing...
+                <div className=" text-white py-2 px-4 rounded-lg shadow-md cursor-pointer">
+                    Cros
                 </div>
-              </div>
-            )}
-          </div>
-
-          {/* Input Box */}
-          <div className="px-6 py-4 bg-white/10 backdrop-blur-xl border-t border-white/20">
-            <div className="flex flex-col gap-2">
-              <div className="relative w-full">
-                <input
-                  type="text"
-                  placeholder="Type a message..."
-                  value={input}
-                  onChange={(e) => setInput(e.target.value)}
-                  onKeyDown={(e) => e.key === 'Enter' && handleSend()}
-                  className="w-full p-3 pr-16 rounded-full bg-white/10 backdrop-blur-md text-white border border-white/20 placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white/30 text-sm"
-                />
-                <button
-                  onClick={handleSend}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/15 hover:bg-white/20 text-white px-5 py-2 rounded-full text-xs transition duration-200 backdrop-blur-sm"
-                >
-                  Send
-                </button>
-              </div>
-              <div className="flex items-center gap-2 text-white text-sm pl-2">
-                <input type="radio" id="research" name="mode" />
-                <label htmlFor="research">Research</label>
-              </div>
+                <div className=" text-white py-2 px-4 rounded-lg shadow-md cursor-pointer">
+                    Questions
+                </div>
             </div>
-          </div>  
+
         </div>
       </div>
     </div>
