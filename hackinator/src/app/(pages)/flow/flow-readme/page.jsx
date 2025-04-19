@@ -24,7 +24,6 @@ export default function ReadmeFlow() {
     }
 
     if (!isValidGithubLink(repoLink)) {
-      toast.error("Please enter a valid GitHub repository URL.");
       setError("Please enter a valid GitHub repository URL.");
       return;
     }
