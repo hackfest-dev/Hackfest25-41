@@ -20,7 +20,7 @@ export default function AnimatedBackground() {
         { color: '#16213e', enabled: true }, // deep blue
       ]
       ,
-      speed: 2,
+      speed: 4,
       horizontalPressure: 3,
       verticalPressure: 5,
       waveFrequencyX: 1,

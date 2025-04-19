@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="flex flex-col h-screen">
-        <Navbar />
+        {/* <Navbar /> */}
         <main className="flex-1 flex items-center justify-center">
           {children}
           <AnimatedBackground branding={false} />
