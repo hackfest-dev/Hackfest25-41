@@ -1,8 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import HackinatorLayout from './(pages)/home/page';
-import Thankyou from '@/components/ThankYou/Tahnkyou';
+import Hackinator from '../app/(pages)/home/page';
 
 export default function App() {
   const [mounted, setMounted] = useState(false);
@@ -12,11 +11,8 @@ export default function App() {
   }, []);
 
   return (
-    // <AnimatedBackground>
       <div className="relative">
-        <HackinatorLayout/>
-        <Thankyou/>
+        <Hackinator/>
       </div>
-    // </AnimatedBackground>
   );
 }

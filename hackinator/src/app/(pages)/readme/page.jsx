@@ -1,8 +1,8 @@
-import ReadME from '@/components/pages/Readme/Readme'
+import ReadmeOnly from '../../../components/pages/Readme/ReadmeOnly'
 import React from 'react'
 
 export default function Flow() {
   return (
-    <div><ReadME/></div>
+    <div><ReadmeOnly/></div>
   )
 }

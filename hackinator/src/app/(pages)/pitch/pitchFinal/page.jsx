@@ -3,7 +3,7 @@
 import { useSearchParams } from 'next/navigation';
 import { useState } from 'react';
 
-export default function ChatInterface() {
+export default function PitchFinal() {
   const searchParams = useSearchParams();
   const topicParam = searchParams.get('topic');
   const selectedTopic = topicParam ? JSON.parse(decodeURIComponent(topicParam)) : null;

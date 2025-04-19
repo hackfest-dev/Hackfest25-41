@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { toast } from 'react-toastify';
 import { useRouter } from 'next/navigation';
 
-export default function IdeaFlow() {
+export default function IdeaOnly() {
   const [idea, setIdea] = useState('');
   const [file, setFile] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -58,7 +58,7 @@ export default function IdeaFlow() {
     if (customTheme.trim()) finalSelection.push(customTheme.trim());
 
     toast.success(`Selected theme sent to server!`, { position: "top-center" });
-    router.push('/flow/problem-selector');
+    router.push('/ideas/problems');
   };
 
   const containerVariants = {
