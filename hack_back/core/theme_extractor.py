@@ -27,27 +27,21 @@ def extract_themes_with_ai(text):
     system_prompt = """You are an AI assistant specialized in analyzing hackathon brochures and extracting themes or tracks.
     Extract the main hackathon tracks or themes from the provided text.
     For each theme, provide:
-    1. Hackathon header (hackathon name)
-    2. The name of the theme/track
-    3. A code name (if available, otherwise create a suitable one)
-    4. A brief description
-    5. 5 relevant keywords
+    1. The name of the theme/track
+    2. A code name (if available, otherwise create a suitable one)
+    3. A brief description
+    4. 5 relevant keywords
 
-    Hackathon themes are typically related to technology, innovation, and specific industries and are provided for people to make projects related to those. Examples are: Fintech, Healthcare, Logistics, Open Innovation, Sustainable Development, Edutech, etc.
-    Review everything twice and ensure the themes are relevant to the hackathon context. Hackathon themes are usually one or two words long, and the description should be concise and relevant to the theme. Hackathon themes are given to people so that they can create projects related to that theme.
-    Do not Repeat the same theme multiple times.
-    Format your response as a JSON array with objects containing "hackathon header","name", "code", "description", and "keywords" (array of strings).
-    Example: {
-            "hackathon header": "hackthon name",
-            "themes": [
-                {
-                    "name": "Healthcare",
-                    "code": "APOLLO",
-                    "description": "Transforming healthcare through technology",
-                    "keywords": ["healthcare", "medical", "patient", "innovation", "technology"]
-                }
-                ]
-    }
+    Format your response as a JSON array with objects containing "name", "code", "description", and "keywords" (array of strings).
+    Example:
+    [
+        {
+            "name": "Healthcare",
+            "code": "APOLLO",
+            "description": "Transforming healthcare through technology",
+            "keywords": ["healthcare", "medical", "patient", "innovation", "technology"]
+        }
+    ]
     """
     
     # Prepare the request
