@@ -899,10 +899,410 @@
                 "source": "LM Studio",
                 "model": "deepseek-r1-distill-llama-8b"
             }
+        },
+        {
+            "id": 91,
+            "topic": "Combined Themes",
+            "text": "Develop a solution for \u201cAI-Powered Diagnostic Assistant for Underserved Communities,\u201d utilizing a pre-trained AI model (e.g., a convolutional neural network) to analyze chest X-rays for signs of pneumonia, coupled with an Edutech chatbot delivering personalized patient education on preventative measures and sustainable hygiene practices. The system must accept image uploads via a web interface (using React), process the images through the AI model in near real-time, provide a confidence score for the diagnosis, and simultaneously trigger the chatbot to deliver tailored educational content based on the diagnosis and user\u2019s location (utilizing publicly available demographic data). Deliverables include a functional prototype demonstrating image analysis and chatbot interaction, along with a documented explanation of the chosen AI model and its limitations.",
+            "created_at": "2025-04-19T23:23:15.078666",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 92,
+            "topic": "Combined Themes",
+            "text": "Develop a solution for \u201cEcoHealthMap,\u201d an interactive web application that utilizes AI image analysis and Edutech content delivery to assess the impact of sustainable farming practices on local community health. The system should accept satellite imagery (Landsat or Sentinel data \u2013 10m resolution) representing agricultural land, process it using a pre-trained convolutional neural network (e.g., TensorFlow/Keras) to identify crop types and vegetation indices indicative of soil health, then dynamically generate Edutech content\u2014delivered via a responsive web interface (React)\u2014providing localized recommendations for sustainable farming techniques based on the identified crops and assessed soil conditions.  The application must also track user engagement with the educational material and provide a visual dashboard displaying changes in vegetation health metrics alongside reported community health data (e.g., incidence of related diseases) \u2013 focusing on demonstrating a correlation between improved farming practices and reduced environmental impact within 48 hours.",
+            "created_at": "2025-04-19T23:23:19.795802",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 93,
+            "topic": "Combined Themes",
+            "text": "Develop a solution for \u201cEcoHealth Tutor,\u201d an AI-powered Edutech platform that leverages wearable sensor data (heart rate variability, activity levels) to provide personalized recommendations for sustainable lifestyle choices aimed at reducing healthcare burden. The system must utilize a pre-trained machine learning model (e.g., LSTM) to predict potential health risks based on user\u2019s physiological data and environmental factors (temperature, air quality \u2013 accessed via publicly available APIs), generating tailored Edutech content delivered through a mobile interface (React Native) suggesting sustainable alternatives (e.g., reducing meat consumption, opting for cycling instead of driving). The platform must record aggregated anonymized user data to train the model further and generate actionable insights for public health initiatives, focusing on demonstrating a correlation between lifestyle changes and reduced strain on healthcare resources within 48 hours.",
+            "created_at": "2025-04-19T23:23:24.020302",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 94,
+            "topic": "Combined Themes",
+            "text": "Develop a solution for \u201cHealthEduLens,\u201d an augmented reality (AR) application that utilizes AI-powered image recognition to diagnose early signs of malnutrition in children within underserved communities while simultaneously delivering personalized Edutech content on sustainable food sourcing and preparation. The app must utilize a pre-trained convolutional neural network (e.g., MobileNet) to analyze images of a child\u2019s facial features and skin condition, identifying potential nutritional deficiencies with an accuracy target of 70% based on a curated dataset of malnutrition indicators; upon detection, the app overlays AR instructions for simple, locally sourced food preparation methods \u2013 visualized through 3D models \u2013 alongside educational videos delivered via Edutech modules focusing on sustainable agriculture practices relevant to that region. The application must integrate with publicly available nutritional databases and GPS data to provide location-specific recommendations and track user engagement with the provided resources within a secure, cloud-based platform (e.g., Firebase) providing actionable insights for community health programs.",
+            "created_at": "2025-04-19T23:23:28.807619",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 95,
+            "topic": "Combined Themes",
+            "text": "Develop a solution for \u201cPredictive Health & Eco-Recipes,\u201d an AI-powered mobile application that combines wearable sensor data with Edutech content to promote sustainable dietary choices and predict potential health risks. The app will utilize a pre-trained LSTM model analyzing heart rate variability, activity levels, and location data to generate personalized meal recommendations based on a database of \u201ceco-recipes\u201d \u2013 recipes prioritizing local, seasonal ingredients and minimizing environmental impact (accessed via an API).  The application must provide real-time feedback on the estimated carbon footprint associated with each recipe choice, coupled with Edutech content explaining the nutritional benefits and sustainable sourcing practices, delivered through interactive microlearning modules; a functional prototype including data visualization of both health predictions and environmental impact is required within 48 hours.",
+            "created_at": "2025-04-19T23:23:32.861904",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 96,
+            "topic": "Combined Themes",
+            "text": "Develop a solution for \u201cDiagnosis & Education Hub,\u201d an AI-powered platform that utilizes computer vision to analyze photographic skin lesions (provided by users via smartphone) alongside Edutech content delivered through a chatbot interface, to aid in the early detection of dermatological conditions while promoting sustainable self-care practices. The system must utilize a pre-trained convolutional neural network (e.g., ResNet50) trained on a publicly available dermatology dataset for lesion classification with a minimum accuracy of 65%, then leverage a conversational AI chatbot (using Dialogflow or similar) to deliver personalized patient education \u2013 including information on sun protection, sustainable skincare product recommendations, and preventative hygiene practices - dynamically adjusted based on the detected condition and user\u2019s location using readily accessible weather data. Deliverables include a functional prototype demonstrating lesion analysis, chatbot interaction, and an interactive dashboard visualizing diagnosis confidence scores alongside relevant educational content.",
+            "created_at": "2025-04-19T23:23:37.334968",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 97,
+            "topic": "Combined Themes",
+            "text": "Develop a solution for \u201cNutriSight,\u201d an AI-powered Edutech tool that utilizes smartphone camera input and image analysis to assess the nutritional quality of locally sourced food items within a community, coupled with personalized Edutech content promoting sustainable dietary choices. The system must employ a pre-trained convolutional neural network (e.g., MobileNet) to analyze images of fresh produce \u2013 fruits and vegetables \u2013 identifying key visual indicators of nutrient density (color, texture, size) with an accuracy target of 60% based on a curated dataset; the output should display a nutritional score alongside suggested sustainable preparation methods via a dynamically generated Edutech micro-lesson delivered through a web interface (React). The solution must also integrate with publicly available data on local food availability and seasonality to enhance recommendations, focusing on delivering actionable insights within 48 hours.",
+            "created_at": "2025-04-19T23:23:41.557749",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 98,
+            "topic": "Combined Themes",
+            "text": "Develop a solution for \u201cEcoHealth Insights,\u201d an AI-powered platform that utilizes smartphone camera input and publicly available air quality data to assess the potential health risks associated with outdoor activities in vulnerable communities, providing targeted Edutech interventions promoting sustainable behaviors. The system must employ a pre-trained convolutional neural network (e.g., MobileNet) to analyze images of the surrounding environment \u2013 identifying elements like pollen concentration, smog levels, and green space density \u2013 alongside integrating air quality data via an open API (e.g., AirNow). Based on this combined analysis, the platform generates risk scores and delivers personalized Edutech content via a mobile interface (React Native) suggesting sustainable activity choices (e.g., indoor exercise, alternate routes) and promoting awareness of local environmental health issues within 48 hours.",
+            "created_at": "2025-04-19T23:23:45.667717",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 99,
+            "topic": "Combined Themes",
+            "text": "Develop a solution for \u201cNutriScan,\u201d an AI-powered mobile application that utilizes smartphone camera input to assess the nutritional value of locally sourced fruits and vegetables while simultaneously delivering Edutech content on sustainable food sourcing practices. The app must employ a pre-trained convolutional neural network (e.g., MobileNet) trained on a curated dataset of common produce, analyzing images for color, texture, and size to predict nutritional density with an accuracy target of 60%. Upon detection of potential deficiencies or overripe produce, the application will automatically generate a short, interactive Edutech micro-lesson via a web interface (React) offering sustainable preparation methods and information on locally available alternatives \u2013 drawing data from a simulated local farmer\u2019s market API.",
+            "created_at": "2025-04-19T23:23:49.576886",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 100,
+            "topic": "Combined Themes",
+            "text": "Develop a solution for \u201cPredictive Wellness Pathways,\u201d an AI-powered telehealth platform utilizing wearable sensor data and localized environmental factors to deliver personalized Edutech interventions promoting sustainable health behaviors. The system should ingest real-time physiological data (heart rate variability, sleep patterns) via a connected wearable device and combine it with hyperlocal weather data (air quality index, UV levels) accessed through an open API.  A trained machine learning model (e.g., Random Forest) will analyze this combined data to predict individual risk of respiratory illness or heat-related stress, triggering targeted Edutech content \u2013 delivered via a mobile interface \u2013 providing actionable steps like adjusting outdoor activity times, utilizing air purification methods, and incorporating seasonal, locally sourced food recommendations based on a simplified database; the deliverable is a functional prototype demonstrating real-time data integration, risk prediction, and dynamic Edutech delivery within 48 hours.",
+            "created_at": "2025-04-19T23:23:53.986029",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 101,
+            "topic": "Combined Themes",
+            "text": "Develop a solution for \u201cAI-Powered Diagnostic Assistant for Underserved Communities,\u201d utilizing a pre-trained AI model (e.g., a convolutional neural network) to analyze chest X-rays for signs of pneumonia, coupled with an Edutech chatbot delivering personalized patient education on preventative measures and sustainable hygiene practices. The system must accept image uploads via a web interface (using React), process the images through the AI model in near real-time, provide a confidence score for the diagnosis, and simultaneously trigger the chatbot to deliver tailored educational content based on the diagnosis and user\u2019s location (utilizing publicly available demographic data). Deliverables include a functional prototype demonstrating image analysis and chatbot interaction, along with a documented explanation of the chosen AI model and its limitations.",
+            "created_at": "2025-04-19T23:23:54.998850",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 102,
+            "topic": "Combined Themes",
+            "text": "Develop a solution for \u201cEcoHealthMap,\u201d an interactive web application that utilizes AI image analysis and Edutech content delivery to assess the impact of sustainable farming practices on local community health. The system should accept satellite imagery (Landsat or Sentinel data \u2013 10m resolution) representing agricultural land, process it using a pre-trained convolutional neural network (e.g., TensorFlow/Keras) to identify crop types and vegetation indices indicative of soil health, then dynamically generate Edutech content\u2014delivered via a responsive web interface (React)\u2014providing localized recommendations for sustainable farming techniques based on the identified crops and assessed soil conditions.  The application must also track user engagement with the educational material and provide a visual dashboard displaying changes in vegetation health metrics alongside reported community health data (e.g., incidence of related diseases) \u2013 focusing on demonstrating a correlation between improved farming practices and reduced environmental impact within 48 hours.",
+            "created_at": "2025-04-19T23:23:54.998883",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 103,
+            "topic": "Combined Themes",
+            "text": "Develop a solution for \u201cEcoHealth Tutor,\u201d an AI-powered Edutech platform that leverages wearable sensor data (heart rate variability, activity levels) to provide personalized recommendations for sustainable lifestyle choices aimed at reducing healthcare burden. The system must utilize a pre-trained machine learning model (e.g., LSTM) to predict potential health risks based on user\u2019s physiological data and environmental factors (temperature, air quality \u2013 accessed via publicly available APIs), generating tailored Edutech content delivered through a mobile interface (React Native) suggesting sustainable alternatives (e.g., reducing meat consumption, opting for cycling instead of driving). The platform must record aggregated anonymized user data to train the model further and generate actionable insights for public health initiatives, focusing on demonstrating a correlation between lifestyle changes and reduced strain on healthcare resources within 48 hours.",
+            "created_at": "2025-04-19T23:23:54.998885",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 104,
+            "topic": "Combined Themes",
+            "text": "Develop a solution for \u201cHealthEduLens,\u201d an augmented reality (AR) application that utilizes AI-powered image recognition to diagnose early signs of malnutrition in children within underserved communities while simultaneously delivering personalized Edutech content on sustainable food sourcing and preparation. The app must utilize a pre-trained convolutional neural network (e.g., MobileNet) to analyze images of a child\u2019s facial features and skin condition, identifying potential nutritional deficiencies with an accuracy target of 70% based on a curated dataset of malnutrition indicators; upon detection, the app overlays AR instructions for simple, locally sourced food preparation methods \u2013 visualized through 3D models \u2013 alongside educational videos delivered via Edutech modules focusing on sustainable agriculture practices relevant to that region. The application must integrate with publicly available nutritional databases and GPS data to provide location-specific recommendations and track user engagement with the provided resources within a secure, cloud-based platform (e.g., Firebase) providing actionable insights for community health programs.",
+            "created_at": "2025-04-19T23:23:54.998887",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 105,
+            "topic": "Combined Themes",
+            "text": "Develop a solution for \u201cPredictive Health & Eco-Recipes,\u201d an AI-powered mobile application that combines wearable sensor data with Edutech content to promote sustainable dietary choices and predict potential health risks. The app will utilize a pre-trained LSTM model analyzing heart rate variability, activity levels, and location data to generate personalized meal recommendations based on a database of \u201ceco-recipes\u201d \u2013 recipes prioritizing local, seasonal ingredients and minimizing environmental impact (accessed via an API).  The application must provide real-time feedback on the estimated carbon footprint associated with each recipe choice, coupled with Edutech content explaining the nutritional benefits and sustainable sourcing practices, delivered through interactive microlearning modules; a functional prototype including data visualization of both health predictions and environmental impact is required within 48 hours.",
+            "created_at": "2025-04-19T23:23:54.998888",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 106,
+            "topic": "Combined Themes",
+            "text": "Develop a solution for \u201cDiagnosis & Education Hub,\u201d an AI-powered platform that utilizes computer vision to analyze photographic skin lesions (provided by users via smartphone) alongside Edutech content delivered through a chatbot interface, to aid in the early detection of dermatological conditions while promoting sustainable self-care practices. The system must utilize a pre-trained convolutional neural network (e.g., ResNet50) trained on a publicly available dermatology dataset for lesion classification with a minimum accuracy of 65%, then leverage a conversational AI chatbot (using Dialogflow or similar) to deliver personalized patient education \u2013 including information on sun protection, sustainable skincare product recommendations, and preventative hygiene practices - dynamically adjusted based on the detected condition and user\u2019s location using readily accessible weather data. Deliverables include a functional prototype demonstrating lesion analysis, chatbot interaction, and an interactive dashboard visualizing diagnosis confidence scores alongside relevant educational content.",
+            "created_at": "2025-04-19T23:23:54.998890",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 107,
+            "topic": "Combined Themes",
+            "text": "Develop a solution for \u201cNutriSight,\u201d an AI-powered Edutech tool that utilizes smartphone camera input and image analysis to assess the nutritional quality of locally sourced food items within a community, coupled with personalized Edutech content promoting sustainable dietary choices. The system must employ a pre-trained convolutional neural network (e.g., MobileNet) to analyze images of fresh produce \u2013 fruits and vegetables \u2013 identifying key visual indicators of nutrient density (color, texture, size) with an accuracy target of 60% based on a curated dataset; the output should display a nutritional score alongside suggested sustainable preparation methods via a dynamically generated Edutech micro-lesson delivered through a web interface (React). The solution must also integrate with publicly available data on local food availability and seasonality to enhance recommendations, focusing on delivering actionable insights within 48 hours.",
+            "created_at": "2025-04-19T23:23:54.998892",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 108,
+            "topic": "Combined Themes",
+            "text": "Develop a solution for \u201cEcoHealth Insights,\u201d an AI-powered platform that utilizes smartphone camera input and publicly available air quality data to assess the potential health risks associated with outdoor activities in vulnerable communities, providing targeted Edutech interventions promoting sustainable behaviors. The system must employ a pre-trained convolutional neural network (e.g., MobileNet) to analyze images of the surrounding environment \u2013 identifying elements like pollen concentration, smog levels, and green space density \u2013 alongside integrating air quality data via an open API (e.g., AirNow). Based on this combined analysis, the platform generates risk scores and delivers personalized Edutech content via a mobile interface (React Native) suggesting sustainable activity choices (e.g., indoor exercise, alternate routes) and promoting awareness of local environmental health issues within 48 hours.",
+            "created_at": "2025-04-19T23:23:54.998893",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 109,
+            "topic": "Combined Themes",
+            "text": "Develop a solution for \u201cNutriScan,\u201d an AI-powered mobile application that utilizes smartphone camera input to assess the nutritional value of locally sourced fruits and vegetables while simultaneously delivering Edutech content on sustainable food sourcing practices. The app must employ a pre-trained convolutional neural network (e.g., MobileNet) trained on a curated dataset of common produce, analyzing images for color, texture, and size to predict nutritional density with an accuracy target of 60%. Upon detection of potential deficiencies or overripe produce, the application will automatically generate a short, interactive Edutech micro-lesson via a web interface (React) offering sustainable preparation methods and information on locally available alternatives \u2013 drawing data from a simulated local farmer\u2019s market API.",
+            "created_at": "2025-04-19T23:23:54.998895",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 110,
+            "topic": "Combined Themes",
+            "text": "Develop a solution for \u201cPredictive Wellness Pathways,\u201d an AI-powered telehealth platform utilizing wearable sensor data and localized environmental factors to deliver personalized Edutech interventions promoting sustainable health behaviors. The system should ingest real-time physiological data (heart rate variability, sleep patterns) via a connected wearable device and combine it with hyperlocal weather data (air quality index, UV levels) accessed through an open API.  A trained machine learning model (e.g., Random Forest) will analyze this combined data to predict individual risk of respiratory illness or heat-related stress, triggering targeted Edutech content \u2013 delivered via a mobile interface \u2013 providing actionable steps like adjusting outdoor activity times, utilizing air purification methods, and incorporating seasonal, locally sourced food recommendations based on a simplified database; the deliverable is a functional prototype demonstrating real-time data integration, risk prediction, and dynamic Edutech delivery within 48 hours.",
+            "created_at": "2025-04-19T23:23:54.998900",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 111,
+            "topic": "Combined Themes",
+            "text": "Develop a solution for \u201cEcoDiagnose,\u201d an AI-powered diagnostic tool leveraging smartphone imaging and Edutech data to assess the environmental impact of potential health risks in underserved communities. Participants must create a mobile application utilizing a pre-trained convolutional neural network (e.g., MobileNet) to analyze images of local flora/fauna and water sources for signs of contamination or ecological distress, coupled with an interactive chatbot delivering Edutech content on sustainable practices related to environmental protection and preventative healthcare \u2013 prioritizing access to clean water and reducing exposure to pollutants. The system needs to integrate publicly available environmental monitoring data (e.g., EPA datasets) via API and provide a confidence score for potential health hazards alongside actionable, localized sustainability recommendations within 48 hours.",
+            "created_at": "2025-04-19T23:28:31.709202",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 112,
+            "topic": "Combined Themes",
+            "text": "Develop a solution for \u201cBioSync,\u201d an Edutech platform that utilizes smartphone camera input and patient-reported symptoms to generate personalized sustainable healthcare recommendations leveraging AI-powered drug interaction prediction. The system must employ a pre-trained convolutional neural network (e.g., MobileNet) to analyze user-submitted images of medication packaging, identifying key visual indicators for dosage verification; this data is then combined with symptom inputs via a mobile interface (React Native) and fed into an AI model trained on publicly available drug interaction databases (e.g., DrugBank API) to generate real-time warnings about potential adverse interactions and suggest sustainable alternatives based on patient\u2019s dietary restrictions \u2013 dynamically generating Edutech micro-lessons promoting mindful medication usage and supporting informed healthcare decisions within 48 hours.",
+            "created_at": "2025-04-19T23:28:35.849716",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 113,
+            "topic": "Combined Themes",
+            "text": "Develop a solution for \u201cEcoHealth Tutor,\u201d an AI-powered mobile application that leverages smartphone camera input to analyze the nutritional sustainability of locally grown produce alongside providing targeted Edutech interventions for underserved communities. The app must utilize a pre-trained convolutional neural network (e.g., MobileNet) to assess produce ripeness, variety, and visual indicators of sustainable farming practices (e.g., organic certification symbols), combined with an API integration for local farmers' market pricing data. Based on this analysis, the application generates a \u201cSustainability Score\u201d and delivers personalized Edutech content \u2013 via a responsive web interface \u2013 promoting recipes utilizing that produce alongside educational materials regarding localized sustainable agriculture methods within 48 hours.",
+            "created_at": "2025-04-19T23:28:39.759467",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 114,
+            "topic": "Combined Themes",
+            "text": "Develop a solution for \u201cDiagnose & Educate,\u201d an AI-powered mobile application designed to rapidly assess potential skin conditions using smartphone camera input while simultaneously providing Edutech content on sustainable skincare practices. The application must utilize a pre-trained convolutional neural network (e.g., MobileNet) to analyze user-uploaded images of skin lesions, predicting the likelihood of common dermatological conditions with an accuracy target of 50% based on a provided dataset; upon detection, the app will dynamically generate a short, interactive Edutech micro-lesson via a web interface (React Native) offering information about sustainable skincare ingredients and reducing reliance on potentially harmful conventional products \u2013 drawing data from a simplified API of eco-friendly brands.",
+            "created_at": "2025-04-19T23:28:43.644040",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 115,
+            "topic": "Combined Themes",
+            "text": "Develop a solution for \u201cPulseWise,\u201d an AI-powered diagnostic tool utilizing smartphone camera input to analyze subtle changes in patient skin pigmentation indicative of early hypertension risk alongside delivering personalized Edutech interventions promoting sustainable lifestyle choices. Participants must create a mobile application employing a pre-trained convolutional neural network (e.g., MobileNet) to analyze user-submitted images of their forearms, identifying patterns associated with vascular changes suggestive of elevated blood pressure; the system will integrate with publicly available environmental data (air quality indices \u2013 via API) to correlate potential external factors with skin pigmentation alterations and generate a risk score. The application must then deliver targeted Edutech content \u2013 presented through interactive micro-lessons \u2013 focusing on sustainable dietary recommendations, stress reduction techniques, and promoting access to green spaces based on geolocation, all within a 48-hour timeframe.",
+            "created_at": "2025-04-19T23:28:48.378137",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 116,
+            "topic": "Combined Themes",
+            "text": "Develop a solution for \u201cHealthMap AI,\u201d an Edutech platform that utilizes smartphone camera input and publicly available environmental data to predict localized outbreaks of waterborne diseases in vulnerable communities. Participants must create a mobile application employing a pre-trained convolutional neural network (e.g., MobileNet) to analyze satellite imagery of water sources (rivers, lakes, ponds) for indicators of contamination\u2014turbidity, algal blooms\u2014and integrate this with real-time environmental data (rainfall, temperature, sanitation levels \u2013 via API) alongside Edutech modules on hygiene practices and sustainable water management solutions. The deliverable is a functional prototype demonstrating predictive modeling accuracy within a specified geographic area, coupled with an accessible, interactive educational interface for community members, all completed within 48 hours.",
+            "created_at": "2025-04-19T23:28:52.898554",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 117,
+            "topic": "Combined Themes",
+            "text": "Develop a solution for \u201cSymptomScan,\u201d an Edutech platform that utilizes smartphone camera input to analyze patient skin conditions alongside real-time environmental data to predict potential outbreaks of fungal infections, leveraging AI-powered diagnosis and sustainable prevention education. Participants must build a mobile application employing a pre-trained convolutional neural network (e.g., MobileNet) to analyze user-submitted images of skin lesions, classifying them into common dermatophyte infections with an accuracy target of 30% based on a provided dataset; simultaneously, the app integrates with local weather API data (temperature, humidity) and air quality data via another API to correlate environmental factors with infection risk. The system dynamically generates Edutech micro-lessons via a web interface (React Native) promoting preventative measures like localized sustainable skincare practices \u2013 utilizing natural remedies and reducing reliance on conventional products \u2013 alongside delivering targeted alerts based on predicted outbreak probabilities within a 5km radius, all completed within 48 hours.",
+            "created_at": "2025-04-19T23:28:57.881130",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 118,
+            "topic": "Combined Themes",
+            "text": "Develop a solution for \u201cEcoHealth Insights,\u201d an AI-powered mobile application that analyzes satellite imagery of agricultural land alongside patient self-reported symptoms to predict localized outbreaks of foodborne illnesses linked to unsustainable farming practices. The app must utilize a pre-trained convolutional neural network (e.g., ResNet50) to identify crop types and assess soil health indicators from satellite data via an API, combined with a natural language processing model analyzing symptom descriptions; the application will generate a risk score for specific produce items based on this analysis and deliver targeted Edutech content \u2013 via a responsive web interface \u2013 promoting sustainable farming practices and providing information about safe food handling techniques within 48 hours.",
+            "created_at": "2025-04-19T23:29:01.681458",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 119,
+            "topic": "Combined Themes",
+            "text": "Develop a solution for \u201cBioSync,\u201d an AI-powered telehealth platform that utilizes smartphone camera input to analyze patient skin lesions for early melanoma detection while simultaneously delivering personalized Edutech content on sustainable skincare practices focused on reducing exposure to harmful UV radiation. Participants must create a mobile application employing a pre-trained convolutional neural network (e.g., MobileNet) to analyze user-uploaded images of skin lesions, predicting the likelihood of melanoma with an accuracy target of 40% based on a provided dataset; upon detection, the app will dynamically generate a short, interactive Edutech micro-lesson via a web interface (React Native) offering information about sun safety, sustainable sunscreen ingredients, and promoting wider adoption of shaded environments \u2013 drawing data from a simplified API of local weather forecasts for UV index.",
+            "created_at": "2025-04-19T23:29:05.908388",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 120,
+            "topic": "Combined Themes",
+            "text": "Develop a solution for \u201cEcoDiagnose,\u201d an Edutech platform that utilizes smartphone camera input to analyze patient skin lesions alongside real-time environmental data (air quality indices via API) to predict the potential emergence of antibiotic-resistant bacterial infections linked to unsustainable agricultural practices, delivering targeted Edutech interventions promoting sustainable farming and hygiene education. Participants must build a mobile application employing a pre-trained convolutional neural network (e.g., MobileNet) for lesion analysis with a minimum accuracy of 25% on a provided dataset, coupled with a location-based API integration to retrieve air quality data; the system will generate personalized Edutech micro-lessons via a web interface focused on sustainable agriculture and hygiene practices, tailored to the user\u2019s geographic region, within a 48-hour timeframe.",
+            "created_at": "2025-04-19T23:29:10.139765",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 121,
+            "topic": "Combined Themes",
+            "text": "Develop a solution for \u201cEcoDiagnose,\u201d an AI-powered diagnostic tool leveraging smartphone imaging and Edutech data to assess the environmental impact of potential health risks in underserved communities. Participants must create a mobile application utilizing a pre-trained convolutional neural network (e.g., MobileNet) to analyze images of local flora/fauna and water sources for signs of contamination or ecological distress, coupled with an interactive chatbot delivering Edutech content on sustainable practices related to environmental protection and preventative healthcare \u2013 prioritizing access to clean water and reducing exposure to pollutants. The system needs to integrate publicly available environmental monitoring data (e.g., EPA datasets) via API and provide a confidence score for potential health hazards alongside actionable, localized sustainability recommendations within 48 hours.",
+            "created_at": "2025-04-19T23:29:11.143308",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 122,
+            "topic": "Combined Themes",
+            "text": "Develop a solution for \u201cBioSync,\u201d an Edutech platform that utilizes smartphone camera input and patient-reported symptoms to generate personalized sustainable healthcare recommendations leveraging AI-powered drug interaction prediction. The system must employ a pre-trained convolutional neural network (e.g., MobileNet) to analyze user-submitted images of medication packaging, identifying key visual indicators for dosage verification; this data is then combined with symptom inputs via a mobile interface (React Native) and fed into an AI model trained on publicly available drug interaction databases (e.g., DrugBank API) to generate real-time warnings about potential adverse interactions and suggest sustainable alternatives based on patient\u2019s dietary restrictions \u2013 dynamically generating Edutech micro-lessons promoting mindful medication usage and supporting informed healthcare decisions within 48 hours.",
+            "created_at": "2025-04-19T23:29:11.143314",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 123,
+            "topic": "Combined Themes",
+            "text": "Develop a solution for \u201cEcoHealth Tutor,\u201d an AI-powered mobile application that leverages smartphone camera input to analyze the nutritional sustainability of locally grown produce alongside providing targeted Edutech interventions for underserved communities. The app must utilize a pre-trained convolutional neural network (e.g., MobileNet) to assess produce ripeness, variety, and visual indicators of sustainable farming practices (e.g., organic certification symbols), combined with an API integration for local farmers' market pricing data. Based on this analysis, the application generates a \u201cSustainability Score\u201d and delivers personalized Edutech content \u2013 via a responsive web interface \u2013 promoting recipes utilizing that produce alongside educational materials regarding localized sustainable agriculture methods within 48 hours.",
+            "created_at": "2025-04-19T23:29:11.143316",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 124,
+            "topic": "Combined Themes",
+            "text": "Develop a solution for \u201cDiagnose & Educate,\u201d an AI-powered mobile application designed to rapidly assess potential skin conditions using smartphone camera input while simultaneously providing Edutech content on sustainable skincare practices. The application must utilize a pre-trained convolutional neural network (e.g., MobileNet) to analyze user-uploaded images of skin lesions, predicting the likelihood of common dermatological conditions with an accuracy target of 50% based on a provided dataset; upon detection, the app will dynamically generate a short, interactive Edutech micro-lesson via a web interface (React Native) offering information about sustainable skincare ingredients and reducing reliance on potentially harmful conventional products \u2013 drawing data from a simplified API of eco-friendly brands.",
+            "created_at": "2025-04-19T23:29:11.143317",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 125,
+            "topic": "Combined Themes",
+            "text": "Develop a solution for \u201cPulseWise,\u201d an AI-powered diagnostic tool utilizing smartphone camera input to analyze subtle changes in patient skin pigmentation indicative of early hypertension risk alongside delivering personalized Edutech interventions promoting sustainable lifestyle choices. Participants must create a mobile application employing a pre-trained convolutional neural network (e.g., MobileNet) to analyze user-submitted images of their forearms, identifying patterns associated with vascular changes suggestive of elevated blood pressure; the system will integrate with publicly available environmental data (air quality indices \u2013 via API) to correlate potential external factors with skin pigmentation alterations and generate a risk score. The application must then deliver targeted Edutech content \u2013 presented through interactive micro-lessons \u2013 focusing on sustainable dietary recommendations, stress reduction techniques, and promoting access to green spaces based on geolocation, all within a 48-hour timeframe.",
+            "created_at": "2025-04-19T23:29:11.143319",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 126,
+            "topic": "Combined Themes",
+            "text": "Develop a solution for \u201cHealthMap AI,\u201d an Edutech platform that utilizes smartphone camera input and publicly available environmental data to predict localized outbreaks of waterborne diseases in vulnerable communities. Participants must create a mobile application employing a pre-trained convolutional neural network (e.g., MobileNet) to analyze satellite imagery of water sources (rivers, lakes, ponds) for indicators of contamination\u2014turbidity, algal blooms\u2014and integrate this with real-time environmental data (rainfall, temperature, sanitation levels \u2013 via API) alongside Edutech modules on hygiene practices and sustainable water management solutions. The deliverable is a functional prototype demonstrating predictive modeling accuracy within a specified geographic area, coupled with an accessible, interactive educational interface for community members, all completed within 48 hours.",
+            "created_at": "2025-04-19T23:29:11.143321",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 127,
+            "topic": "Combined Themes",
+            "text": "Develop a solution for \u201cSymptomScan,\u201d an Edutech platform that utilizes smartphone camera input to analyze patient skin conditions alongside real-time environmental data to predict potential outbreaks of fungal infections, leveraging AI-powered diagnosis and sustainable prevention education. Participants must build a mobile application employing a pre-trained convolutional neural network (e.g., MobileNet) to analyze user-submitted images of skin lesions, classifying them into common dermatophyte infections with an accuracy target of 30% based on a provided dataset; simultaneously, the app integrates with local weather API data (temperature, humidity) and air quality data via another API to correlate environmental factors with infection risk. The system dynamically generates Edutech micro-lessons via a web interface (React Native) promoting preventative measures like localized sustainable skincare practices \u2013 utilizing natural remedies and reducing reliance on conventional products \u2013 alongside delivering targeted alerts based on predicted outbreak probabilities within a 5km radius, all completed within 48 hours.",
+            "created_at": "2025-04-19T23:29:11.143323",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 128,
+            "topic": "Combined Themes",
+            "text": "Develop a solution for \u201cEcoHealth Insights,\u201d an AI-powered mobile application that analyzes satellite imagery of agricultural land alongside patient self-reported symptoms to predict localized outbreaks of foodborne illnesses linked to unsustainable farming practices. The app must utilize a pre-trained convolutional neural network (e.g., ResNet50) to identify crop types and assess soil health indicators from satellite data via an API, combined with a natural language processing model analyzing symptom descriptions; the application will generate a risk score for specific produce items based on this analysis and deliver targeted Edutech content \u2013 via a responsive web interface \u2013 promoting sustainable farming practices and providing information about safe food handling techniques within 48 hours.",
+            "created_at": "2025-04-19T23:29:11.143324",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 129,
+            "topic": "Combined Themes",
+            "text": "Develop a solution for \u201cBioSync,\u201d an AI-powered telehealth platform that utilizes smartphone camera input to analyze patient skin lesions for early melanoma detection while simultaneously delivering personalized Edutech content on sustainable skincare practices focused on reducing exposure to harmful UV radiation. Participants must create a mobile application employing a pre-trained convolutional neural network (e.g., MobileNet) to analyze user-uploaded images of skin lesions, predicting the likelihood of melanoma with an accuracy target of 40% based on a provided dataset; upon detection, the app will dynamically generate a short, interactive Edutech micro-lesson via a web interface (React Native) offering information about sun safety, sustainable sunscreen ingredients, and promoting wider adoption of shaded environments \u2013 drawing data from a simplified API of local weather forecasts for UV index.",
+            "created_at": "2025-04-19T23:29:11.143326",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 130,
+            "topic": "Combined Themes",
+            "text": "Develop a solution for \u201cEcoDiagnose,\u201d an Edutech platform that utilizes smartphone camera input to analyze patient skin lesions alongside real-time environmental data (air quality indices via API) to predict the potential emergence of antibiotic-resistant bacterial infections linked to unsustainable agricultural practices, delivering targeted Edutech interventions promoting sustainable farming and hygiene education. Participants must build a mobile application employing a pre-trained convolutional neural network (e.g., MobileNet) for lesion analysis with a minimum accuracy of 25% on a provided dataset, coupled with a location-based API integration to retrieve air quality data; the system will generate personalized Edutech micro-lessons via a web interface focused on sustainable agriculture and hygiene practices, tailored to the user\u2019s geographic region, within a 48-hour timeframe.",
+            "created_at": "2025-04-19T23:29:11.143329",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
         }
     ],
     "metadata": {
-        "last_updated": "2025-04-19T11:21:23.263444",
-        "total_count": 90
+        "last_updated": "2025-04-19T23:29:11.143331",
+        "total_count": 130
     }
 }

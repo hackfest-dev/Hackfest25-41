@@ -21,21 +21,26 @@ export default function ProblemSelector() {
     const fetchIdeas = async () => {
       setLoading(true);
       try {
-        const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ1MTA3ODcyLCJpYXQiOjE3NDUxMDQyNzIsImp0aSI6IjliYWZjMjAyNmFkNjRhMGM4ZmJjNjA5OTg3ZmUxYzg1IiwidXNlcl9pZCI6Mn0.PHN5odgydL2MgvxxRNLTY5S-_a9AGJT1kK7MF3DG5oQ';
-        const response = await axios.post('http://127.0.0.1:8000/api/ideas/27/generate/',
-          {}, // Body if needed (currently empty)
+        const token =
+          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ1MTA3ODcyLCJpYXQiOjE3NDUxMDQyNzIsImp0aSI6IjliYWZjMjAyNmFkNjRhMGM4ZmJjNjA5OTg3ZmUxYzg1IiwidXNlcl9pZCI6Mn0.PHN5odgydL2MgvxxRNLTY5S-_a9AGJT1kK7MF3DG5oQ';
+
+        const response = await axios.post(
+          'http://127.0.0.1:8000/api/ideas/27/generate/',
+          {},
           {
             headers: {
-              Authorization: `Bearer ${token}`, // Replace this
+              Authorization: `Bearer ${token}`,
             },
           }
         );
 
-        setIdeas(response.data);
-        setSelectionStatus(Array(response.data.length).fill(null));
+        const ideasData = Array.isArray(response.data) ? response.data : [];
+        setIdeas(ideasData);
+        setSelectionStatus(Array(ideasData.length).fill(null));
       } catch (error) {
         console.error('Error fetching ideas:', error);
         toast.error('Failed to fetch ideas');
+        setIdeas([]);
       } finally {
         setLoading(false);
       }
@@ -54,25 +59,31 @@ export default function ProblemSelector() {
     return statusArray[nextIndex] === null ? nextIndex : -1;
   }, [ideas]);
 
-  const handleSwipe = useCallback((direction) => {
-    setSelectionStatus(prevStatus => {
-      const updatedStatus = [...prevStatus];
-      if (direction === 'accepted') {
-        const acceptedCount = updatedStatus.filter(s => s === 'accepted').length;
-        if (acceptedCount >= 6) {
-          toast.error('You can only select up to 6 ideas!', { position: 'top-center', autoClose: 3000 });
-          return prevStatus;
+  const handleSwipe = useCallback(
+    (direction) => {
+      setSelectionStatus((prevStatus) => {
+        const updatedStatus = [...prevStatus];
+        if (direction === 'accepted') {
+          const acceptedCount = updatedStatus.filter((s) => s === 'accepted').length;
+          if (acceptedCount >= 6) {
+            toast.error('You can only select up to 6 ideas!', {
+              position: 'top-center',
+              autoClose: 3000,
+            });
+            return prevStatus;
+          }
+          updatedStatus[currentIndex] = 'accepted';
+        } else {
+          updatedStatus[currentIndex] = 'rejected';
         }
-        updatedStatus[currentIndex] = 'accepted';
-      } else {
-        updatedStatus[currentIndex] = 'rejected';
-      }
 
-      const nextIndex = findNextAvailableIndex(currentIndex, updatedStatus);
-      setCurrentIndex(nextIndex !== -1 ? nextIndex : -1);
-      return updatedStatus;
-    });
-  }, [currentIndex, findNextAvailableIndex]);
+        const nextIndex = findNextAvailableIndex(currentIndex, updatedStatus);
+        setCurrentIndex(nextIndex !== -1 ? nextIndex : -1);
+        return updatedStatus;
+      });
+    },
+    [currentIndex, findNextAvailableIndex]
+  );
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -116,23 +127,19 @@ export default function ProblemSelector() {
   return (
     <div className="flex flex-col items-center justify-center bg-slate-950/40 backdrop-blur-lg px-4 py-8 text-white">
       {loading ? (
-        <div className="text-xl font-bold text-white/70">Loading ideas...</div>
+        <div className="text-xl font-bold text-white/70">Loading Problems statments...</div>
       ) : (
         <>
           <div className="relative w-20 h-20 mb-6">
             <svg className="transform -rotate-90" viewBox="0 0 36 36">
               <path
-                d="M18 2.0845
-                a 15.9155 15.9155 0 0 1 0 31.831
-                a 15.9155 15.9155 0 0 1 0 -31.831"
+                d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
                 fill="none"
                 stroke="#333"
                 strokeWidth="2"
               />
               <motion.path
-                d="M18 2.0845
-                a 15.9155 15.9155 0 0 1 0 31.831
-                a 15.9155 15.9155 0 0 1 0 -31.831"
+                d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
                 fill="none"
                 stroke="#10b981"
                 strokeWidth="2"
@@ -165,7 +172,8 @@ export default function ProblemSelector() {
                   <p className="text-sm text-white/80">{currentIdea.description}</p>
                 </div>
                 <div className="text-center text-xs text-white/60">
-                  Swipe → Accept | Swipe ← Reject<br />
+                  Swipe → Accept | Swipe ← Reject
+                  <br />
                   (or use arrow keys)
                 </div>
               </motion.div>
@@ -177,16 +185,17 @@ export default function ProblemSelector() {
           </div>
 
           <div className="flex space-x-2 overflow-x-auto mb-6 max-w-[90vw] px-2">
-            {ideas.map((idea, i) =>
-              selectionStatus[i] === 'accepted' ? (
-                <div
-                  key={idea.id}
-                  className="bg-white/10 border border-white/10 rounded-md px-3 py-2 text-xs text-white text-center backdrop-blur-md shadow-md"
-                >
-                  {idea.title}
-                </div>
-              ) : null
-            )}
+            {Array.isArray(ideas) &&
+              ideas.map((idea, i) =>
+                selectionStatus[i] === 'accepted' ? (
+                  <div
+                    key={idea.id || i}
+                    className="bg-white/10 border border-white/10 rounded-md px-3 py-2 text-xs text-white text-center backdrop-blur-md shadow-md"
+                  >
+                    {idea.title}
+                  </div>
+                ) : null
+              )}
           </div>
 
           <motion.button
