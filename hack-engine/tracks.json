@@ -2,80 +2,68 @@
     "hackathon_name": "we are 2200",
     "tracks": [
         {
-            "name": "Financial Innovation",
-            "code": "FINANCE_CORE",
-            "description": "Developing innovative solutions for the financial sector, encompassing areas like fintech, blockchain, and digital banking.",
-            "keywords": [
-                "finance",
-                "banking",
-                "blockchain",
-                "fintech",
-                "investment"
-            ]
-        },
-        {
-            "name": "Open Innovation",
-            "code": "OPEN_SPACE",
-            "description": "A broad category encouraging creative solutions across any technology area, fostering experimentation and diverse project ideas.",
-            "keywords": [
-                "innovation",
-                "technology",
-                "creative",
-                "solutions",
-                "development"
-            ]
-        },
-        {
-            "name": "Healthcare Solutions",
-            "code": "HEALTH_CODE",
-            "description": "Creating technological advancements in healthcare, including patient monitoring, diagnostics, and medical data management.",
+            "name": "Healthcare",
+            "code": "HEALIX",
+            "description": "Developing innovative solutions for improving patient care, diagnostics, and overall healthcare management.",
             "keywords": [
                 "healthcare",
                 "medical",
                 "patient",
                 "diagnosis",
-                "technology"
+                "wellness"
             ]
         },
         {
-            "name": "Sustainable Tech",
-            "code": "GREEN_TECH",
-            "description": "Developing solutions for environmental sustainability, including renewable energy, smart cities, and waste management.",
+            "name": "FinTech Innovation",
+            "code": "MONETIZE",
+            "description": "Creating cutting-edge financial technologies \u2013 from blockchain solutions to automated trading systems.",
+            "keywords": [
+                "finance",
+                "blockchain",
+                "payments",
+                "investment",
+                "algorithms"
+            ]
+        },
+        {
+            "name": "Sustainable Solutions",
+            "code": "ECOSYSTEM",
+            "description": "Designing and implementing tech-driven approaches for environmental conservation, renewable energy, and sustainable practices.",
             "keywords": [
                 "sustainability",
                 "environment",
-                "renewable",
-                "energy",
-                "climate"
+                "renewable energy",
+                "climate change",
+                "conservation"
             ]
         },
         {
             "name": "Immersive Experiences",
-            "code": "VR_REALITY",
-            "description": "Building innovative applications for virtual reality, augmented reality, and mixed reality technologies.",
+            "code": "REALITY",
+            "description": "Building interactive virtual reality (VR) and augmented reality (AR) applications for entertainment, education, or training.",
             "keywords": [
                 "vr",
                 "ar",
-                "reality",
                 "immersive",
-                "digital"
+                "virtual reality",
+                "augmented reality"
             ]
         },
         {
             "name": "Logistics Optimization",
-            "code": "LOGISTICS_FLOW",
-            "description": "Creating solutions to improve logistics operations, including supply chain management, transportation, and warehousing.",
+            "code": "FLOWTRACKER",
+            "description": "Developing intelligent logistics systems for supply chain management, route optimization, and efficient delivery services.",
             "keywords": [
                 "logistics",
-                "supplychain",
-                "transportation",
-                "warehousing",
-                "optimization"
+                "supply chain",
+                "route optimization",
+                "delivery",
+                "transportation"
             ]
         }
     ],
     "metadata": {
-        "last_updated": "2025-04-19T01:23:37.782986",
-        "total_count": 6
+        "last_updated": "2025-04-19T11:27:44.052412",
+        "total_count": 5
     }
 }
