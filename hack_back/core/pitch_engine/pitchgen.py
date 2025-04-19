@@ -1,7 +1,7 @@
 import os
 import json
 import requests
-from search_engine_pitch import perform_search
+from .search_engine_pitch import perform_search
 
 LM_STUDIO_API_URL = "http://localhost:1234/v1/chat/completions"
 
@@ -45,16 +45,9 @@ def extract_json_from_response(response_text):
         print(f"Error parsing JSON from LM Studio response: {e}")
         return None
 
-def main():
-    readme_path = "README.md"
-    if os.path.isfile(readme_path):
-        with open(readme_path, "r", encoding="utf-8") as f:
-            project_description = f.read().strip()
-        idea_source = "readme"
-    else:
-        print("[!] No README.md found")
-        project_description = input("Enter project description: ").strip()
-        idea_source = "user"
+def generate_pitch_from_readme(readme_content):
+    idea_source = "readme"
+    project_description = readme_content.strip()
 
     print("Generating search queries...")
     system_prompt_queries = (
@@ -66,11 +59,11 @@ def main():
     queries_response = call_lm_studio(system_prompt_queries, user_prompt_queries)
     if not queries_response:
         print("Failed to generate search queries.")
-        return
+        return None
     queries_json = extract_json_from_response(queries_response)
     if not queries_json:
         print("Failed to parse search queries JSON.")
-        return
+        return None
     search_queries = queries_json.get("queries", [])
 
     search_results = {}
@@ -92,11 +85,11 @@ def main():
     analysis_response = call_lm_studio(system_prompt_analysis, user_prompt_analysis)
     if not analysis_response:
         print("Failed to get analysis from LM Studio.")
-        return
+        return None
     analysis_json = extract_json_from_response(analysis_response)
     if not analysis_json:
         print("Failed to parse analysis JSON.")
-        return
+        return None
     pros = analysis_json.get("pros", [])
     cons = analysis_json.get("cons", [])
 
@@ -121,7 +114,7 @@ def main():
     pitch_response = call_lm_studio(system_prompt_pitch, user_prompt_pitch)
     if not pitch_response:
         print("Failed to generate pitch.")
-        return
+        return None
     print("\nGenerated Pitch:\n")
     print(pitch_response)
 
@@ -157,10 +150,9 @@ def main():
         "judge_questions": judge_questions
     }
 
-    with open("pitch_data.json", "w", encoding="utf-8") as f:
-        json.dump(pitch_data, f, indent=2)
+    # Optionally save to file if needed
+    # with open("pitch_data.json", "w", encoding="utf-8") as f:
+    #     json.dump(pitch_data, f, indent=2)
 
-    print("\nFinal pitch created and saved to pitch_data.json")
-
-if __name__ == "__main__":
-    main()
+    print("\nFinal pitch data generated.")
+    return pitch_data

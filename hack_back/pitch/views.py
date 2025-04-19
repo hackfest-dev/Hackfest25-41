@@ -9,9 +9,30 @@ import os
 
 # Create your views here.
 
+from rest_framework import status
+from rest_framework.response import Response
+from readme.models import ReadmeSession
+from core.pitch_engine.pitchgen import generate_pitch_from_readme
+
 class GeneratePitchView(APIView):
     permission_classes = [IsAuthenticated]
     authentication_classes = [JWTAuthentication]
 
     def post(self, request):
-        pass
+        readme_session_id = request.data.get("readme_session_id")
+        if not readme_session_id:
+            return Response({"error": "readme_session_id is required"}, status=status.HTTP_400_BAD_REQUEST)
+        try:
+            readme_session = ReadmeSession.objects.get(id=readme_session_id)
+        except ReadmeSession.DoesNotExist:
+            return Response({"error": "ReadmeSession not found"}, status=status.HTTP_404_NOT_FOUND)
+
+        readme_content = readme_session.generated_readme if hasattr(readme_session, "readmefile") else None
+        if not readme_content:
+            return Response({"error": "Readme content not found for the given session"}, status=status.HTTP_404_NOT_FOUND)
+
+        pitch_data = generate_pitch_from_readme(readme_content)
+        if not pitch_data:
+            return Response({"error": "Failed to generate pitch"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+        return Response(pitch_data, status=status.HTTP_200_OK)
