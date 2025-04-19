@@ -1,0 +1,109 @@
+{
+    "hackathon_name": "we are 2200",
+    "generated_ideas": [
+        {
+            "id": 1,
+            "topic": "Logistics Optimization",
+            "text": "Develop a solution for FLOWTRACKER that utilizes machine learning to dynamically optimize delivery routes for a fleet of electric vehicles operating within a dense urban environment, considering real-time traffic data, weather forecasts, order volume predictions (based on historical sales data), and vehicle charging station availability. The system must generate optimized routes with estimated arrival times, prioritize minimizing total travel distance and delivery time, and provide a visual interface displaying the current route status for at least 10 simulated vehicles, delivering actionable insights within 48 hours.",
+            "created_at": "2025-04-19T11:29:19.578484",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 2,
+            "topic": "Logistics Optimization",
+            "text": "Develop a solution for FLOWTRACKER that predicts last-mile delivery delays using machine learning based on real-time weather data (API integration), historical delivery performance within a defined metropolitan area (at least 500 simulated deliveries), and publicly available traffic incident reports. The system must generate proactive rerouting suggestions with estimated delay impacts, prioritizing minimizing the potential for late deliveries and providing a concise dashboard displaying predicted delays and recommended alternative routes for at least 20 simulated delivery vehicles within a 48-hour timeframe.",
+            "created_at": "2025-04-19T11:29:19.578494",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 3,
+            "topic": "Logistics Optimization",
+            "text": "Develop a solution for FLOWTRACKER that utilizes AI-powered route optimization to dynamically manage a fleet of delivery trucks servicing a network of geographically dispersed retail stores. The system must ingest real-time location data via GPS, predict potential traffic congestion using historical data and current weather conditions, and optimize routes based on factors such as order volume at each store and truck capacity \u2013 generating optimized delivery schedules with estimated travel times for at least 5 simulated trucks within a 48-hour timeframe, delivering actionable route adjustments triggered by predictive delays.",
+            "created_at": "2025-04-19T11:29:19.578500",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 4,
+            "topic": "Logistics Optimization",
+            "text": "Develop a solution for FLOWTRACKER that predicts delivery time variability for parcel shipments across a defined city network utilizing machine learning. The system must ingest historical shipment data (including origin/destination, weather, and carrier performance), real-time traffic conditions via an API, and dynamically adjust route suggestions based on predicted delays \u2013 aiming to reduce average estimated delivery times by 15% compared to static routes. Deliverables include a functional prototype with simulated shipment tracking, a predictive model trained within the hackathon timeframe, and a visualization dashboard displaying potential delay impacts and optimized delivery routes for at least 30 simulated parcels.",
+            "created_at": "2025-04-19T11:29:19.578504",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 5,
+            "topic": "Logistics Optimization",
+            "text": "Develop a solution for FLOWTRACKER that utilizes AI to optimize delivery routes for a courier service operating within a single city, focusing solely on minimizing total travel time and distance. The system must ingest real-time traffic data via a simulated API (providing average speed and incident reports), historical order data for the past 24 hours (simulated), and dynamically generate optimized routes for 5 simulated delivery vehicles, presenting the proposed route with estimated arrival times and highlighting potential bottlenecks \u2013 the output should be a visually represented map interface displaying the optimal delivery sequence within 48 hours.",
+            "created_at": "2025-04-19T11:29:19.578508",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 6,
+            "topic": "Logistics Optimization",
+            "text": "Develop a solution for FLOWTRACKER that utilizes reinforcement learning to optimize delivery routes for a single, dynamically changing delivery zone \u2013 a defined downtown area with varying street closures (simulated) and fluctuating order volumes (simulated based on time of day). The system must learn optimal routing strategies by simulating 20 delivery vehicles attempting to fulfill orders within this zone over a 4-hour period, considering real-time simulated traffic congestion updates (every 5 minutes), estimated delivery times for each order based on distance and speed limits, and the goal of minimizing average delivery time per order. The deliverable is a functional simulation output displaying vehicle positions, order status, and dynamically adjusted routes over the 4-hour period, demonstrating the learning process and final route effectiveness.",
+            "created_at": "2025-04-19T11:29:19.578512",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 7,
+            "topic": "Logistics Optimization",
+            "text": "Develop a solution for FLOWTRACKER that utilizes machine learning to predict delivery time variability for same-day courier deliveries within a dense urban environment (simulated city with ~100 simulated addresses). The system must ingest historical delivery data (including distance, weather, driver speed), real-time traffic conditions via a simplified API simulating congestion levels (high, medium, low), and dynamically adjust suggested routes based on predicted delays \u2013 aiming to reduce average estimated delivery times by 10% compared to static routes. Deliverables include a functional prototype with simulated delivery tracking, a trained predictive model within the hackathon timeframe, and a concise dashboard displaying predicted delay impacts and optimized delivery routes for at least 15 simulated deliveries.",
+            "created_at": "2025-04-19T11:29:19.578516",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 8,
+            "topic": "Logistics Optimization",
+            "text": "Develop a solution for FLOWTRACKER that utilizes AI to dynamically optimize last-mile delivery routes for e-commerce parcels within a dense urban environment. The system must ingest real-time traffic data (simulated API with varying congestion levels), historical order data for the past hour (simulated, including delivery time windows), and weather conditions (simulated).  The solution should generate optimized route sequences for 3 simulated delivery vehicles, minimizing total distance traveled while adhering to specified delivery time windows \u2013 output a visual map interface displaying the optimal delivery sequence with estimated arrival times and highlighting potential congestion impacts within a 48-hour timeframe.",
+            "created_at": "2025-04-19T11:29:19.578519",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 9,
+            "topic": "Logistics Optimization",
+            "text": "Develop a solution for FLOWTRACKER that utilizes AI to optimize delivery routes for a perishable goods distributor operating in a city with dynamic traffic patterns and variable order volumes. The system must ingest real-time traffic data via a simulated API (providing speed limits and incident reports), historical delivery data for the past 6 hours (simulated, including temperature sensitivity of goods), and weather forecasts (simulated).  The solution should generate optimized route sequences for 2 delivery vehicles, prioritizing fastest delivery times while maintaining a target temperature range for the delivered goods \u2013 output a visual map interface displaying the optimal delivery sequence with estimated arrival times, predicted temperature deviations, and highlighting potential traffic bottlenecks within a 48-hour timeframe.",
+            "created_at": "2025-04-19T11:29:19.578523",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 10,
+            "topic": "Logistics Optimization",
+            "text": "Develop a solution for FLOWTRACKER that utilizes machine learning to optimize the sequencing of deliveries for a multi-stop courier service operating in a simulated urban environment. The system must ingest historical delivery data (3 hours), real-time traffic data via a simplified API simulating congestion levels (high, medium, low) and dynamically generate an optimized delivery sequence for 8 stops, prioritizing shortest *total* travel time while considering vehicle capacity constraints (simulated weight limits per vehicle). Deliverables include a functional algorithm outputting the optimal stop sequence with estimated transit times, a trained model demonstrating route optimization, and a concise report analyzing the impact of traffic congestion on the final delivery schedule.",
+            "created_at": "2025-04-19T11:29:19.578527",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        }
+    ],
+    "metadata": {
+        "last_updated": "2025-04-19T11:29:19.578461",
+        "total_count": 10
+    }
+}

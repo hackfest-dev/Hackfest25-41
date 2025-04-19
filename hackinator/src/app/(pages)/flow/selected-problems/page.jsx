@@ -1,11 +1,12 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import { useSearchParams } from 'next/navigation';
+import { useSearchParams, useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 
 export default function SelectedIdeasPage() {
   const searchParams = useSearchParams();
+  const router = useRouter();
   const [selectedIdeas, setSelectedIdeas] = useState([]);
 
   useEffect(() => {
@@ -47,6 +48,12 @@ export default function SelectedIdeasPage() {
     },
   };
 
+  const handleIdeaClick = (idea) => {
+    console.log('Sending to backend:', idea); // Simulated backend call
+    const topicQuery = encodeURIComponent(JSON.stringify(idea));
+    router.push(`/flow/discussion-page?topic=${topicQuery}`);
+  };
+
   return (
     <motion.div
       className="p-6 flex flex-col items-center"
@@ -70,10 +77,11 @@ export default function SelectedIdeasPage() {
         {selectedIdeas.map((idea, index) => (
           <motion.div
             key={index}
-            className="rounded-2xl p-6 h-44 flex flex-col justify-center 
+            onClick={() => handleIdeaClick(idea)}
+            className="cursor-pointer rounded-2xl p-6 h-44 flex flex-col justify-center 
                        border border-white/10 backdrop-blur-md 
                        shadow-[0_4px_20px_rgba(0,0,0,0.05)] 
-                       transition-all cursor-pointer"
+                       transition-all"
             variants={cardVariants}
             whileHover={{
               scale: 1.02,

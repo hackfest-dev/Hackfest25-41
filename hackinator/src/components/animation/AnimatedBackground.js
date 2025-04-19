@@ -15,7 +15,7 @@ export default function AnimatedBackground() {
       colors: [
         { color: '#0f0c29', enabled: true }, // deep violet/navy
         { color: '#302b63', enabled: true }, // rich indigo
-        { color: '#f5f5f5', enabled: true }, // soft white (for contrast)
+        { color: '#f5f0f5', enabled: true }, // soft white (for contrast)
         { color: '#24243e', enabled: true }, // muted dark purple
         { color: '#16213e', enabled: true }, // deep blue
       ]

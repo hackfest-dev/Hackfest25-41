@@ -399,10 +399,210 @@
                 "source": "LM Studio",
                 "model": "deepseek-r1-distill-llama-8b"
             }
+        },
+        {
+            "id": 41,
+            "topic": "Logistics & Supply Chain",
+            "text": "Develop a solution for optimizing the dynamic routing of refrigerated trucks transporting perishable goods across a simulated North American network, considering real-time temperature data, traffic conditions, and delivery time windows. Your system must utilize machine learning to predict potential spoilage based on transit times and dynamically adjust routes to minimize product loss, achieving a 15% reduction in predicted spoilage compared to static routing, while integrating with publicly available traffic APIs and displaying optimized routes via a user-friendly web interface.",
+            "created_at": "2025-04-19T12:27:44.788824",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 42,
+            "topic": "Logistics & Supply Chain",
+            "text": "Develop a solution for automating the optimization of parcel delivery routes within a dense urban environment utilizing real-time sensor data from drones and ground vehicles. Your system must integrate GPS tracking, weather forecasts via an API, and historical traffic patterns to generate optimized routes minimizing travel time and fuel consumption while considering drone operational constraints (e.g., no-fly zones) \u2013 deliverable: a functional prototype capable of generating and displaying optimized delivery routes for 10 simulated parcels within a defined city map with automated adjustments based on live sensor input.",
+            "created_at": "2025-04-19T12:27:47.516770",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 43,
+            "topic": "Logistics & Supply Chain",
+            "text": "Develop a solution for predicting last-mile delivery delays in a regional urban logistics network using machine learning and real-time data feeds. Your system must ingest historical delivery data, current traffic conditions via an API (e.g., Google Maps), weather forecasts, and GPS tracking of vehicles to predict potential delay probabilities for each delivery segment, outputting optimized routes prioritizing on-time deliveries and minimizing overall transit time \u2013 deliverable: a functional prototype capable of predicting delay probabilities with at least 70% accuracy and generating dynamically updated delivery routes displayed via a map interface.",
+            "created_at": "2025-04-19T12:27:50.363043",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 44,
+            "topic": "Logistics & Supply Chain",
+            "text": "Develop a solution for optimizing the routing of temperature-sensitive pharmaceutical shipments across a defined European network using reinforcement learning. Your system must integrate real-time weather data (API), historical shipment data, and dynamically adjust routes based on predicted delivery time windows and potential disruptions \u2013 achieving at least a 10% reduction in average transit times compared to traditional static route planning, while maintaining temperature thresholds within specified parameters and presenting optimized routes through an interactive dashboard displaying key performance indicators.",
+            "created_at": "2025-04-19T12:27:52.975642",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 45,
+            "topic": "Logistics & Supply Chain",
+            "text": "Develop a solution for optimizing the routing of autonomous delivery robots within a simulated urban logistics network, utilizing reinforcement learning to dynamically adjust routes based on real-time pedestrian density data (simulated API feed) and predicted delivery time windows. The system must minimize total travel distance while maintaining an average robot speed of 5 km/h, accounting for designated \u201cno-go\u201d zones (defined by polygon shapes) and providing a visual representation of optimized routes via a dynamic map interface with key metrics like estimated delivery time and energy consumption \u2013 deliverable: a functional prototype capable of simulating a 30-minute route optimization cycle.",
+            "created_at": "2025-04-19T12:27:56.039144",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 46,
+            "topic": "Logistics & Supply Chain",
+            "text": "Develop a solution for optimizing the consolidated delivery of e-commerce parcels within a defined metropolitan area using an AI-powered routing engine. Your system must ingest data from a simulated parcel tracking API (providing location, weight, dimensions, and estimated remaining transit time) alongside real-time traffic conditions via Google Maps API and dynamically generate optimized routes prioritizing shortest travel time while minimizing vehicle mileage \u2013 achieving a 10% reduction in average delivery distance compared to a manually created route. Deliverables include a functional prototype capable of generating and displaying optimized routes for 20 simulated parcels on an interactive map, along with key performance indicators (KPIs) such as total delivered distance, average transit time, and fuel consumption estimates, presented via a web interface.",
+            "created_at": "2025-04-19T12:27:59.471963",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 47,
+            "topic": "Logistics & Supply Chain",
+            "text": "Develop a solution for optimizing the routing of refrigerated truck shipments across a North American network using machine learning. Your system must ingest historical shipping data (temperature fluctuations, transit times), real-time weather forecasts via an API, and current traffic conditions via Google Maps to predict potential temperature excursions exceeding pre-defined thresholds. The system should dynamically adjust routes in real-time, prioritizing shortest delivery time while maintaining optimal temperature control within specified zones, outputting optimized routes visualized on a map interface with alerts for potential deviations \u2013 deliverable: a functional prototype capable of simulating 3 truck shipments across a defined US/Canada route network and demonstrating a reduction in average transit time by at least 5% compared to a static, shortest-distance routing algorithm.",
+            "created_at": "2025-04-19T12:28:03.025753",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 48,
+            "topic": "Logistics & Supply Chain",
+            "text": "Develop a solution for optimizing the delivery routes of a fleet of electric cargo bikes within a dense urban environment (1 square mile) using real-time traffic data via an open API (e.g., TomTom), predicted dwell times at customer drop-off points based on historical order data, and dynamic charging station availability. The system must prioritize minimizing total travel distance and energy consumption for the fleet while meeting pre-defined delivery time windows for each package \u2013 deliverable: a functional prototype capable of generating optimized routes for 10 simulated deliveries per hour displayed via a map interface showing real-time vehicle location, predicted arrival times, and remaining battery levels.",
+            "created_at": "2025-04-19T12:28:06.369862",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 49,
+            "topic": "Logistics & Supply Chain",
+            "text": "Develop a solution for optimizing the routing of same-day delivery vehicles within a dense urban area (5 square miles) using real-time traffic data via a simulated TomTom API, predicted dwell times at drop-off points based on historical order data, and dynamically available loading docks (simulated API feed). Your system must prioritize minimizing total travel distance and fuel consumption while adhering to pre-defined delivery time windows for each package \u2013 the solution should generate optimized routes displayed on an interactive map interface showing vehicle location, estimated arrival times, and remaining delivery capacity; additionally, the system needs to automatically adjust routes based on a simulated 15-minute delay due to unexpected road closures (simulated API event) impacting a randomly selected segment of the delivery zone.",
+            "created_at": "2025-04-19T12:28:10.038248",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 50,
+            "topic": "Logistics & Supply Chain",
+            "text": "Develop a solution for optimizing last-mile delivery routes for a hyperlocal grocery store chain utilizing real-time order data, dynamic traffic information (via a simulated Google Maps API), and pre-defined service time windows. The system must dynamically adjust routes based on predicted delivery urgency (prioritized by order age) and current road conditions, aiming to minimize the average delivery distance within a 3-mile radius for each order while maintaining an average delivery time of under 30 minutes \u2013 deliverable: a functional prototype capable of simulating route optimization for 50 simulated orders per hour displayed on a map interface with key metrics including total distance traveled, average delivery time, and fuel efficiency (simulated), incorporating a mechanism to reroute due to a simulated 10-minute traffic delay.",
+            "created_at": "2025-04-19T12:28:13.788963",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 51,
+            "topic": "Logistics & Supply Chain",
+            "text": "Develop a solution for optimizing the dynamic routing of refrigerated trucks transporting perishable goods across a simulated North American network, considering real-time temperature data, traffic conditions, and delivery time windows. Your system must utilize machine learning to predict potential spoilage based on transit times and dynamically adjust routes to minimize product loss, achieving a 15% reduction in predicted spoilage compared to static routing, while integrating with publicly available traffic APIs and displaying optimized routes via a user-friendly web interface.",
+            "created_at": "2025-04-19T12:28:14.791090",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 52,
+            "topic": "Logistics & Supply Chain",
+            "text": "Develop a solution for automating the optimization of parcel delivery routes within a dense urban environment utilizing real-time sensor data from drones and ground vehicles. Your system must integrate GPS tracking, weather forecasts via an API, and historical traffic patterns to generate optimized routes minimizing travel time and fuel consumption while considering drone operational constraints (e.g., no-fly zones) \u2013 deliverable: a functional prototype capable of generating and displaying optimized delivery routes for 10 simulated parcels within a defined city map with automated adjustments based on live sensor input.",
+            "created_at": "2025-04-19T12:28:14.791104",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 53,
+            "topic": "Logistics & Supply Chain",
+            "text": "Develop a solution for predicting last-mile delivery delays in a regional urban logistics network using machine learning and real-time data feeds. Your system must ingest historical delivery data, current traffic conditions via an API (e.g., Google Maps), weather forecasts, and GPS tracking of vehicles to predict potential delay probabilities for each delivery segment, outputting optimized routes prioritizing on-time deliveries and minimizing overall transit time \u2013 deliverable: a functional prototype capable of predicting delay probabilities with at least 70% accuracy and generating dynamically updated delivery routes displayed via a map interface.",
+            "created_at": "2025-04-19T12:28:14.791109",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 54,
+            "topic": "Logistics & Supply Chain",
+            "text": "Develop a solution for optimizing the routing of temperature-sensitive pharmaceutical shipments across a defined European network using reinforcement learning. Your system must integrate real-time weather data (API), historical shipment data, and dynamically adjust routes based on predicted delivery time windows and potential disruptions \u2013 achieving at least a 10% reduction in average transit times compared to traditional static route planning, while maintaining temperature thresholds within specified parameters and presenting optimized routes through an interactive dashboard displaying key performance indicators.",
+            "created_at": "2025-04-19T12:28:14.791113",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 55,
+            "topic": "Logistics & Supply Chain",
+            "text": "Develop a solution for optimizing the routing of autonomous delivery robots within a simulated urban logistics network, utilizing reinforcement learning to dynamically adjust routes based on real-time pedestrian density data (simulated API feed) and predicted delivery time windows. The system must minimize total travel distance while maintaining an average robot speed of 5 km/h, accounting for designated \u201cno-go\u201d zones (defined by polygon shapes) and providing a visual representation of optimized routes via a dynamic map interface with key metrics like estimated delivery time and energy consumption \u2013 deliverable: a functional prototype capable of simulating a 30-minute route optimization cycle.",
+            "created_at": "2025-04-19T12:28:14.791117",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 56,
+            "topic": "Logistics & Supply Chain",
+            "text": "Develop a solution for optimizing the consolidated delivery of e-commerce parcels within a defined metropolitan area using an AI-powered routing engine. Your system must ingest data from a simulated parcel tracking API (providing location, weight, dimensions, and estimated remaining transit time) alongside real-time traffic conditions via Google Maps API and dynamically generate optimized routes prioritizing shortest travel time while minimizing vehicle mileage \u2013 achieving a 10% reduction in average delivery distance compared to a manually created route. Deliverables include a functional prototype capable of generating and displaying optimized routes for 20 simulated parcels on an interactive map, along with key performance indicators (KPIs) such as total delivered distance, average transit time, and fuel consumption estimates, presented via a web interface.",
+            "created_at": "2025-04-19T12:28:14.791121",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 57,
+            "topic": "Logistics & Supply Chain",
+            "text": "Develop a solution for optimizing the routing of refrigerated truck shipments across a North American network using machine learning. Your system must ingest historical shipping data (temperature fluctuations, transit times), real-time weather forecasts via an API, and current traffic conditions via Google Maps to predict potential temperature excursions exceeding pre-defined thresholds. The system should dynamically adjust routes in real-time, prioritizing shortest delivery time while maintaining optimal temperature control within specified zones, outputting optimized routes visualized on a map interface with alerts for potential deviations \u2013 deliverable: a functional prototype capable of simulating 3 truck shipments across a defined US/Canada route network and demonstrating a reduction in average transit time by at least 5% compared to a static, shortest-distance routing algorithm.",
+            "created_at": "2025-04-19T12:28:14.791125",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 58,
+            "topic": "Logistics & Supply Chain",
+            "text": "Develop a solution for optimizing the delivery routes of a fleet of electric cargo bikes within a dense urban environment (1 square mile) using real-time traffic data via an open API (e.g., TomTom), predicted dwell times at customer drop-off points based on historical order data, and dynamic charging station availability. The system must prioritize minimizing total travel distance and energy consumption for the fleet while meeting pre-defined delivery time windows for each package \u2013 deliverable: a functional prototype capable of generating optimized routes for 10 simulated deliveries per hour displayed via a map interface showing real-time vehicle location, predicted arrival times, and remaining battery levels.",
+            "created_at": "2025-04-19T12:28:14.791138",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 59,
+            "topic": "Logistics & Supply Chain",
+            "text": "Develop a solution for optimizing the routing of same-day delivery vehicles within a dense urban area (5 square miles) using real-time traffic data via a simulated TomTom API, predicted dwell times at drop-off points based on historical order data, and dynamically available loading docks (simulated API feed). Your system must prioritize minimizing total travel distance and fuel consumption while adhering to pre-defined delivery time windows for each package \u2013 the solution should generate optimized routes displayed on an interactive map interface showing vehicle location, estimated arrival times, and remaining delivery capacity; additionally, the system needs to automatically adjust routes based on a simulated 15-minute delay due to unexpected road closures (simulated API event) impacting a randomly selected segment of the delivery zone.",
+            "created_at": "2025-04-19T12:28:14.791141",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 60,
+            "topic": "Logistics & Supply Chain",
+            "text": "Develop a solution for optimizing last-mile delivery routes for a hyperlocal grocery store chain utilizing real-time order data, dynamic traffic information (via a simulated Google Maps API), and pre-defined service time windows. The system must dynamically adjust routes based on predicted delivery urgency (prioritized by order age) and current road conditions, aiming to minimize the average delivery distance within a 3-mile radius for each order while maintaining an average delivery time of under 30 minutes \u2013 deliverable: a functional prototype capable of simulating route optimization for 50 simulated orders per hour displayed on a map interface with key metrics including total distance traveled, average delivery time, and fuel efficiency (simulated), incorporating a mechanism to reroute due to a simulated 10-minute traffic delay.",
+            "created_at": "2025-04-19T12:28:14.791144",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
         }
     ],
     "metadata": {
-        "last_updated": "2025-04-19T11:29:19.598351",
-        "total_count": 40
+        "last_updated": "2025-04-19T12:28:14.791148",
+        "total_count": 60
     }
 }

@@ -157,43 +157,31 @@ def get_search_results(theme):
     print(f"Found {len(unique_results)} relevant search results.")
     return unique_results[:10]  # Limit to 10 results
 
-import requests
-import os
-
-BING_SEARCH_API_KEY = os.getenv("BING_SEARCH_API_KEY")  # User must set this environment variable
-BING_SEARCH_ENDPOINT = "https://api.bing.microsoft.com/v7.0/search"
+from duckduckgo_search import DDGS
 
 def simulate_web_search(query, theme):
-    """Perform real web search using Bing Search API."""
-    if not BING_SEARCH_API_KEY:
-        print("BING_SEARCH_API_KEY not set. Falling back to simulated search results.")
-        return simulate_web_search_fallback(query, theme)
-    
-    headers = {"Ocp-Apim-Subscription-Key": BING_SEARCH_API_KEY}
-    params = {"q": query, "count": 5, "textDecorations": True, "textFormat": "HTML"}
-    
+    """Perform real web search using DuckDuckGo Search."""
     try:
-        response = requests.get(BING_SEARCH_ENDPOINT, headers=headers, params=params, timeout=10)
-        response.raise_for_status()
-        data = response.json()
-        
-        results = []
-        web_pages = data.get("webPages", {}).get("value", [])
-        for item in web_pages:
-            results.append({
-                "title": item.get("name", ""),
-                "snippet": item.get("snippet", ""),
-                "link": item.get("url", "")
-            })
-        
+        ddgs = DDGS()
+        # Strip quotes from query to avoid exact phrase limiting
+        clean_query = query.strip('"').strip("'")
+        results = list(ddgs.text(clean_query, max_results=15))
+        print(f"DuckDuckGo returned {len(results)} results for query: {clean_query}")
         if not results:
-            print("No results from Bing Search API, falling back to simulated results.")
+            print("No results found from DuckDuckGo, falling back to simulated search results.")
             return simulate_web_search_fallback(query, theme)
         
-        return results[:3]  # Return top 3 results
+        formatted_results = []
+        for item in results:
+            formatted_results.append({
+                "title": item.get("title", ""),
+                "snippet": item.get("body", ""),
+                "link": item.get("href", "")
+            })
+        return formatted_results[:10]  # Return top 10 results
     
     except Exception as e:
-        print(f"Error during Bing Search API call: {e}")
+        print(f"Error during DuckDuckGo Search call: {e}")
         print("Falling back to simulated search results.")
         return simulate_web_search_fallback(query, theme)
 
