@@ -94,14 +94,10 @@ export default function ChatInterface() {
         {/* Chat Window */}
         <div className="flex flex-col flex-1">
           {/* Header */}
-          <div className='flex items-center justify-between px-6 py-4 bg-white/10 backdrop-blur-xl border-b border-white/20'>
-            <div className="px-5 py-3 text-white text-md font-semibold shadow-md">
-              Hackinator 🤖
+            <div className="px-5 py-3 text-white text-md bg-white/10 backdrop-blur-xl border-b border-white/20 font-semibold shadow-md">
+              Hackinator
             </div>
-            <div className=" text-white text-md shadow-md">
-              <input type="radio" /> Research
-            </div>
-          </div>
+
 
           {/* Selected Topic Display */}
           {selectedTopic && (
@@ -138,24 +134,30 @@ export default function ChatInterface() {
           </div>
 
           {/* Input Box */}
-          <div className="px-6 py-4 bg-white/10 backdrop-blur-xl border-t border-white/20 flex items-center">
-            <div className="relative w-full">
-              <input
-                type="text"
-                placeholder="Type a message..."
-                value={input}
-                onChange={(e) => setInput(e.target.value)}
-                onKeyDown={(e) => e.key === 'Enter' && handleSend()}
-                className="w-full p-3 pr-16 rounded-full bg-white/10 backdrop-blur-md text-white border border-white/20 placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white/30 text-sm"
-              />
-              <button
-                onClick={handleSend}
-                className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/15 hover:bg-white/20 text-white px-5 py-2 rounded-full text-xs transition duration-200 backdrop-blur-sm"
-              >
-                Send
-              </button>
+          <div className="px-6 py-4 bg-white/10 backdrop-blur-xl border-t border-white/20">
+            <div className="flex flex-col gap-2">
+              <div className="relative w-full">
+                <input
+                  type="text"
+                  placeholder="Type a message..."
+                  value={input}
+                  onChange={(e) => setInput(e.target.value)}
+                  onKeyDown={(e) => e.key === 'Enter' && handleSend()}
+                  className="w-full p-3 pr-16 rounded-full bg-white/10 backdrop-blur-md text-white border border-white/20 placeholder:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white/30 text-sm"
+                />
+                <button
+                  onClick={handleSend}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/15 hover:bg-white/20 text-white px-5 py-2 rounded-full text-xs transition duration-200 backdrop-blur-sm"
+                >
+                  Send
+                </button>
+              </div>
+              <div className="flex items-center gap-2 text-white text-sm pl-2">
+                <input type="radio" id="research" name="mode" />
+                <label htmlFor="research">Research</label>
+              </div>
             </div>
-          </div>
+          </div>  
         </div>
       </div>
     </div>

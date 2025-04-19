@@ -11,7 +11,7 @@ export default function FuturisticReadme() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="w-4/5 md:w-70 mx-auto" // 70% width and centered
+        className="w-[850px] md:w-70 mx-auto" // 70% width and centered
       >
         {/* Main content container */}
         <div className="rounded-lg overflow-hidden shadow-2xl bg-gray-800 border border-gray-700">
