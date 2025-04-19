@@ -1,5 +1,5 @@
 // app/components/pages/Pith/PitchInput.jsx
-'use client';
+'use client'
 import React, { useState } from 'react';
 
 const PitchInput = ({ mode }) => {

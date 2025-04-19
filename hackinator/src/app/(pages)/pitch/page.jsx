@@ -1,9 +1,11 @@
-import PithFlow from '@/components/pages/Pith/Pith'
 import React from 'react'
+import Pitchgeneration from '../../../components/pages/Pitch/Pitchgeneration'
 
 export default function Pith() {
   return (
-    <div><PithFlow/></div>
+    <div>
+      <Pitchgeneration/>
+    </div>
     
   )
 }

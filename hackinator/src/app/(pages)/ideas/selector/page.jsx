@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
-import Thankyou from '@/components/ThankYou/Tahnkyou';
+import Thankyou from '../../../../components/ThankYouPath/Tahnkyou';
 
 export default function SelectedIdeasPageOnly() {
   const searchParams = useSearchParams();
@@ -125,15 +125,6 @@ export default function SelectedIdeasPageOnly() {
             )}
             </AnimatePresence>
         </div>
-
-        <motion.h4
-        className="text-2xl sm:text-3xl font-bold text-center mt-10"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: 'easeOut' }}
-      >
-        Be unstoppable and keep going!
-      </motion.h4>
     </motion.div>
   );
 }
