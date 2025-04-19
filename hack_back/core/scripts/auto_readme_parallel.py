@@ -183,7 +183,7 @@ def get_ai_generated_readme(repository_data, repo_owner, repo_name):
         repo_summary += f"\n{file['path']}:\n{file['content'][:500]}...\n"
     
     payload = {
-        "model": "gemma-3-1b-it",
+        "model": "gemma-3-4b-it",
         "messages": [
             {"role": "system", "content": system_message},
             {"role": "user", "content": repo_summary}
