@@ -21,11 +21,11 @@ export default function Hackinator() {
     { title: 'Pitch only', icon: LightBulbIcon, videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', pageLink: '/pitch' },
     { title: 'Readme Only', icon: DocumentTextIcon, videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', pageLink: '/readme' },
     { title: 'Discussion only', icon: ChatBubbleLeftRightIcon, videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', pageLink: '/discussion' },
-    { title: 'Idea only', icon: EyeIcon, videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', pageLink: '/idea' },
+    { title: 'Idea only', icon: EyeIcon, videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', pageLink: '/ideas' },
     { title: 'Go With Flow', icon: RocketLaunchIcon, videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', pageLink: '/flow' },
   ];
 
-  const handleCardHover = (feature) => {
+  const handleCardClick = (feature) => {
     setModalContent(feature);
     setModalOpen(true);
   };
@@ -106,12 +106,20 @@ export default function Hackinator() {
           >
             <motion.div
               ref={modalRef}
-              className="bg-white p-6 rounded-2xl shadow-xl max-w-xl w-full text-center flex flex-col"
+              className="bg-white p-6 rounded-2xl shadow-xl max-w-xl w-full text-center flex flex-col relative"
               variants={modalVariants}
               initial="hidden"
               animate="visible"
               exit="exit"
             >
+              {/* Close Button */}
+              <button
+                onClick={closeModal}
+                className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-xl"
+              >
+                &times;
+              </button>
+
               <motion.div className="p-6 mb-4" variants={contentFade} initial="hidden" animate="visible">
                 <h3 className="text-2xl font-bold text-indigo-800 mb-4">{modalContent.title}</h3>
                 <p className="text-gray-600 mb-4">
@@ -157,7 +165,7 @@ export default function Hackinator() {
               <div
                 key={idx}
                 className="border bg-slate-200 border-indigo-300 p-8 rounded-xl text-base shadow-md hover:shadow-xl transition cursor-pointer flex flex-col items-center w-72"
-                onMouseEnter={() => handleCardHover(feature)}
+                onClick={() => handleCardClick(feature)}
               >
                 <Icon className="h-14 w-14 text-indigo-500 mb-4" />
                 <div className="font-semibold text-indigo-700 text-xl mb-2">{feature.title}</div>
@@ -176,7 +184,7 @@ export default function Hackinator() {
               <div
                 key={idx}
                 className="border bg-slate-200 border-indigo-300 p-8 rounded-xl text-base shadow-md hover:shadow-xl transition cursor-pointer flex flex-col items-center w-72"
-                onMouseEnter={() => handleCardHover(feature)}
+                onClick={() => handleCardClick(feature)}
               >
                 <Icon className="h-14 w-14 text-indigo-500 mb-4" />
                 <div className="font-semibold text-indigo-700 text-xl mb-2">{feature.title}</div>

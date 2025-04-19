@@ -12,11 +12,8 @@ export default function App() {
   }, []);
 
   return (
-    // <AnimatedBackground>
       <div className="relative">
         <HackinatorLayout/>
-        <Thankyou/>
       </div>
-    // </AnimatedBackground>
   );
 }

@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import React from "react";
-import confetti from "canvas-confetti";
+import React, { useEffect } from 'react';
+import confetti from 'canvas-confetti';
 
 export default function Thankyou() {
-  const handleClick = () => {
+  useEffect(() => {
     const duration = 5 * 1000;
     const animationEnd = Date.now() + duration;
     const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
@@ -31,13 +31,7 @@ export default function Thankyou() {
         origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 },
       });
     }, 250);
-  };
+  }, []);
 
-  return (
-    <div className="relative">
-      <button onClick={handleClick} className="px-4 py-2 bg-blue-600 text-white rounded">
-        Trigger Fireworks
-      </button>
-    </div>
-  );
+  return null; // Nothing to render visually
 }

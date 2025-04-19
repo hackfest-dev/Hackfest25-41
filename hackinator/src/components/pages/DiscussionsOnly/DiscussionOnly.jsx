@@ -5,7 +5,7 @@ import { FiMenu, FiChevronLeft } from 'react-icons/fi';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 
-export default function ChatInterface() {
+export default function DiscussionsOnly() {
   const searchParams = useSearchParams();
   const topicParam = searchParams.get('topic');
   const selectedTopic = topicParam ? JSON.parse(decodeURIComponent(topicParam)) : null;
