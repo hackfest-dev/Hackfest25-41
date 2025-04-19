@@ -3,12 +3,13 @@
 import React, { useEffect, useState } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
+import axios from 'axios';
 
 export default function SelectedIdeasPage() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const [selectedIdeas, setSelectedIdeas] = useState([]);
-
+  
   useEffect(() => {
     const ideasParam = searchParams.get('ideas');
     if (ideasParam) {
@@ -19,6 +20,24 @@ export default function SelectedIdeasPage() {
         console.error('Failed to parse ideas:', e);
       }
     }
+    
+    // Send GET request to backend when component is mounted
+    const fetchIdeas = async () => {
+      try {
+        const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ1MTA3ODcyLCJpYXQiOjE3NDUxMDQyNzIsImp0aSI6IjliYWZjMjAyNmFkNjRhMGM4ZmJjNjA5OTg3ZmUxYzg1IiwidXNlcl9pZCI6Mn0.PHN5odgydL2MgvxxRNLTY5S-_a9AGJT1kK7MF3DG5oQ'; // Replace this with the actual token you want to send
+        const response = await axios.post('http://127.0.0.1:8000/api/ideas/27/generate/', {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        console.log(response.data);
+        // You can update the selectedIdeas or perform other actions based on the response.
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchIdeas();
   }, [searchParams]);
 
   const handleIdeaClick = (idea) => {
@@ -26,7 +45,6 @@ export default function SelectedIdeasPage() {
     router.push(`/flow/discussion-page?topic=${topicQuery}`);
   };
 
-  // New layout configuration
   const getLayoutConfig = (length) => {
     if (length === 1) return 'single';
     if (length === 2) return 'double';

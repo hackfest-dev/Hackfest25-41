@@ -99,7 +99,7 @@ class CreateHackathonView(APIView):
             else:
                 # Fallback: treat result as list of themes and generate title
                 themes = result
-                hackathon_title = themes[0]['hackathon header'] + " Hackathon" if themes else "Hackathon Session"
+                hackathon_title = " Hackathon" if themes else "Hackathon Session"
 
             # Save hackathon title in HackathonSession
             session = HackathonSession.objects.create(user=user, title=hackathon_title)

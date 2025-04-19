@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { toast } from 'react-toastify';
 import { useRouter } from 'next/navigation';
+import axios from 'axios';
 
 export default function IdeaFlow() {
   const [idea, setIdea] = useState('');
@@ -26,16 +27,27 @@ export default function IdeaFlow() {
     setLoading(true);
     setErrorMessage('');
     try {
-      await new Promise((resolve) => setTimeout(resolve, 2000));
-      const dummyThemes = [
-        "AI-powered learning assistant",
-        "Braille-to-speech converter",
-        "Voice-based classroom notes",
-        "Smart attendance system",
-        "Offline audio content generator"
-      ];
-      setThemeOptions(dummyThemes);
-      setShowThemes(true);
+      const formData = new FormData();
+      formData.append('file', file);
+      formData.append('text', idea);
+
+      const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ1MTA1OTU0LCJpYXQiOjE3NDUxMDIzNTQsImp0aSI6IjA5MjMzYmUzNzUxNTRmZjM4ZjNiYjgyMmI5MGFhNzhlIiwidXNlcl9pZCI6Mn0.2ent3BJbNMiyhEAgAO0oriRPsTIw_NueNL3evxEEMjE"; // or wherever you're storing it
+
+      console.log('token', token);
+
+      const response = await axios.post(`http://127.0.0.1:8000/api/session/create/`, formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+          'Authorization': `Bearer ${token}`
+        },
+      });
+
+      console.log('response', response);
+      
+
+      setThemeOptions(response.data.themes);
+      console.log('themeOptions', themeOptions);
+      setShowThemes(true);    
       setLoading(false);
       toast.success("Idea and file uploaded successfully!", { position: "top-center" });
       toast.info("Themes generated. Please select one.", { position: "top-center" });
@@ -53,13 +65,40 @@ export default function IdeaFlow() {
     );
   };
 
-  const handleFinalSubmit = () => {
+  const handleFinalSubmit = async () => {
     const finalSelection = [...selectedThemes];
     if (customTheme.trim()) finalSelection.push(customTheme.trim());
-
-    toast.success(`Selected theme sent to server!`, { position: "top-center" });
-    router.push('/flow/problem-selector');
+  
+    setLoading(true);
+  
+    try {
+      const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ1MTA3NTIyLCJpYXQiOjE3NDUxMDM5MjIsImp0aSI6IjUyMmJjM2E3YTYxNDQzMDM4ZWNhYWYzYzVkYjMzODZiIiwidXNlcl9pZCI6Mn0.Qrbz3rl_M9_eYcPyXy1K2iJiWHqiOYS2tq4vXNJAfhA"; // Get your token securely
+  
+      // Send the selected themes to the backend
+      const response = await axios.post(
+        `http://127.0.0.1:8000/api/session/themes/29/add/`, 
+        { themes: finalSelection },
+        {
+          headers: {
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/json'
+          }
+        }
+      );
+  
+      // Handle the response (if needed)
+      console.log('Selected themes sent:', response.data);
+  
+      toast.success('Selected theme(s) sent to the server!', { position: "top-center" });
+      router.push('/flow/problem-selector'); // Redirect after submission
+    } catch (error) {
+      setLoading(false);
+      const errorText = error.message || 'There was an error sending the selected theme(s).';
+      toast.error(errorText);
+      console.error('Error sending selected themes:', error);
+    }
   };
+  
 
   const containerVariants = {
     hidden: { opacity: 0, y: 50 },
@@ -159,19 +198,22 @@ export default function IdeaFlow() {
 
           <div className="grid md:grid-cols-2 gap-6">
             {themeOptions.map((theme, idx) => (
-              <motion.div
-                key={idx}
-                className={`flex items-center justify-between border border-gray-300 rounded-xl p-4 transition-all duration-200 hover:shadow-lg ${selectedThemes.includes(theme) ? 'ring-2 ring-purple-500' : ''}`}
-                whileHover={{ scale: 1.02 }}
-              >
-                <span className="text-lg font-medium">{theme}</span>
-                <button
-                  className={`px-4 py-1.5 text-sm rounded-full font-semibold transition-all duration-200 ${selectedThemes.includes(theme) ? 'bg-purple-600 text-white' : 'bg-white/10 hover:bg-white/20'}`}
-                  onClick={() => handleThemeSelect(theme)}
-                >
-                  {selectedThemes.includes(theme) ? '✓ Selected' : 'Select'}
-                </button>
-              </motion.div>
+             <motion.div
+             key={idx}
+             className={`flex flex-col gap-2 border border-gray-300 rounded-xl p-4 transition-all duration-200 hover:shadow-lg ${selectedThemes.includes(theme) ? 'ring-2 ring-purple-500' : ''}`}
+             whileHover={{ scale: 1.02 }}
+           >
+             <div className="flex justify-between items-center">
+               <span className="text-lg font-semibold">{theme.name}</span>
+               <button
+                 className={`px-4 py-1.5 text-sm rounded-full font-semibold transition-all duration-200 ${selectedThemes.includes(theme) ? 'bg-purple-600 text-white' : 'bg-white/10 hover:bg-white/20'}`}
+                 onClick={() => handleThemeSelect(theme)}
+               >
+                 {selectedThemes.includes(theme) ? '✓ Selected' : 'Select'}
+               </button>
+             </div>
+             <p className="text-sm text-gray-500">{theme.description}</p>
+           </motion.div>
             ))}
           </div>
 
