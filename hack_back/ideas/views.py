@@ -8,12 +8,14 @@ from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework.permissions import IsAuthenticated
 from rest_framework_simplejwt.authentication import JWTAuthentication
 from .models import HackathonSession
+from hackathon.models import ThemeSelection
 from core.pusher import pusher_client
 from core.theme_extractor import extract_themes_from_text
-# from core import problem_generator, storage
+from core.scripts.main import process_themes
 import logging
 import io
 import json
+import os
 
 # Create your views here.
 
@@ -23,55 +25,43 @@ class GenerateIdeasView(APIView):
     authentication_classes = [JWTAuthentication]
 
     def post(self, request, session_id):
-        import os
-        from core import problem_generator, storage
-        import json
-
-        generated_ideas_path = os.path.join('core', 'generated_ideas.json')
-        problem_statements_path = os.path.join('core', 'problem_statements.json')
+        generated_ideas_path = os.path.join('core', 'scripts', 'generated_ideas.json')
 
         # For demonstration, define a theme for generation (could be dynamic)
-        theme = {
-            "name": "Default Theme",
-            "code": "default",
-            "description": "Default theme description",
-            "keywords": ["innovation", "technology", "solution"]
-        }
+        try:
+            session = HackathonSession.objects.get(id=session_id)
+        except HackathonSession.DoesNotExist:
+            return Response({"error": "HackathonSession not found."}, status=404)
 
-        # Load existing problem statements texts to avoid duplicates
-        existing_problems = storage.get_existing_problem_texts()
+        # Get theme names from ThemeSelection related to this session
+        theme_names = list(session.themes.values_list('theme_name', flat=True))
+        if not theme_names:
+            return Response({"error": "No themes found for this session."}, status=404)
 
-        # Generate problem statements using AI
-        generated_statements = problem_generator.generate_problem_statements(theme, [], existing_problems, max_ideas=3)
+        # Import the converter function from core.scripts.main
+        from core.scripts.main import convert_theme_names_to_objects
 
-        # Append generated ideas in generated_ideas.json with unique ids and session handling
-        storage.append_generated_ideas("Hackathon", theme["name"], generated_statements, session_id, file_path=generated_ideas_path)
+        # Convert theme names to theme objects expected by process_themes
+        themes = convert_theme_names_to_objects(theme_names)
 
-        # Add generated ideas to problem_statements.json
-        storage.add_problem_statements(theme["name"], generated_statements, file_path=problem_statements_path)
+        # Call process_themes with the list of theme objects and hackathon name
+        process_themes(themes, "Hackathon")
 
-        # Append generated ideas in generated_ideas.json with unique ids and session handling
-        appended_count = storage.append_generated_ideas("Hackathon", theme["name"], generated_statements, session_id, file_path=generated_ideas_path)
 
-        # Add generated ideas to problem_statements.json
-        storage.add_problem_statements(theme["name"], generated_statements, file_path=problem_statements_path)
-
-        # Load updated generated_ideas.json to get all ideas for this session
+        # Load updated generated_ideas.json to get all ideas
         with open(generated_ideas_path, 'r') as f:
             generated_data = json.load(f)
 
-        # Get the last appended ideas based on appended_count
         all_ideas = generated_data.get("generated_ideas", [])
-        last_ideas = all_ideas[-appended_count:] if appended_count > 0 else []
 
-        # Prepare response data with consistent unique ids for newly added ideas
+        # Prepare response data
         response_ideas = []
-        for idea in last_ideas:
+        for idea in all_ideas:
             response_ideas.append({
-                "id": idea["id"],
+                "id": idea.get("id", ""),
                 "theme": idea.get("topic", ""),
-                "title": idea["text"][:50],  # Use first 50 chars as title
-                "text": idea["text"]
+                "title": idea.get("text", "")[:50],  # Use first 50 chars as title
+                "text": idea.get("text", "")
             })
 
         return Response({"session_id": session_id, "ideas": response_ideas}, status=200)

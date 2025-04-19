@@ -1,0 +1,17 @@
+{
+    "hackathon_name": "Hackathon",
+    "tracks": [
+        {
+            "name": "['Healthcare', 'Edutech', 'Sustainable Development']",
+            "code": "GENERIC",
+            "description": "Innovative solutions in ['healthcare', 'edutech', 'sustainable development']",
+            "keywords": [
+                "['healthcare', 'edutech', 'sustainable development']"
+            ]
+        }
+    ],
+    "metadata": {
+        "last_updated": "2025-04-19T11:20:41.550930",
+        "total_count": 1
+    }
+}
