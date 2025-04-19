@@ -23,45 +23,55 @@ class GenerateIdeasView(APIView):
     authentication_classes = [JWTAuthentication]
 
     def post(self, request, session_id):
-        try:
-            # Validate session exists
-            session = HackathonSession.objects.filter(id=session_id).first()
-            if not session:
-                return Response({"error": "Invalid session_id"}, status=status.HTTP_404_NOT_FOUND)
+        import os
+        from core import problem_generator, storage
+        import json
 
-            # Extract theme info from session or related data
-            # Fetch theme_name from ThemeSelection related to session
-            theme_name = "Default Theme"
-            theme_code = "default"
-            theme_description = "Default theme description"
-            theme_keywords = []
+        generated_ideas_path = os.path.join('core', 'generated_ideas.json')
+        problem_statements_path = os.path.join('core', 'problem_statements.json')
 
-            theme_selections = session.themes.all()
-            if theme_selections.exists():
-                theme_name = theme_selections[0].theme_name
-                # TODO: Fetch theme_code, description, keywords from a theme details source if available
+        # For demonstration, define a theme for generation (could be dynamic)
+        theme = {
+            "name": "Default Theme",
+            "code": "default",
+            "description": "Default theme description",
+            "keywords": ["innovation", "technology", "solution"]
+        }
 
-            theme = {
-                "name": theme_name,
-                "code": theme_code,
-                "description": theme_description,
-                "keywords": theme_keywords,
-                "session_id": session_id
-            }
+        # Load existing problem statements texts to avoid duplicates
+        existing_problems = storage.get_existing_problem_texts()
 
-            # Get existing problems to avoid duplicates
-            existing_problems = storage.get_existing_problem_texts()
+        # Generate problem statements using AI
+        generated_statements = problem_generator.generate_problem_statements(theme, [], existing_problems, max_ideas=3)
 
-            # Generate ideas using core problem_generator
-            generated_ideas = problem_generator.generate_problem_statements(theme, search_results=[], existing_problems=existing_problems, max_ideas=3)
+        # Append generated ideas in generated_ideas.json with unique ids and session handling
+        storage.append_generated_ideas("Hackathon", theme["name"], generated_statements, session_id, file_path=generated_ideas_path)
 
-            # Store generated ideas temporarily in local JSON file
-            hackathon_name = session.hackathon_name if hasattr(session, 'hackathon_name') else "Default Hackathon"
-            storage.save_generated_ideas_detailed(hackathon_name, theme['name'], generated_ideas, session_id=session_id)
+        # Add generated ideas to problem_statements.json
+        storage.add_problem_statements(theme["name"], generated_statements, file_path=problem_statements_path)
 
-            # Return generated ideas and theme as response with id and title
-            return Response({"generated_ideas": generated_ideas, "theme": theme, "hackathon_name": hackathon_name}, status=status.HTTP_200_OK)
+        # Append generated ideas in generated_ideas.json with unique ids and session handling
+        appended_count = storage.append_generated_ideas("Hackathon", theme["name"], generated_statements, session_id, file_path=generated_ideas_path)
 
-        except Exception as e:
-            logging.error(f"Error generating ideas for session {session_id}: {str(e)}")
-            return Response({"error": "Failed to generate ideas"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        # Add generated ideas to problem_statements.json
+        storage.add_problem_statements(theme["name"], generated_statements, file_path=problem_statements_path)
+
+        # Load updated generated_ideas.json to get all ideas for this session
+        with open(generated_ideas_path, 'r') as f:
+            generated_data = json.load(f)
+
+        # Get the last appended ideas based on appended_count
+        all_ideas = generated_data.get("generated_ideas", [])
+        last_ideas = all_ideas[-appended_count:] if appended_count > 0 else []
+
+        # Prepare response data with consistent unique ids for newly added ideas
+        response_ideas = []
+        for idea in last_ideas:
+            response_ideas.append({
+                "id": idea["id"],
+                "theme": idea.get("topic", ""),
+                "title": idea["text"][:50],  # Use first 50 chars as title
+                "text": idea["text"]
+            })
+
+        return Response({"session_id": session_id, "ideas": response_ideas}, status=200)
