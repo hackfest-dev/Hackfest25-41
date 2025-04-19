@@ -26,9 +26,9 @@ def load_problem_statements():
             }
         }
 
-def save_problem_statements(data):
+def save_problem_statements(data, file_path='problem_statements.json'):
     """Save problem statements to JSON file."""
-    with open('problem_statements.json', 'w') as f:
+    with open(file_path, 'w') as f:
         json.dump(data, f, indent=4)
 
 def get_existing_problem_texts():
@@ -50,7 +50,7 @@ def is_duplicate_problem(problem_text, existing_problems):
             return True
     return False
 
-def add_problem_statements(topic, new_statements):
+def add_problem_statements(topic, new_statements, file_path='problem_statements.json'):
     """Add new problem statements to storage."""
     data = load_problem_statements()
     
@@ -77,7 +77,7 @@ def add_problem_statements(topic, new_statements):
     data["metadata"]["total_count"] = len(data["statements"])
     
     # Save updated data
-    save_problem_statements(data)
+    save_problem_statements(data, file_path)
     
     return added_count
 
@@ -113,18 +113,39 @@ def save_generated_ideas(hackathon_name, ideas):
     
     return len(ideas)
 
-def save_generated_ideas_detailed(hackathon_name, theme_name, ideas):
-    """Save generated ideas in detailed format similar to problem_statements.json."""
-    data = {
-        "hackathon_name": hackathon_name,
-        "generated_ideas": [],
-        "metadata": {
-            "last_updated": datetime.now().isoformat(),
-            "total_count": len(ideas)
+def append_generated_ideas(hackathon_name, theme_name, new_ideas, session_id, file_path='generated_ideas.json'):
+    """
+    Append new generated ideas to existing generated_ideas.json for the same session.
+    If session_id differs or file missing, reset and start fresh.
+    Assign unique incremental ids continuing from existing ideas.
+    """
+    try:
+        # Load existing data
+        if os.path.exists(file_path):
+            with open(file_path, 'r') as f:
+                data = json.load(f)
+        else:
+            data = None
+    except (FileNotFoundError, json.JSONDecodeError):
+        data = None
+
+    # Initialize if no data or session_id changed
+    if not data or data.get("metadata", {}).get("session_id") != session_id:
+        data = {
+            "hackathon_name": hackathon_name,
+            "generated_ideas": [],
+            "metadata": {
+                "last_updated": datetime.now().isoformat(),
+                "total_count": 0,
+                "session_id": session_id
+            }
         }
-    }
-    
-    for idx, idea_text in enumerate(ideas, start=1):
+
+    existing_ideas = data.get("generated_ideas", [])
+    last_id = existing_ideas[-1]["id"] if existing_ideas else 0
+
+    # Append new ideas with unique ids
+    for idx, idea_text in enumerate(new_ideas, start=last_id + 1):
         idea_entry = {
             "id": idx,
             "topic": theme_name,
@@ -135,9 +156,16 @@ def save_generated_ideas_detailed(hackathon_name, theme_name, ideas):
                 "model": "deepseek-r1-distill-llama-8b"
             }
         }
-        data["generated_ideas"].append(idea_entry)
-    
-    with open('generated_ideas.json', 'w') as f:
+        existing_ideas.append(idea_entry)
+
+    # Update metadata
+    data["generated_ideas"] = existing_ideas
+    data["metadata"]["last_updated"] = datetime.now().isoformat()
+    data["metadata"]["total_count"] = len(existing_ideas)
+    data["metadata"]["session_id"] = session_id
+
+    # Save back to file
+    with open(file_path, 'w') as f:
         json.dump(data, f, indent=4)
-    
-    return len(ideas)
+
+    return len(new_ideas)

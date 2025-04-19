@@ -1,0 +1,308 @@
+{
+    "statements": [
+        {
+            "id": 1,
+            "topic": "Default Theme",
+            "text": "Develop a solution for predicting user churn within a mobile e-commerce app based solely on the default settings they\u2019ve selected (e.g., preferred notification frequency, color scheme, font size) using machine learning; the team must build a predictive model with at least 80% accuracy and deploy it as a simple API endpoint accessible via a Swagger UI, utilizing only publicly available datasets for training.",
+            "created_at": "2025-04-19T05:03:18.505842",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 2,
+            "topic": "Default Theme",
+            "text": "Develop a solution for automatically generating personalized onboarding experiences for new users of a SaaS application based on their initial selection of the default theme (light or dark) and three pre-selected core features \u2013 ensuring seamless user engagement within the first 15 minutes. Teams must create a system that dynamically adjusts UI elements, content suggestions, and tutorial prompts in real-time via a WebSocket connection to simulate a live onboarding flow, delivering a tailored experience judged on subjective usability testing with at least five simulated users.",
+            "created_at": "2025-04-19T05:03:21.049191",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 3,
+            "topic": "Default Theme",
+            "text": "Develop a solution for predicting user engagement with a smart home device based solely on their selection of the default brightness level and temperature setting \u2013 teams must create a predictive model leveraging sensor data (simulated or publicly available) to forecast usage patterns within 24 hours, delivering a prioritized list of potential maintenance needs ranked by predicted impact severity.",
+            "created_at": "2025-04-19T05:03:23.156319",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 4,
+            "topic": "Default Theme",
+            "text": "Develop a solution for automatically generating accessible UI mockups based on a user\u2019s selection of the default theme (light or dark), incorporating real-time accessibility checks using browser developer tools and suggesting remediation strategies \u2013 teams must deliver a command-line tool that analyzes a provided HTML file, outputs an accessible JSON representation of the mockup with identified issues, and generates a visual mockup highlighting those problems.",
+            "created_at": "2025-04-19T05:03:29.721965",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 5,
+            "topic": "Default Theme",
+            "text": "Develop a solution for creating a dynamic Default Theme Persona based on a user\u2019s single selection of a pre-defined default theme (e.g., \u201cMinimalist,\u201d \u201cRetro,\u201d \u201cOcean\u201d) \u2013 the team must build an interactive web application that generates a curated set of three complementary UI elements (font, color palette, and icon style) reflecting this persona, delivering a functional prototype with demonstrable visual cohesion within 48 hours.",
+            "created_at": "2025-04-19T05:03:32.169000",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 6,
+            "topic": "Default Theme",
+            "text": "Develop a solution for predicting user preference drift in a digital news app based solely on the default theme (light or dark) selected by the user, coupled with their frequency of accessing articles categorized as \u201cWorld\u201d or \u201cTechnology.\u201d Teams must build a classification model capable of identifying users likely to switch themes within 72 hours, delivering a deployable prototype that utilizes a publicly available news article dataset and achieves at least 70% accuracy in predicting theme changes.",
+            "created_at": "2025-04-19T05:03:34.668018",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 7,
+            "topic": "Default Theme",
+            "text": "Develop a solution for creating an AI-powered \u201cDefault Theme Suggestion Engine\u201d that analyzes user browsing history (simulated data provided) within a minimalist web application to recommend the most visually appealing default theme based on inferred aesthetic preferences \u2013 teams must build a machine learning model using Python and TensorFlow, trained on a dataset of color palettes and UI element styles, delivering a functional prototype demonstrating accurate theme recommendations with a minimum accuracy rate of 65% judged by subjective evaluation.",
+            "created_at": "2025-04-19T05:09:10.149888",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 8,
+            "topic": "Default Theme",
+            "text": "Develop a solution for creating a \u201cDefault Theme Audit\u201d tool that automatically analyzes website HTML code based on a selected default theme (light or dark) using browser developer tools, identifying accessibility violations related to color contrast, font size, and semantic markup \u2013 the deliverable is a command-line script capable of generating a detailed report outlining identified issues with severity ratings and suggesting prioritized remediation steps within 48 hours.",
+            "created_at": "2025-04-19T05:09:12.581289",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 9,
+            "topic": "Default Theme",
+            "text": "Develop a solution for creating an adaptive UI component library that dynamically adjusts its styling based on the user\u2019s selected default theme (light or dark), utilizing CSS variables and JavaScript to manage color palettes, font sizes, and spacing \u2013 teams must build a functional prototype demonstrating at least three core UI components (button, input field, card) with fully responsive styling adapting to both themes, accompanied by automated unit tests covering key visual properties.",
+            "created_at": "2025-04-19T05:09:15.077657",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 10,
+            "topic": "Default Theme",
+            "text": "Develop a solution for creating a \u201cDefault Theme Style Generator\u201d that leverages procedural generation techniques to create unique color palettes and font pairings based on a user's input of a single, arbitrary keyword (e.g., Serenity, Velocity, Rust). The system must output a fully styled UI component \u2013 a digital business card mockup \u2013 with dynamically generated colors, fonts, and spacing reflecting the chosen keyword, utilizing a JavaScript framework (React or Vue) and delivering a static HTML/CSS representation within 48 hours.",
+            "created_at": "2025-04-19T05:09:23.534372",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 11,
+            "topic": "Default Theme",
+            "text": "Develop a solution for creating an AI-powered \u201cDefault Theme Contextualizer\u201d that analyzes the user's device operating system (iOS or Android) default theme setting alongside their recent app usage patterns to predict the most relevant color palette suggestions for a minimalist design application \u2013 teams must build a rule-based engine leveraging API access to OS theme data and simulated app usage logs, delivering a functional prototype presenting dynamically generated color palettes within a web interface with at least three distinct theme profiles based on device and usage context.",
+            "created_at": "2025-04-19T05:09:26.277073",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 12,
+            "topic": "Default Theme",
+            "text": "Develop a solution for automatically generating accessible default website themes by analyzing existing content using semantic HTML structure and color contrast ratios \u2013 teams must create a browser extension that identifies critical text elements, calculates WCAG compliance based on provided color palettes (light & dark), and suggests immediate modifications to improve accessibility within 48 hours, delivering a functional prototype with demonstrable improvement in at least one specific accessibility metric.",
+            "created_at": "2025-04-19T05:09:28.670819",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 13,
+            "topic": "Default Theme",
+            "text": "Develop a solution for creating \u201cEchoTheme,\u201d a system that predicts user interface (UI) default theme preferences based on ambient lighting detected via a webcam feed combined with real-time browser activity data \u2013 the system must utilize computer vision to analyze light intensity and color temperature, correlating this data with mouse movements, page scrolling speed, and dominant visual elements within the current webpage, delivering a working prototype that dynamically adjusts a simple website\u2019s color scheme (primary, secondary, accent) in response to detected ambient lighting conditions within 48 hours.",
+            "created_at": "2025-04-19T05:11:36.471071",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 14,
+            "topic": "Default Theme",
+            "text": "Develop a solution for creating \u201cThemeSync,\u201d a browser extension that automatically detects the dominant color palette of any webpage and generates a corresponding dark mode theme with near-perfect color fidelity, utilizing CSS media queries and JavaScript to dynamically apply the generated styles \u2013 teams must produce a functional extension capable of accurately identifying and replicating at least three distinct color palettes from diverse website designs, demonstrating minimal visual distortion and seamless application within 48 hours.",
+            "created_at": "2025-04-19T05:11:38.988685",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 15,
+            "topic": "Default Theme",
+            "text": "Develop a solution for creating \u201cAdaptivePalette,\u201d an AI-powered system that automatically generates a visually appealing and accessible default color palette based on the content of a single webpage \u2013 teams must utilize image analysis (specifically, dominant color extraction) combined with a generative adversarial network (GAN) trained on a curated dataset of minimalist design themes to produce a novel color scheme, outputting a JSON file containing the generated palette\u2019s primary, secondary, and accent colors along with corresponding CSS variables for immediate implementation within a standard HTML/CSS webpage mockup.",
+            "created_at": "2025-04-19T05:11:41.816911",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 16,
+            "topic": "Default Theme",
+            "text": "Develop a solution for creating \u201cDefaultFlow,\u201d a browser extension that analyzes the color palette of the currently active tab and predicts potential user interaction flows based on established UI/UX best practices for default theme applications \u2013 teams must utilize a rule-based engine to suggest alternative button placement, typography pairings, and spacing adjustments based on color harmony principles (e.g., complementary colors, analogous schemes) and a database of common UX patterns, delivering a functional prototype demonstrating at least three suggested flow improvements within a simulated webpage environment with interactive elements.",
+            "created_at": "2025-04-19T05:11:56.678446",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 17,
+            "topic": "Default Theme",
+            "text": "Develop a solution for creating \u201cThemeLens,\u201d a browser extension that automatically generates a visually consistent default theme based on the dominant typography and imagery of a webpage \u2013 teams must utilize computer vision to analyze font families, sizes, weights, and color variations alongside image recognition to identify key visual elements (shapes, patterns), then synthesize a minimal, accessible dark mode theme with optimized contrast ratios and appropriate spacing, delivering a functional extension that produces a CSS stylesheet mimicking the generated theme for a specified target webpage within 48 hours.",
+            "created_at": "2025-04-19T05:11:59.456448",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 18,
+            "topic": "Default Theme",
+            "text": "Develop a solution for creating \u201cPaletteGuard,\u201d an automated browser tool that identifies and neutralizes jarring color combinations on websites using AI-powered visual analysis and generates a harmonized default theme \u2013 teams must utilize a pre-trained convolutional neural network (CNN) to assess color dissonance based on established color theory principles, then dynamically apply CSS adjustments to reduce contrast and create a visually balanced dark mode theme, delivering a functional browser extension with a demonstrable reduction in perceived visual discomfort as measured by simulated user testing data within 48 hours.",
+            "created_at": "2025-04-19T05:12:02.271823",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 19,
+            "topic": "Default Theme",
+            "text": "Develop a solution for creating \u201cEchoTheme,\u201d a browser extension that analyzes the dominant color palette of an open webpage and generates a simplified, accessible dark mode theme using procedural CSS generation based on color theory principles \u2013 teams must produce a functional extension capable of identifying at least five distinct color palettes, generating corresponding CSS with optimized contrast ratios (minimum WCAG AA compliance), and dynamically applying the theme to the active tab within 48 hours.",
+            "created_at": "2025-04-19T05:12:13.779996",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 20,
+            "topic": "Default Theme",
+            "text": "Develop a solution for creating \u201cDefaultSense,\u201d a browser extension that automatically identifies and corrects accessibility issues within default website themes by analyzing color contrast ratios against WCAG AA guidelines \u2013 teams must utilize JavaScript to query the DOM of the active webpage, calculate color contrast using established algorithms, and dynamically apply CSS adjustments to elements exceeding the specified thresholds, delivering a functional prototype demonstrating real-time feedback and automatic theme refinement for at least three common accessibility violations within 48 hours.",
+            "created_at": "2025-04-19T05:12:16.424549",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 21,
+            "topic": "Default Theme",
+            "text": "Develop a solution for \u201cContextual Default,\u201d a browser extension that automatically adapts a dark mode theme based on the content type of the current webpage \u2013 teams must utilize machine learning to classify webpage content (e.g., news articles, e-commerce product pages, blog posts) and then apply pre-defined CSS adjustments optimized for visual clarity and user experience within each category, delivering a functional extension with accurate content classification and dynamic theme switching demonstrated across at least three distinct content types within 48 hours.",
+            "created_at": "2025-04-19T05:12:19.184074",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 22,
+            "topic": "Default Theme",
+            "text": "Develop a solution for \u201cAdaptive Baseline,\u201d a browser extension that analyzes the dominant font weight and size of a webpage\u2019s body text and generates a dynamically adjusted dark mode theme prioritizing legibility \u2013 teams must utilize JavaScript to detect the primary font properties, apply CSS adjustments to achieve a minimum 4.5:1 contrast ratio with black background elements, and produce a functional extension that automatically updates the theme whenever the body text font changes within 48 hours, delivering a demonstrable improvement in simulated reading speed metrics.",
+            "created_at": "2025-04-19T05:14:14.658573",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 23,
+            "topic": "Default Theme",
+            "text": "Develop a solution for \u201cChromatic Drift,\u201d an automated browser extension that proactively detects and corrects subtle shifts in color palettes across websites, identifying deviations from established default theme guidelines based on a user-defined anchor palette \u2013 teams must create a system leveraging image hashing and perceptual color analysis to flag these drifts, dynamically generating CSS adjustments to maintain visual consistency with the anchor palette, delivering a functional extension capable of tracking up to 10 distinct website color palettes and applying corrective CSS within 48 hours.",
+            "created_at": "2025-04-19T05:14:17.401155",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 24,
+            "topic": "Default Theme",
+            "text": "Develop a solution for creating \u201cThemeSync,\u201d a browser extension that automatically detects and replicates the visual style \u2013 including font families, color palettes, and spacing \u2013 of any webpage into a user\u2019s preferred dark mode theme, prioritizing accessibility and aesthetic coherence. The extension must utilize headless Chrome to render the target page, extract CSS variables, and generate a corresponding dark mode stylesheet adhering to WCAG AA contrast guidelines for text elements, delivering a functional prototype capable of syncing styles from at least three distinct websites with varying design complexities within 48 hours.",
+            "created_at": "2025-04-19T05:14:20.280393",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 25,
+            "topic": "Default Theme",
+            "text": "Develop a solution for \u201cDefault Harmony,\u201d an extension that analyzes the dominant color palette of any webpage and generates a visually consistent dark mode theme, prioritizing harmonious color relationships based on established color theory principles (e.g., complementary, analogous). Teams must utilize image analysis to extract key colors, employ a simplified color harmony algorithm within JavaScript to suggest alterations, and dynamically apply CSS adjustments to create a functional dark mode theme \u2013 delivering a working prototype that demonstrates at least three distinct color palette transformations within 48 hours, accompanied by a documented rationale for each implemented adjustment.",
+            "created_at": "2025-04-19T05:14:25.993493",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 26,
+            "topic": "Default Theme",
+            "text": "Develop a solution for \u201cPixel Echo,\u201d a browser extension that analyzes the dominant image style (e.g., photographic, illustrated, flat design) of a webpage\u2019s hero section and automatically applies corresponding dark mode adjustments \u2013 teams must utilize computer vision techniques to classify image styles, dynamically adjusting CSS properties like blur, saturation, and shadow effects to replicate the original visual aesthetic in a darkened environment, delivering a functional extension demonstrating accurate style classification across at least five distinct image styles within 48 hours.",
+            "created_at": "2025-04-19T05:14:28.729154",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 27,
+            "topic": "Default Theme",
+            "text": "Develop a solution for \u201cAdaptive Baseline 2.0,\u201d a browser extension that analyzes the dominant font weight and size of a webpage\u2019s body text and generates a dynamically adjusted dark mode theme prioritizing legibility, incorporating real-time user feedback on contrast perception via a simple slider \u2013 teams must utilize JavaScript to detect the primary font properties, apply CSS adjustments to achieve a minimum 4.5:1 contrast ratio with black background elements, integrate a visual slider component for users to adjust perceived contrast sensitivity, and produce a functional extension that automatically updates the theme whenever the body text font changes or the user adjusts the contrast slider within 48 hours, delivering a demonstrable improvement in simulated reading speed metrics based on user-adjusted contrast thresholds.",
+            "created_at": "2025-04-19T05:14:32.175383",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 28,
+            "topic": "Default Theme",
+            "text": "Develop a solution for \u201cDefault Sentinel,\u201d an automated browser extension that identifies and flags instances of non-standard default font usage across websites \u2013 teams must utilize JavaScript and CSS parsing to detect deviations from a curated list of common system fonts (e.g., Arial, Helvetica, Times New Roman) and automatically generate a warning notification within the browser UI, accompanied by a link to a standardized font replacement suggestion; deliver a functional extension capable of detecting at least 10 distinct font types and generating notifications in real-time while browsing, alongside a documented methodology for expanding the font detection library.",
+            "created_at": "2025-04-19T05:14:56.439666",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 29,
+            "topic": "Default Theme",
+            "text": "Develop a solution for \u201cShadowShift,\u201d a browser extension that automatically generates and applies high-quality, dynamic shadow effects in dark mode based on the original webpage\u2019s design \u2013 teams must utilize CSS property analysis to identify existing shadows, replicate their parameters (offset, blur, spread) with adjusted values optimized for low-light conditions, and dynamically update shadow styles upon page content changes within a target browser environment (Chrome or Firefox), delivering a functional prototype capable of replicating at least five distinct shadow effects from various websites within 48 hours.",
+            "created_at": "2025-04-19T05:14:59.341761",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 30,
+            "topic": "Default Theme",
+            "text": "Develop a solution for \u201cChromatic Drift,\u201d an AI-powered browser extension that analyzes website color palettes in real-time and predicts the most visually harmonious dark mode theme adjustments based on established color theory principles \u2013 teams must utilize image analysis to extract dominant colors, employ a simplified color harmony algorithm (e.g., complementary, analogous) within JavaScript, and dynamically apply CSS adjustments to create a functional dark mode theme prototype demonstrating at least three distinct color palette transformations with documented rationale, prioritizing visual balance and user perception of color contrast.",
+            "created_at": "2025-04-19T05:15:02.191897",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        }
+    ],
+    "metadata": {
+        "last_updated": "2025-04-19T05:15:02.191908",
+        "total_count": 30
+    }
+}
