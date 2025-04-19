@@ -115,6 +115,102 @@ def display_problem_statement(statement, number):
     print("-" * 80)
     print("\nGenerating next problem statement...")
 
+import concurrent.futures
+
+import concurrent.futures
+
+def process_themes(themes, hackathon_name):
+    """Process an array of themes with parallel search and combined problem generation."""
+    def search_theme(theme):
+        try:
+            print(f"Searching for relevant information for theme: {theme['name']}...")
+            search_results = get_search_results(theme)
+            return (theme, search_results)
+        except Exception as e:
+            print(f"Error searching theme {theme['name']}: {str(e)}")
+            return (theme, [])
+
+    # Save tracks to tracks.json once
+    save_tracks(hackathon_name, themes)
+    print(f"Saved {len(themes)} tracks to tracks.json")
+
+    # Parallelize search queries
+    with concurrent.futures.ThreadPoolExecutor() as executor:
+        future_to_theme = {executor.submit(search_theme, theme): theme for theme in themes}
+        theme_search_results = {}
+        for future in concurrent.futures.as_completed(future_to_theme):
+            theme, results = future.result()
+            theme_search_results[theme['name']] = (theme, results)
+
+    # Combine all search results
+    combined_search_results = []
+    combined_themes = []
+    for theme_name in theme_search_results:
+        theme, results = theme_search_results[theme_name]
+        combined_themes.append(theme)
+        combined_search_results.extend(results)
+
+    # Load existing problem statements once
+    existing_problems = get_existing_problem_texts()
+
+    # Generate combined problem statements for all themes
+    from storage import save_generated_ideas_detailed, add_problem_statements
+    try:
+        print(f"\nGenerating combined problem statements for all themes...")
+        # Create a combined theme object
+        combined_theme = {
+            "name": "Combined Themes",
+            "code": "COMBINED",
+            "description": "Combined themes: " + ", ".join([theme['name'] for theme in combined_themes]),
+            "keywords": list({kw for theme in combined_themes for kw in theme.get('keywords', [])})
+        }
+        generated_ideas = generate_problem_statements(
+            combined_theme,
+            combined_search_results,
+            existing_problems,
+            max_ideas=10
+        )
+        print(f"DEBUG: Number of generated ideas before saving: {len(generated_ideas)}")
+        print(f"DEBUG: Sample generated idea: {generated_ideas[0] if generated_ideas else 'No ideas generated'}")
+        save_generated_ideas_detailed(hackathon_name, combined_theme['name'], generated_ideas)
+        print(f"Saved {len(generated_ideas)} generated ideas to generated_ideas.json")
+        add_problem_statements(combined_theme['name'], generated_ideas)
+    except Exception as e:
+        print(f"Error generating combined problem statements: {str(e)}")
+
+    print("\nAll themes have been processed.")
+
+def convert_theme_names_to_objects(theme_names):
+    """Convert a list of theme name strings to theme objects with default values."""
+    default_descriptions = {
+        "healthcare": "Transforming healthcare through technology",
+        "education": "Innovating education with technology",
+        "environment": "Promoting sustainable environmental solutions",
+        "finance": "Pioneering the future of finance",
+    }
+    default_codes = {
+        "healthcare": "APOLLO",
+        "education": "ATHENA",
+        "environment": "DEMETER",
+        "finance": "PLUTUS",
+    }
+    default_keywords = {
+        "healthcare": ["healthcare", "medical", "patient", "innovation", "technology"],
+        "education": ["education", "learning", "technology", "innovation", "students"],
+        "environment": ["environment", "sustainability", "green", "climate", "energy"],
+        "finance": ["finance", "fintech", "security", "technology", "trust"],
+    }
+    theme_objects = []
+    for name in theme_names:
+        lname = name.lower()
+        theme_objects.append({
+            "name": name.title(),
+            "code": default_codes.get(lname, "GENERIC"),
+            "description": default_descriptions.get(lname, "Innovative solutions in " + name),
+            "keywords": default_keywords.get(lname, [name.lower()]),
+        })
+    return theme_objects
+
 def main():
     """Main function to run the hackathon companion."""
     try:
@@ -139,67 +235,27 @@ def main():
         # Extract hackathon name from brochure
         hackathon_name = extract_hackathon_name(brochure_text)
         
-        # Step 2: Extract themes using AI
-        print("Extracting hackathon tracks using AI...")
-        themes = extract_themes_from_text(brochure_text)
+        # Instead of extracting themes, user should pass an array of theme names (strings)
+        # For demonstration, we define a sample array of theme names (can be replaced)
+        sample_theme_names = [
+            'healthcare',
+            'education',
+            'environment',
+            'finance',
+        ]
         
-        # Save tracks to tracks.json
-        save_tracks(hackathon_name, themes)
-        print(f"Saved {len(themes)} tracks to tracks.json")
+        # Convert theme names to theme objects
+        sample_themes = convert_theme_names_to_objects(sample_theme_names)
         
-        # Step 3: Display themes and get user selection
-        display_themes(themes, hackathon_name)
-        selected_theme = get_user_selection(themes)
-        
-        # Step 4: Generate search queries using AI
-        print(f"\nGenerating search queries for {selected_theme['name']}...")
-        
-        # Step 5: Perform web search
-        print("\nSearching for relevant information...")
-        search_results = get_search_results(selected_theme)
-        
-        # Display search results
-        display_search_results(search_results)
-        print("\nUsing search results as context for problem statement generation...")
-        time.sleep(2)
-        
-        # Step 6: Generate problem statements one by one
-        print(f"\nGenerating problem statements for {selected_theme['name']}...")
-        existing_problems = get_existing_problem_texts()
-        
-        # Generate problem statements (they are saved to storage automatically)
-      
-        
-        # New step: Generate 10 problem statements for generated_ideas.json
-        print(f"\nGenerating 10 problem statements for generated_ideas.json for {hackathon_name}...")
-        generated_ideas = generate_problem_statements(
-            selected_theme,
-            search_results,
-            [],
-            max_ideas=10
-        )
-        
-        # Save generated ideas to generated_ideas.json in detailed format
-        from storage import save_generated_ideas_detailed, add_problem_statements
-        print(f"DEBUG: Number of generated ideas before saving: {len(generated_ideas)}")
-        print(f"DEBUG: Sample generated idea: {generated_ideas[0] if generated_ideas else 'No ideas generated'}")
-        save_generated_ideas_detailed(hackathon_name, selected_theme['name'], generated_ideas)
-        print(f"Saved {len(generated_ideas)} generated ideas to generated_ideas.json")
-        
-        # Also add generated ideas to problem_statements.json with theme name as topic
-        add_problem_statements(selected_theme['name'], generated_ideas)
-        
-        # Step 7: Display final message
-        print("\n" + "=" * 80)
-        print("All statements have been saved to problem_statements.json")
-        print("\nThank you for using the Hackathon Companion!")
-        print("=" * 80)
+        # Call the new function to process these themes
+        process_themes(sample_themes, hackathon_name)
         
     except KeyboardInterrupt:
         print("\n\nOperation cancelled by user.")
     except Exception as e:
         print(f"\nAn error occurred: {str(e)}")
         print("Please try again. If the problem persists, check your configuration.")
+
 
 if __name__ == "__main__":
     main()

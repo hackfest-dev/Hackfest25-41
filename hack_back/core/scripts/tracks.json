@@ -1,0 +1,57 @@
+{
+    "hackathon_name": "we are 2200",
+    "tracks": [
+        {
+            "name": "Healthcare",
+            "code": "APOLLO",
+            "description": "Transforming healthcare through technology",
+            "keywords": [
+                "healthcare",
+                "medical",
+                "patient",
+                "innovation",
+                "technology"
+            ]
+        },
+        {
+            "name": "Education",
+            "code": "ATHENA",
+            "description": "Innovating education with technology",
+            "keywords": [
+                "education",
+                "learning",
+                "technology",
+                "innovation",
+                "students"
+            ]
+        },
+        {
+            "name": "Environment",
+            "code": "DEMETER",
+            "description": "Promoting sustainable environmental solutions",
+            "keywords": [
+                "environment",
+                "sustainability",
+                "green",
+                "climate",
+                "energy"
+            ]
+        },
+        {
+            "name": "Finance",
+            "code": "PLUTUS",
+            "description": "Pioneering the future of finance",
+            "keywords": [
+                "finance",
+                "fintech",
+                "security",
+                "technology",
+                "trust"
+            ]
+        }
+    ],
+    "metadata": {
+        "last_updated": "2025-04-19T16:16:01.928875",
+        "total_count": 4
+    }
+}

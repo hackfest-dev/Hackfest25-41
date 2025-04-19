@@ -599,10 +599,80 @@
                 "source": "LM Studio",
                 "model": "deepseek-r1-distill-llama-8b"
             }
+        },
+        {
+            "id": 61,
+            "topic": "Immersive Experiences",
+            "text": "Develop a solution for creating an interactive AR experience that overlays historical architectural blueprints onto a real-world building using spatial tracking and object recognition; participants must accurately identify at least five distinct architectural elements within the blueprint overlay, allowing users to \u2018virtually dismantle\u2019 and rebuild sections of the structure in real-time via hand gestures, delivering a functional prototype demonstrating basic VR/AR interaction and visual fidelity within 48 hours.",
+            "created_at": "2025-04-19T14:40:19.862484",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 62,
+            "topic": "Immersive Experiences",
+            "text": "Develop a solution for creating an immersive AR experience that simulates a historical artisan workshop using photogrammetry and real-time physics simulation. Participants must reconstruct a small section of the workshop (approximately 2m x 2m) in AR, allowing users to interact with virtual tools \u2013 a potter\u2019s wheel, carving knife, or weaving loom \u2013 utilizing hand tracking for intuitive manipulation and demonstrating realistic material properties within a designated physical space, delivering a functional prototype showcasing dynamic VR/AR interaction and visual fidelity within 48 hours.",
+            "created_at": "2025-04-19T14:40:22.549273",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 63,
+            "topic": "Immersive Experiences",
+            "text": "Develop a solution for creating an immersive VR experience that simulates the sensation of \u201cphantom limb\u201d pain during a brief, controlled exposure to visual stimuli \u2013 specifically, rapidly flashing geometric shapes \u2013 targeting users with chronic phantom limb pain for preliminary therapeutic testing. Participants must utilize a commercially available VR headset (Meta Quest 2 or equivalent) and integrate biofeedback data (heart rate variability) into the experience, dynamically adjusting the stimulus intensity based on user responses while maintaining a minimum visual fidelity of 960x720 resolution and demonstrating at least three distinct levels of pain simulation through variable geometric patterns and flash rates within 48 hours.",
+            "created_at": "2025-04-19T14:40:25.585236",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 64,
+            "topic": "Immersive Experiences",
+            "text": "Develop a solution for creating an immersive VR experience that simulates the sensation of \u2018presence\u2019 during a guided meditation session using dynamic environmental audio and visual cues triggered by user biofeedback data. Participants must utilize a commercially available VR headset (Meta Quest 2 or equivalent), integrate heart rate variability data via Bluetooth, and generate a calming virtual environment with responsive lighting and ambient sounds \u2013 delivering a functional prototype demonstrating real-time adaptation of the immersive experience based on physiological responses and achieving at least a 70% user self-reported feeling of \u2018presence\u2019 within a 48-hour timeframe.",
+            "created_at": "2025-04-19T14:40:28.485182",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 65,
+            "topic": "Immersive Experiences",
+            "text": "Develop a solution for creating an immersive AR experience that allows users to virtually \u201crepair\u201d damaged historical artifacts in real-time using augmented overlays and intuitive gesture controls. Participants must build an application utilizing hand tracking on a mobile device (e.g., iPad or Android tablet) to overlay holographic repair guides, simulate tool interactions with virtual components, and provide haptic feedback through the device\u2019s touchscreen mimicking the feel of different materials \u2013 delivering a functional prototype demonstrating core AR interaction mechanics and visual fidelity within 48 hours.",
+            "created_at": "2025-04-19T14:40:31.384290",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 66,
+            "topic": "Immersive Experiences",
+            "text": "Develop a solution for creating an immersive VR experience that simulates the sensation of \u201cflow state\u201d during a complex, iterative creative task \u2013 specifically, digitally sculpting a simple object (e.g., a stylized fruit) \u2013 targeting novice users. Participants must utilize a commercially available VR headset (Meta Quest 2 or equivalent), implement dynamic audio cues synchronized with user hand movements and estimated completion progress, and provide haptic feedback through the controller mimicking the resistance of virtual sculpting tools, delivering a functional prototype demonstrating core VR interaction mechanics and achieving a measurable reduction in reported perceived effort based on a brief post-experience survey within 48 hours.",
+            "created_at": "2025-04-19T14:40:34.493716",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
+        },
+        {
+            "id": 67,
+            "topic": "Immersive Experiences",
+            "text": "Develop a solution for creating an immersive AR experience that overlays interactive historical data onto real-world architectural spaces. Participants must build an application utilizing marker tracking on mobile devices (iOS or Android) to identify pre-defined architectural markers (e.g., building facades, statues), triggering dynamically generated 3D models and informational overlays representing significant events or figures associated with that location \u2013 delivering a functional prototype demonstrating accurate AR overlay placement, interactive timeline navigation triggered by marker recognition, and the display of at least three distinct historical data points within a single location within 48 hours.",
+            "created_at": "2025-04-19T14:40:37.536563",
+            "metadata": {
+                "source": "LM Studio",
+                "model": "deepseek-r1-distill-llama-8b"
+            }
         }
     ],
     "metadata": {
-        "last_updated": "2025-04-19T12:28:14.791148",
-        "total_count": 60
+        "last_updated": "2025-04-19T14:40:37.536605",
+        "total_count": 67
     }
 }

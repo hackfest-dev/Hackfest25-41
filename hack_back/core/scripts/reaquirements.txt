@@ -1,0 +1,6 @@
+hPyPDF2==3.0.1
+pdfplumber==0.10.2
+requests==2.31.0
+beautifulsoup4==4.12.2
+soupsieve==2.6
+duckduckgo_search==2.6.1
