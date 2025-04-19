@@ -30,11 +30,23 @@ class GenerateIdeasView(APIView):
                 return Response({"error": "Invalid session_id"}, status=status.HTTP_404_NOT_FOUND)
 
             # Extract theme info from session or related data
+            # Fetch theme_name from ThemeSelection related to session
+            theme_name = "Default Theme"
+            theme_code = "default"
+            theme_description = "Default theme description"
+            theme_keywords = []
+
+            theme_selections = session.themes.all()
+            if theme_selections.exists():
+                theme_name = theme_selections[0].theme_name
+                # TODO: Fetch theme_code, description, keywords from a theme details source if available
+
             theme = {
-                "name": session.theme_name if hasattr(session, 'theme_name') else "Default Theme",
-                "code": session.theme_code if hasattr(session, 'theme_code') else "default",
-                "description": session.theme_description if hasattr(session, 'theme_description') else "Default theme description",
-                "keywords": session.theme_keywords if hasattr(session, 'theme_keywords') else []
+                "name": theme_name,
+                "code": theme_code,
+                "description": theme_description,
+                "keywords": theme_keywords,
+                "session_id": session_id
             }
 
             # Get existing problems to avoid duplicates
@@ -44,10 +56,11 @@ class GenerateIdeasView(APIView):
             generated_ideas = problem_generator.generate_problem_statements(theme, search_results=[], existing_problems=existing_problems, max_ideas=3)
 
             # Store generated ideas temporarily in local JSON file
-            storage.save_generated_ideas_detailed(session.hackathon_name if hasattr(session, 'hackathon_name') else "Default Hackathon", theme['name'], generated_ideas)
+            hackathon_name = session.hackathon_name if hasattr(session, 'hackathon_name') else "Default Hackathon"
+            storage.save_generated_ideas_detailed(hackathon_name, theme['name'], generated_ideas, session_id=session_id)
 
-            # Return generated ideas as response
-            return Response({"generated_ideas": generated_ideas}, status=status.HTTP_200_OK)
+            # Return generated ideas and theme as response with id and title
+            return Response({"generated_ideas": generated_ideas, "theme": theme, "hackathon_name": hackathon_name}, status=status.HTTP_200_OK)
 
         except Exception as e:
             logging.error(f"Error generating ideas for session {session_id}: {str(e)}")
