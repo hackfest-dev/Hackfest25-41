@@ -1,12 +1,12 @@
 "use client";
 
-export default function Home() {
+export default function Readme() {
   const handleGoClick = () => {
     // Placeholder for future functionality
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 p-4">
+    <div className=" p-4">
       {/* Input Section */}
       <div className="flex justify-center items-center space-x-2 mb-10">
         <input
