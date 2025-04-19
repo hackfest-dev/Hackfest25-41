@@ -1,0 +1,29 @@
+[
+  {
+    "abstract": "In the wake of e-commerce and its successful diffusion in most commercial activities, last-mile distribution causes more and more trouble in urban areas al",
+    "keyword_source": "last-mile delivery",
+    "title": "Last-mile delivery concepts: a survey from an operational research perspective",
+    "link": "https://link.springer.com/article/10.1007/s00291-020-00607-8",
+    "authors_publication": "N Boysen, S Fedtke, S Schwerdfeger - Or Spectrum, 2021 - Springer",
+    "snippet": "… when setting up or operating last-mile delivery, solved with quantitative methods. Thus, we exclude empirical work, eg, on customer acceptance of specific delivery concepts (eg, see De …",
+    "is_relevant": true
+  },
+  {
+    "abstract": "Purpose\n\nThe purpose of this paper is twofold: first, to review and classify scientific publications dealing with those innovative solutions aimed at increasing the efficiency of last-mile delivery in business to consumer (B2C) e-commerce; and, second, to outline directions for future research in this field.",
+    "keyword_source": "last-mile delivery",
+    "title": "Innovative solutions to increase last-mile delivery efficiency in B2C e-commerce: a literature review",
+    "link": "https://www.emerald.com/insight/content/doi/10.1108/ijpdlm-02-2019-0048/full/html",
+    "authors_publication": "R Mangiaracina, A Perego, A Seghezzi… - International Journal of …, 2019 - emerald.com",
+    "snippet": "… B2C e-commerce initiative, last-mile delivery process deserves particular attention in … delivery areas and the degree of automation of the process. Innovative and viable last-mile delivery …",
+    "is_relevant": true
+  },
+  {
+    "abstract": null,
+    "keyword_source": "real-time traffic",
+    "title": "The PRODYN real time traffic algorithm",
+    "link": "https://www.sciencedirect.com/science/article/pii/B9780080293653500481",
+    "authors_publication": "JJ Henry, JL Farges, J Tuffal - Control in transportation systems, 1984 - Elsevier",
+    "snippet": "… PRODYN is an algorithm able to compute in real time the best signal settings with respect to the delay criterion for any flow demand in traffic networks. The hierarchical algorithm uses …",
+    "is_relevant": true
+  }
+]
