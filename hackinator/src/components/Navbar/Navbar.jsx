@@ -1,9 +1,18 @@
-import React from 'react'
+'use client'; // Required for using hooks in App Router
+
+import { usePathname } from 'next/navigation';
 
 export default function Navbar() {
+  const pathname = usePathname();
+
+  // Hide navbar on discussion page
+  if (pathname === '/flow/discusion-page') {
+    return null;
+  }
+
   return (
     <div>
-              {/* {/* Top Navigation */}
+      {/* Top Navigation */}
       <div className="flex justify-between items-center border-b border-gray-300 p-4 bg-transparent bg-blur-md shadow-md sticky z-30">
         <div className="text-3xl font-extrabold text-indigo-700">Hackinator</div>
         <div className="space-x-3">
