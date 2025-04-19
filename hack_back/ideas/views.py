@@ -10,7 +10,7 @@ from rest_framework_simplejwt.authentication import JWTAuthentication
 from .models import HackathonSession
 from core.pusher import pusher_client
 from core.theme_extractor import extract_themes_from_text
-from core import problem_generator, storage
+# from core import problem_generator, storage
 import logging
 import io
 import json
