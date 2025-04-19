@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import AnimatedHome from '../../components/Home/AnimatedHome';
+import AnimatedHome from '../../../components/Home/AnimatedHome';
 
 const containerVariants = {
   hidden: { opacity: 0 },
