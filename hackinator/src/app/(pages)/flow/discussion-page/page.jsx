@@ -39,7 +39,7 @@ export default function ChatInterface() {
 
   return (
     <div className="w-[950px] h-[650px] flex justify-center items-center">
-      <div className="flex w-full max-w-6xl h-full rounded-lg overflow-hidden shadow-xl bg-white/10 backdrop-blur-xl border border-white/20">
+      <div className="flex w-full max-w-6xl h-full rounded-lg overflow-hidden shadow-xl text-gray-200 bg-slate-900/40 backdrop-blur-lg">
 
         {/* Sidebar */}
         <div
@@ -94,8 +94,13 @@ export default function ChatInterface() {
         {/* Chat Window */}
         <div className="flex flex-col flex-1">
           {/* Header */}
-          <div className="px-5 py-3 bg-white/10 backdrop-blur-xl text-white text-md font-semibold shadow-md">
-            Hackinator 🤖
+          <div className='flex items-center justify-between px-6 py-4 bg-white/10 backdrop-blur-xl border-b border-white/20'>
+            <div className="px-5 py-3 text-white text-md font-semibold shadow-md">
+              Hackinator 🤖
+            </div>
+            <div className=" text-white text-md shadow-md">
+              <input type="radio" /> Research
+            </div>
           </div>
 
           {/* Selected Topic Display */}
