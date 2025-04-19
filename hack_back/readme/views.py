@@ -5,6 +5,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework_simplejwt.authentication import JWTAuthentication
 from core.scripts.auto_readme_parallel import generate_readme_for_repo
 from urllib.parse import urlparse
+from readme.models import ReadmeSession
 import os
 
 class GenerateReadmeAPIView(APIView):
@@ -33,7 +34,14 @@ class GenerateReadmeAPIView(APIView):
         
         try:
             readme_content = generate_readme_for_repo(repo_owner, repo_name)
-            return Response({"readme": readme_content}, status=status.HTTP_200_OK)
+            ReadmeSession.objects.create(
+                session=None,  # Assuming session is not used here
+                user=request.user,
+                github_repo_link=repo_link,
+                repo_summary="",
+                generated_readme=readme_content
+            )
+            return Response({"readme": readme_content, "message": "Readme generated successfully.", "readme_session_id": ReadmeSession.objects.last().id}, status=status.HTTP_200_OK)
         except Exception as e:
             return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
