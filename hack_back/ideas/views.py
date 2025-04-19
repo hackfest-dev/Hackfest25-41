@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework.permissions import IsAuthenticated
 from rest_framework_simplejwt.authentication import JWTAuthentication
-from .models import HackathonSession
+from .models import HackathonSession, Idea
 from hackathon.models import ThemeSelection
 from core.pusher import pusher_client
 from core.theme_extractor import extract_themes_from_text
@@ -65,3 +65,38 @@ class GenerateIdeasView(APIView):
             })
 
         return Response({"session_id": session_id, "ideas": response_ideas}, status=200)
+
+
+class FinalizeIdeaView(APIView):
+    permission_classes = [IsAuthenticated]
+    authentication_classes = [JWTAuthentication]
+
+    def post(self, request, session_id, idea_id):
+        try:
+            # Get the session and idea
+            session = HackathonSession.objects.get(id=session_id)
+            
+            with open(os.path.join('core', 'scripts', 'generated_ideas.json'), 'r') as f:
+                generated_data = json.load(f)
+                
+            # Find the idea in the generated data
+            idea = next((idea for idea in generated_data.get("generated_ideas", []) if idea.get("id") == idea_id), None)
+            if not idea:
+                return Response({"error": "Idea not found."}, status=404)
+            else:
+                idea_obj = Idea.objects.create(
+                    session=session,
+                    user= request.user,
+                    content=idea.get("text", ""),
+                    accepted=True,
+                    finalised=True
+                )
+                idea_obj.save()
+
+                return Response({"message": "Idea finalized successfully."}, status=200)
+
+
+        except HackathonSession.DoesNotExist:
+            return Response({"error": "HackathonSession not found."}, status=404)
+        except Exception as e:
+            return Response({"error": str(e)}, status=500)
